@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+padding: 0;
+font-family: Kadwa;
+}
+.body-login{
+    display: flex;
+    background-color: rgba(12, 9, 9, 0.87);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+.body-login img {
+width: 700px;
+}
+
+main {
+    padding: 0 0 53px 0;
+    width: 100%;
+  }
+  .titulo-login{
+    color:aliceblue;
+    font-size: 6vh;
+}
+.chaves{
+  color: #E79315;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: left;
+  }
+
+label {
+    display:inline-block;
+    flex-direction: column;
+    margin-top: 5px;
+    color: white;
+    font-size: 25px;
+}
+input, select {
+  display: inline-block;
+  background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding: 12px;
+    margin-top: 5px;
+    color: white;
+    border-bottom: solid 2px white;
+    box-sizing: border-box;
+    font-size: 20px;
+    width: 380px;
+  }
+  .inp-cargo { 
+width: 380px;
+  }
+  select:hover{
+    color: white ;
+    display: inline-block;
+    background-color:rgba(12, 9, 9, 0.87) ;
+  }
+
+  .btn-entrar, .btn-cadastrar {
+    background-color: rgba(122, 113, 113, 0.75);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 150px;
+  }  
+  .btn-entrar:hover,
+.btn-cadastrar:hover {
+  background-color: #ada3a3;
+}
