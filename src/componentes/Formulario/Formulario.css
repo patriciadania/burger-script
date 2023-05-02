@@ -1,4 +1,4 @@
-.body-login{
+/* .body-login{
     display: flex;
     background-color: rgba(12, 9, 9, 0.87);
     flex-direction: column;
@@ -7,7 +7,7 @@
     height: 100vh;
     margin: 0;
     background-repeat: no-repeat;
-} 
+}  */
 .formulario {
     display: flex;
     justify-content: center;
@@ -17,6 +17,7 @@
 .formulario form{
     max-width: 80%;
     padding: 36px 64px;
+    text-align: center;
 }
 .titulo-login{
     color:aliceblue;
