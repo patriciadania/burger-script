@@ -1,22 +1,17 @@
 * {
-    margin: 0;
-padding: 0;
 font-family: Kadwa;
 }
 .body-login{
-    display: flex;
-    background-color: rgba(12, 9, 9, 0.87);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-repeat: no-repeat;
-}
-.body-login img {
-width: 700px;
-}
-
+  display: flex;
+  background-color: rgba(12, 9, 9, 0.87);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+} 
+/* 
 main {
     padding: 0 0 53px 0;
     width: 100%;
@@ -84,4 +79,4 @@ width: 380px;
   .btn-entrar:hover,
 .btn-cadastrar:hover {
   background-color: #ada3a3;
-}
+} */
