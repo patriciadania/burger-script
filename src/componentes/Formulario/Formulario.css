@@ -1,0 +1,30 @@
+.body-login{
+    display: flex;
+    background-color: rgba(12, 9, 9, 0.87);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+} 
+.formulario {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    margin-top: -29rem;
+}
+.formulario form{
+    max-width: 80%;
+    padding: 36px 64px;
+}
+.titulo-login{
+    color:aliceblue;
+    font-size: 6vh;
+}
+.chaves{
+  color: #E79315;
+  font-size: 6vh;
+} 
+
+

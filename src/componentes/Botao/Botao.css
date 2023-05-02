@@ -1,0 +1,21 @@
+.botao {
+    background-color: rgba(122, 113, 113, 0.75);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 200px;
+  }
+  
+
+.botao:hover {
+    color: white ;
+    display:inline-block;
+    background-color:rgba(12, 9, 9, 0.87) ;
+  }
