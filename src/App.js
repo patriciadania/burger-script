@@ -1,5 +1,5 @@
 
-import Login from './componentes/Login/Login';
+import Login from './Paginas/Login/Login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TelaInicial from './componentes/TelaInicial/TelaInicial';
 
