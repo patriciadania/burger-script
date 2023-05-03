@@ -1,7 +1,7 @@
 .lista-suspensa label{
   font-weight: 50;
   margin-bottom: 5px;
-  display: inline-flex;
+  display: inline-block;
   flex-direction: column;
   margin-top: 5px;
   color: white;
@@ -9,7 +9,7 @@
   text-align: left;
   }
   .lista-suspensa select{
-  
+    
     background-color: transparent;
     border: none;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);

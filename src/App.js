@@ -11,11 +11,10 @@ function App() {
       <Route exact path="/">
         <Login />
         </Route>
-      <Route path="/TelaInicial">
+      <Route path="/TelaInicial" component={TelaInicial}>
         <TelaInicial />
       </Route>
       </Switch>
-
     </Router>
    
   );
