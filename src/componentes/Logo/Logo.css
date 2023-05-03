@@ -10,7 +10,15 @@
 }
 
   .logo img {
-    max-width: 30rem;
+    max-width: 43rem;
     margin-bottom: 15rem;
   }
+  .titulo-login{
+    color:aliceblue;
+    font-size: 6vh;
+}
+.chaves{
+  color: #E79315;
+  font-size: 6vh;
+} 
   

@@ -8,7 +8,7 @@
     margin: 0;
     background-repeat: no-repeat;
 } 
-.formulario {
+/* .formulario {
     display: flex;
     justify-content: center;
     margin-top: 300px;
@@ -18,17 +18,26 @@
 }
 .formulario form{
     max-width: 80%;
-    padding: 36px 64px;
+    padding: 40px;
     
+} */
+.formulario{
+    position: fixed;
+    margin-top: 20rem;
+    
+    width: 80%;
 }
-.titulo-login{
-    color:aliceblue;
-    font-size: 6vh;
+
+.form{
+    
+    border-radius: 10px;
+    left: 50%;
+    width: 50%;
+    justify-content: center;
+}
+h2 {
     text-align: center;
+    margin-bottom: 1rem;
 }
-.chaves{
-  color: #E79315;
-  font-size: 6vh;
-} 
 
 
