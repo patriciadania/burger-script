@@ -5,21 +5,22 @@
   } */
   .campo-texto{
     margin: 24px 0;
+    display: flex;
+    flex-direction: column;
   }
   .campo-texto label {
     font-weight: 50;
     margin-bottom: 5px;
     display: inline-block;
-    flex-direction: column;
     margin-top: 5px;
     color: white;
-    font-size: 25px;
+    font-size: 18px;
+    text-align: left;
+
   }
   .campo-texto input {
-    padding: 10px 0;
-    font-size: 25px;
+    font-size: 18px;
     border-style: none;
-    box-shadow: 0px 0px 5px 1px #ccc;
     display: inline-block;
     background-color: transparent;
     box-shadow: none;

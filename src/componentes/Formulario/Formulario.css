@@ -1,4 +1,4 @@
-/* .body-login{
+.body-login{
     display: flex;
     background-color: rgba(12, 9, 9, 0.87);
     flex-direction: column;
@@ -7,21 +7,24 @@
     height: 100vh;
     margin: 0;
     background-repeat: no-repeat;
-}  */
+} 
 .formulario {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
-    margin-top: -29rem;
+    margin-top: 300px;
+    text-align: center;
+    position: fixed;
+   
 }
 .formulario form{
     max-width: 80%;
     padding: 36px 64px;
-    text-align: center;
+    
 }
 .titulo-login{
     color:aliceblue;
     font-size: 6vh;
+    text-align: center;
 }
 .chaves{
   color: #E79315;

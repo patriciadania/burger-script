@@ -1,13 +1,22 @@
-//import logo from './logo.svg';
-import './App.css';
-////import Formulario from './componentes/Formulario/Formulario';
+
 import Login from './componentes/Login/Login';
-//import Logo from './componentes/Logo';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TelaInicial from './componentes/TelaInicial/TelaInicial';
+
 
 function App() {
   return (
-   
-      < Login />
+    <Router>
+      <Switch>
+      <Route exact path="/">
+        <Login />
+        </Route>
+      <Route path="/TelaInicial">
+        <TelaInicial />
+      </Route>
+      </Switch>
+
+    </Router>
    
   );
 }

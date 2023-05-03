@@ -3,6 +3,7 @@ import CampoTexto from '../CampoTexto/CampoTexto';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Formulario = () => {
     const cargos = [
@@ -52,6 +53,7 @@ const Formulario = () => {
                 />
                 <Botao>
                     Login
+                    <Link to="/PaginaInicial"></Link>
                 </Botao>
             </form>
         </section>
