@@ -1,24 +1,23 @@
 .lista-suspensa label{
   font-weight: 50;
   margin-bottom: 5px;
-  display: inline-block;
+  display: inline-flex;
   flex-direction: column;
   margin-top: 5px;
   color: white;
-  font-size: 25px;
+  font-size: 18px;
+  text-align: left;
   }
   .lista-suspensa select{
-    display: inline-block;
+  
     background-color: transparent;
     border: none;
-    border-radius: 4px;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 5px;
     color: white;
     border-bottom: solid 2px white;
     box-sizing: border-box;
-    width: 380px;
   }
   select:hover{
     color: white ;

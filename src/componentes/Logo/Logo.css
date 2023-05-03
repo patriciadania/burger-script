@@ -5,10 +5,12 @@
     justify-content: center;
     padding: 20px;
     align-items: center;
+    position: fixed;
+    margin-top: -10rem;
 }
 
   .logo img {
-    max-width: 77%;
-    margin-bottom: 25rem;
+    max-width: 30rem;
+    margin-bottom: 15rem;
   }
   

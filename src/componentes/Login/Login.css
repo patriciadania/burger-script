@@ -1,14 +1,15 @@
 * {
 font-family: Kadwa;
+margin: 0;
+    width: 100%;
 }
+
 .body-login{
   display: flex;
   background-color: rgba(12, 9, 9, 0.87);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
   background-repeat: no-repeat;
 } 
 /* 
