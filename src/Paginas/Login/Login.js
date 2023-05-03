@@ -1,5 +1,5 @@
-import Formulario from "../Formulario/Formulario"
-import { Logo } from "../Logo/Logo"
+import Formulario from "../../componentes/Formulario/Formulario"
+import { Logo } from "../../componentes/Logo/Logo"
 import "./Login.css"
 
 

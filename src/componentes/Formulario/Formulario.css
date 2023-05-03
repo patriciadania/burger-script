@@ -24,8 +24,10 @@
 .formulario{
     position: fixed;
     margin-top: 20rem;
-    
+    flex-direction: column;
     width: 80%;
+    display: flex;
+    align-items: center;
 }
 
 .form{
@@ -37,7 +39,7 @@
 }
 h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 

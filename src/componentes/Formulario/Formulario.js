@@ -53,11 +53,12 @@ const Formulario = () => {
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
                 /> */}
-                <Botao>
+        
+            </form>
+            <Botao>
                     Acessar
                     <Link to="/TelaInicial"></Link>
                 </Botao>
-            </form>
         </section>
     )
 }

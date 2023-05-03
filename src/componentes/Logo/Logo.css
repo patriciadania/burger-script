@@ -3,9 +3,8 @@
    background-color: transparent;
     text-align: center;
     justify-content: center;
-    padding: 20px;
     align-items: center;
-    position: fixed;
+    position: absolute;
     margin-top: -10rem;
 }
 

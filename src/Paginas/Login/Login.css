@@ -6,12 +6,15 @@ margin: 0;
 
 .body-login{
   display: flex;
+  position: relative;
   background-color: rgba(12, 9, 9, 0.87);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
+
 } 
+
 /* 
 main {
     padding: 0 0 53px 0;
