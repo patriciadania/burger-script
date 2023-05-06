@@ -1,10 +1,8 @@
 import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
-//import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import TelaInicial from '../TelaInicial/TelaInicial'
 
 const Formulario = () => {
     const cargos = [
@@ -56,8 +54,7 @@ const Formulario = () => {
         
             </form>
             <Botao>
-                    Acessar
-                    <Link to="/TelaInicial"></Link>
+                Acessar
                 </Botao>
         </section>
     )
