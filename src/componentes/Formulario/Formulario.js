@@ -2,23 +2,24 @@ import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import Navecagao from '../Navegacao/Navegacao';
 
 const Formulario = () => {
-    const cargos = [
-        ' ',
-        'Administração',
-        'Atendimento',
-        'Cozinha',
+    // const cargos = [
+    //     ' ',
+    //     'Administração',
+    //     'Atendimento',
+    //     'Cozinha',
 
-    ]
+    // ]
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-    const [cargo, setCargo] = useState('')
+    //const [cargo, setCargo] = useState('')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido =>', email, senha, cargo)
+        console.log('Form foi submetido =>', email, senha)
     }
     return (
         <section className="formulario">
@@ -51,11 +52,14 @@ const Formulario = () => {
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
                 /> */}
-        
+
             </form>
-            <Botao>
-                Acessar
-                </Botao>
+            <Navecagao>
+                <Botao />
+            </Navecagao>
+
+
+
         </section>
     )
 }

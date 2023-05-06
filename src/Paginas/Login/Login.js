@@ -1,3 +1,4 @@
+
 import Formulario from "../../componentes/Formulario/Formulario"
 import { Logo } from "../../componentes/Logo/Logo"
 import "./Login.css"
@@ -5,10 +6,10 @@ import "./Login.css"
 
 function Login(){
 return (
-    <body className='body-login'>
+    <section className='body-login'>
         <Logo />
         <Formulario />
-    </body>
+    </section>
 )
 }
 export default Login
