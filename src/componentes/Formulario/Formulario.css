@@ -8,19 +8,6 @@
     margin: 0;
     background-repeat: no-repeat;
 } 
-/* .formulario {
-    display: flex;
-    justify-content: center;
-    margin-top: 300px;
-    text-align: center;
-    position: fixed;
-   
-}
-.formulario form{
-    max-width: 80%;
-    padding: 40px;
-    
-} */
 .formulario{
     position: fixed;
     margin-top: 20rem;
