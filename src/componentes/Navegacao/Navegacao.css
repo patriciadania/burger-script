@@ -6,7 +6,7 @@ nav{
 li{
     list-style: none;
 }
-a{
+/* a{
     text-decoration: none;
     justify-content: center;
     color: white;
@@ -17,4 +17,4 @@ a{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-} 
+}  */
