@@ -1,0 +1,30 @@
+
+   .container{
+   display: grid;
+   grid-template-columns: 1fr;
+   
+
+   }
+   .column{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr  1fr 1fr 1fr;
+    grid-gap: 10px;
+   }
+   .tipoRefecao{
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    background-color: rgba(122, 113, 113, 0.75);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+    border-radius: 5px;
+    margin: 2rem;
+   }
+   .categoria{
+    text-transform: uppercase;
+    margin: 5px;
+    color:white;
+    border-bottom: 3px solid;
+    max-width: 12rem;
+    text-align: center;
+   }
+   

@@ -1,7 +1,7 @@
 import estilos from './Navegacao.css'
 import { Link } from 'react-router-dom'
 
-export default function Navecagao(){
+export default function Navegacao(){
 return (
     <nav className={estilos.link}>
     <ul>
