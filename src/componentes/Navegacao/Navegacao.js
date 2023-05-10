@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom'
 
 export default function Navegacao(){
 return (
-    <nav className={estilos.link}>
-    <ul>
-      <li>
-        <Link to='/atendimento'>Acessar</Link>
-      </li>
-    </ul>
+      <nav className='acessar'>
+              <Link to='/atendimento' className={estilos.link}>Acessar</Link>
   </nav>
 )
 }

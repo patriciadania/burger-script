@@ -3,7 +3,7 @@ import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
 //import { Link } from 'react-router-dom';
-import Navecagao from '../Navegacao/Navegacao';
+import Navegacao from '../Navegacao/Navegacao';
 
 const Formulario = () => {
     // const cargos = [
@@ -54,9 +54,9 @@ const Formulario = () => {
                 /> */}
 
             </form>
-            <Navecagao>
+            <Navegacao>
                 <Botao />
-            </Navecagao>
+            </Navegacao>
 
 
 
