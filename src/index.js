@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppRoutes from './Routes';
+import AppRoutes from './Rotas';
 
 
 
