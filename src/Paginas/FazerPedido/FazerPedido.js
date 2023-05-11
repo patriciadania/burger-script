@@ -11,9 +11,6 @@ export default function FazerPedido() {
             <div style={{width: '50%', margin: '0'}}>
   <Cardapio />
 </div>
-<nav>
-                <Link to='/resumopedido' className='botaoResumo'>Resumo do Pedido</Link>
-            </nav>
         </section>
  
 

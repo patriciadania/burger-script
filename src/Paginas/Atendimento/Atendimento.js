@@ -8,7 +8,7 @@ export default function Atendimento() {
   return (
     <section className='telaAtendimento'>
      <nav>
-      <Link to='/' className='botaoSair'>Sair</Link>
+     <Link to='/' className='botaoSair'>Sair</Link>
 </nav>
 
       <h2 className='msgBoasVindas'>olá,</h2>
