@@ -1,84 +1,47 @@
-.telaAtendimento{
-  margin-top: 5rem ;
+
+  .telaAtendimento{
+  margin-top: 10rem ;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
+ 
 }
 .msgBoasVindas{
   text-transform: uppercase;
   font-size: 1.8em;
   color: rgba(255, 253, 253, 1);
-  float: left;
+
 }
 
-.fazerPedido, .aguardandoEntrega, .pedidosEntregues{
+.fazerPedido,
+.pedidosEntregues,
+.aguardandoPedidos{
   color: rgba(255, 253, 253, 1);
   background-color: rgba(122, 113, 113, 0.5);
   margin-bottom: 5rem;
   text-transform: uppercase;
-  max-width: 60rem;
- padding: 30px 9px;
- border-radius: 5px;
- font-family: Kadwa;
- font-size: 1.8em;
-
-}
-.icones{
-  width: 5rem;
-  justify-content: center;
-  vertical-align: -20px;
-}
-.link{
-  text-decoration: none;
-  color: rgba(255, 253, 253, 1);
-}
-.telaAtendimento{
-  margin-top: 5rem ;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.msgBoasVindas{
-  text-transform: uppercase;
-  font-size: 1.8em;
-  color: rgba(255, 253, 253, 1);
-  float: left;
-}
-
-.fazerPedido, .aguardandoEntrega, .pedidosEntregues{
-  color: rgba(255, 253, 253, 1);
-  background-color: rgba(122, 113, 113, 0.5);
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-  max-width: 60rem;
- padding: 30px 9px;
- border-radius: 5px;
- font-family: Kadwa;
- font-size: 1.8em;
-
-}
-.icones{
-  width: 5rem;
-  justify-content: center;
-  vertical-align: -20px;
-}
-.link{
-  text-decoration: none;
-  color: rgba(255, 253, 253, 1);
-}
-.botaoSair {
-  color: rgba(255, 253, 253, 1);
-  font-size: 30px;
+  max-width: 35rem;
+  padding: 5px 5px;
+  border-radius: 5px;
   font-family: Kadwa;
-
+  font-size: 1.3rem;
 }
+
+.icones{
+  width: 5rem;
+  justify-content: center;
+  vertical-align: -20px;
+}
+.link{
+  text-decoration: none;
+  color: rgba(255, 253, 253, 1);
+}
+
 .botaoSair {
-  position: absolute; /* definir posição do botão como absolute */
+  position: absolute; 
   top: 0;
   right: 10;
   color: rgba(255, 253, 253, 1);

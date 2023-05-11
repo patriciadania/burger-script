@@ -1,11 +1,13 @@
-/* Estilos para o componente Cardapio */
+
 
 .conteudoCardapio {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 20px;
     padding: 0 20px;
+
   }
   

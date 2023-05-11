@@ -3,11 +3,12 @@
     background-color: rgba(122, 113, 113, 0.5);
     margin-bottom: 5rem;
     text-transform: uppercase;
-    max-width: 60rem;
-   padding: 30px 9px;
-   border-radius: 5px;
-   font-family: Kadwa;
-   font-size: 1.8em;
+    max-width: 35rem;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-family: Kadwa;
+    font-size: 1.3rem;
+  
 }
 .telaFazerPedido{
     margin-top: 5rem ;
@@ -19,11 +20,17 @@
     position: relative;
 }
 .botaoVoltar {
-    position: absolute; /* definir posição do botão como absolute */
+    position: absolute; 
     top: 0;
     right: 10;
     color: rgba(255, 253, 253, 1);
     font-size: 30px;
+    font-family: Kadwa;
+  
+}
+.botaoResumo {
+    color: rgba(255, 253, 253, 1);
+    font-size: 26px;
     font-family: Kadwa;
   
 }
