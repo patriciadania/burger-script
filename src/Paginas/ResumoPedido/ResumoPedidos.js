@@ -1,6 +1,20 @@
-// import React, { useState } from 'react';
+import ResumoPedido from './ResumoPedido.css'
+//import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
-// function FormularioPedido({ onSubmit }) {
+
+
+export default function ResumoDoPedido() {
+    return (
+      <nav>
+      <Link to='/fazerpedido' className='botaoVoltar'>Voltar</Link>
+</nav>
+    )
+
+
+}
+
+//export default function ResumoPedido({ onSubmit }) {
 //   const [atendente, setAtendente] = useState('');
 //   const [mesa, setMesa] = useState('');
 //   const [cliente, setCliente] = useState('');
@@ -75,11 +89,9 @@
 //   );
 // }
 
-// export default FormularioPedido;
 
-// import React, { useState } from 'react';
 
-// function Contador() {
+// export function Contador() {
 //   const [count, setCount] = useState(0);
 
 //   function increment() {
@@ -94,4 +106,3 @@
 //   );
 // }
 
-// export default Contador;

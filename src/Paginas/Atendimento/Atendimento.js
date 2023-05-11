@@ -7,8 +7,13 @@ import './Atendimento.css'
 export default function Atendimento() {
   return (
     <section className='telaAtendimento'>
+     <nav>
+      <Link to='/' className='botaoSair'>Sair</Link>
+</nav>
+
       <h2 className='msgBoasVindas'>olá,</h2>
-      <span className='fazerPedido'><Link to='/fazerpedido' className='link'> 
+      <span className='fazerPedido'>
+        <Link to='/fazerpedido' className='link'> 
       fazer um novo pedido
        <img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones"/> 
       </Link>
@@ -19,7 +24,12 @@ export default function Atendimento() {
           <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
           </Link> 
           </span>
-      <span className='pedidosEntregues'>pedidos entregues <img src="../imagens/icones/check.png" alt="Icone de entregue" className="icones"/></span>
+      <span className='pedidosEntregues'>
+      <Link to='/pedidosentregues' className='link'>
+        pedidos entregues 
+        <img src="../imagens/icones/check.png" alt="Icone de entregue" className="icones"/>
+    </Link>
+    </span>
     </section>
 
   );

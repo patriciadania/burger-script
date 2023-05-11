@@ -1,7 +1,23 @@
+
+
 .containerItens {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    max-width: 30rem;
-    color: aliceblue;
-  }
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+ 
+  align-items: center;
+  width: 300px;
+}
+
+.containerItens p {
+  font-size: 18px;
+}
+
+.containerItens p:first-child {
+  font-weight: bold;
+}
+
+
