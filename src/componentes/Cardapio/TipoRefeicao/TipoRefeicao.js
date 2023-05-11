@@ -1,24 +1,27 @@
+
+
 import Refeicoes from '../Refeicoes/Refeicoes';
-import './TipoRefeicao.css'
+import './TipoRefeicao.css';
+
 const TipoRefeicao = ({ restaurante }) => {
   return (
-    <section className='container'>
-      <div className='column'>
-        <h2 className='tipoRefecao'>{restaurante.tipoRefeicao}</h2>
+    <div className='table-container'>
+      <div className='table-row'>
+        <div className='table-cell menu1'>
+          <h2 className='tipoRefecao'>{restaurante.tipoRefeicao}</h2>
+          {restaurante.categorias.map((categoria) => {
+            return (
+              <div key={categoria.titulo}>
+                <h1 className='categoria-titulo'>{categoria.titulo}</h1>
+                {categoria.produtos.map((item) => (
+                  <Refeicoes produto={item} key={item.id} />
+                ))}
+              </div>
+            );
+          })}
         </div>
-        <div className='column'>
-        {restaurante.categorias.map((categoria) => {
-          return (
-            <div key={categoria.titulo}>
-              <h1 className='categoria'>{categoria.titulo}</h1>
-              {categoria.produtos.map((item) => (
-                <Refeicoes produto={item} key={item.id} />
-              ))}
-            </div>
-          );
-        })}
-        </div>
-    </section>
+      </div>
+    </div>
   );
 };
 
