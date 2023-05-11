@@ -6,6 +6,8 @@ import Cozinha from "./Paginas/Cozinha/Cozinha";
 import Administracao from "./Paginas/Adm/Adm";
 import FazerPedido from "./Paginas/FazerPedido/FazerPedido";
 import AguardandoEntrega from "./Paginas/AguardandoEntrega/AguardandoEntrega";
+import PedidosEntregues from "./Paginas/PedidosEntregues/PedidosEntregues";
+
 
 function AppRoutes() {
   return (
@@ -17,6 +19,8 @@ function AppRoutes() {
       <Route path="/administracao" element={<Administracao />} />
       <Route path="/fazerpedido" element={<FazerPedido />} />
       <Route path= "/aguardandoentrega" element={<AguardandoEntrega/>}/>
+      <Route path= "/pedidosentregues" element={<PedidosEntregues/>}/>
+
     </Routes>
     </BrowserRouter>
     
