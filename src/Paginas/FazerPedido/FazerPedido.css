@@ -18,11 +18,12 @@
     align-items: center;
     text-align: center;
     position: relative;
+    width: 100vh;
 }
 .botaoVoltar {
     position: absolute; 
     top: 0;
-    right: 10;
+    text-align: right;
     color: rgba(255, 253, 253, 1);
     font-size: 30px;
     font-family: Kadwa;
