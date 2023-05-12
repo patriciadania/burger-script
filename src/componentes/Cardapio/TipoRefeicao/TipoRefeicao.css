@@ -44,6 +44,7 @@
     .table-cell {
       display: table-cell;
       
+      
     }
     
     .menu1,
@@ -54,8 +55,6 @@
     
     .summary {
       height: 100vh;
-      background: red;
-  
     }
     .tipoRefecao{
       text-transform: uppercase;
@@ -74,3 +73,4 @@
     max-width: 12rem;
     text-align: center;
    }
+   

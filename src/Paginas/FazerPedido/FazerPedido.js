@@ -10,7 +10,6 @@ export default function FazerPedido() {
             <span className='resumoDoPedido'>Fazer um novo pedido<img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones" /></span>
             <div style={{width: '50%', margin: '0'}}>
   <Cardapio />
-  <p>test</p>
 </div>
         </section>
  

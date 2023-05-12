@@ -5,6 +5,7 @@ import './TipoRefeicao.css';
 
 const TipoRefeicao = ({ restaurante }) => {
   return (
+    
     <div className='table-container'>
       <div className='table-row'>
         <div className='table-cell menu1'>
@@ -22,6 +23,7 @@ const TipoRefeicao = ({ restaurante }) => {
         </div>
       </div>
     </div>
+  
   );
 };
 
