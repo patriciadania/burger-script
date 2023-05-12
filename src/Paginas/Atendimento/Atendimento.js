@@ -7,7 +7,7 @@ import './Atendimento.css'
 export default function Atendimento() {
   return (
     <section className='telaAtendimento'>
-     <nav>
+     <nav className='botaoSair'>
      <Link to='/' className='botaoSair'>Sair</Link>
 </nav>
 
