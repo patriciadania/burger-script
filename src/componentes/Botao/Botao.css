@@ -1,26 +1,23 @@
-button {
-  position: absolute;
-  align-items: center;
 
-}
 .botao {
-  position: absolute;
-  justify-content: center;
   background-color: rgba(122, 113, 113, 0.75);
   color: white;
   font-weight: bold;
-  font-size: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  margin-top: 200px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 200px;
   text-transform: uppercase;
   white-space: nowrap;
 }
-
+.div-botao{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .botao:hover {
   color: white ;
   display:inline-block;
@@ -30,4 +27,32 @@ a{
   text-decoration: none;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px) {
+  .botao{
+    font-size: 1.5vh;
+    width: 100px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .botao{
+    font-size: 1.8vh;
+    width: 150px;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .botao{
+    font-size: 20px;
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .botao{
+    font-size: 20px;
+    width: 200px;
+  }
 }

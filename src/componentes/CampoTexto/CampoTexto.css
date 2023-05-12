@@ -1,34 +1,4 @@
-/* .campo-texto {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  } */
-  /* .campo-texto{
-    margin: 24px 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .campo-texto label {
-    font-weight: 50;
-    margin-bottom: 5px;
-    display: inline-block;
-    margin-top: 5px;
-    color: white;
-    font-size: 18px;
-    text-align: left;
 
-  }
-  .campo-texto input {
-    font-size: 18px;
-    border-style: none;
-    display: inline-block;
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom: solid 2px white;
-    box-sizing: border-box;
-    outline: none;
-  }
-   */
    .campo-texto{
     position: relative;
     top: 50%;
@@ -37,15 +7,12 @@
     transform: translate(-50%, -50%);
    
    }
-   /* .campo-texto .user-box{
-    position: relative;
-   } */
    .campo-texto input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
@@ -56,7 +23,6 @@
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 25px;
   color: #fff;
   pointer-events: none;
   transition: .5s;
@@ -67,5 +33,44 @@
   top: -20px;
   left: 0;
   color: #bdb8b8;
-  font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .campo-texto label {
+    font-size: 15px;
+  }
+  .campo-texto input:focus ~ label,
+  .campo-texto input:valid ~ label {
+    font-size: 13px;
+  }
+ 
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .campo-texto input:focus ~ label,
+  .campo-texto input:valid ~ label {
+    font-size: 16px;
+  }
+  .campo-texto label {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .campo-texto input:focus ~ label,
+  .campo-texto input:valid ~ label {
+    font-size: 16px;
+  }
+  .campo-texto label {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .campo-texto input:focus ~ label,
+  .campo-texto input:valid ~ label {
+    font-size: 16px;
+  }
+  .campo-texto label {
+    font-size: 25px;
+  }
 }
