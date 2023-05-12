@@ -50,6 +50,7 @@ const Formulario = () => {
                     label="Senha: "
                     valor={senha}
                     aoAlterado={valor => setSenha(valor)}
+                    tipo="password"
                 />
 
                 <Botao>acessar</Botao>
