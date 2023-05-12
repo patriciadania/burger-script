@@ -1,10 +1,14 @@
-.table-cell {
+/* .table-cell {
     display: table-cell;
+  } */
+  .container-resumo-pedido{
+    display: flex;
+  
   }
   .infoPedido{
     text-transform: uppercase;
     color:white;
-    margin-left: 10rem;
+  
  
   }
   /* .tituloResumoPedido{
@@ -28,7 +32,7 @@ text-align: left;
   .loader {
     display: block;
     --height-of-loader: 4px;
-    --loader-color: #0071e2;
+    --loader-color: rgb(201, 136, 83);
     width: 100%;
     height: var(--height-of-loader);
     border-radius: 30px;
@@ -67,20 +71,27 @@ text-align: left;
   }
   
   th, td {
+   
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    justify-content: space-between;
   }
-  
+ 
   thead th {
-    background-color: #f2f2f2;
+    background-color: rgb(34, 33, 33);
   }
   
   tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #494848;
   }
   
   tbody tr:hover {
-    background-color: #eaeaea;
+    background-color:#494848;
   }
-  
+
+  .totalPedido{
+    background-color: green;
+  }
+ 

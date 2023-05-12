@@ -6,9 +6,8 @@ import './TipoRefeicao.css';
 const TipoRefeicao = ({ restaurante }) => {
   return (
     
-    <div className='table-container'>
-      <div className='table-row'>
-        <div className='table-cell menu1'>
+    <div className='container-tipo-ref'>
+     
           <h2 className='tipoRefecao'>{restaurante.tipoRefeicao}</h2>
           {restaurante.categorias.map((categoria) => {
             return (
@@ -21,8 +20,6 @@ const TipoRefeicao = ({ restaurante }) => {
             );
           })}
         </div>
-      </div>
-    </div>
   
   );
 };

@@ -1,4 +1,4 @@
-.resumoDoPedido {
+/* .resumoDoPedido {
     color: rgba(255, 253, 253, 1);
     background-color: rgba(122, 113, 113, 0.5);
     margin-bottom: 5rem;
@@ -8,6 +8,7 @@
     border-radius: 5px;
     font-family: Kadwa;
     font-size: 1.3rem;
+
   
 }
 .telaFazerPedido{
@@ -17,8 +18,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: relative;
-    width: 100vh;
 }
 .botaoVoltar {
     position: absolute; 
@@ -34,4 +33,20 @@
     font-size: 26px;
     font-family: Kadwa;
   
+} */
+
+.telaFazerPedido{
+    margin-top: 5rem ;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.componentes{
+    position: relative;
+    width: 100%;
+
+ 
 }

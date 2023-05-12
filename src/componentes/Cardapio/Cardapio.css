@@ -11,3 +11,10 @@
   }
    */
   
+.cardapio-resumo{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+ padding: 0 8rem;
+}

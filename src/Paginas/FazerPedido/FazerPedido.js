@@ -1,16 +1,21 @@
 import Cardapio from '../../componentes/Cardapio/Cardapio'
+import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido'
 import './FazerPedido.css'
 import { Link } from 'react-router-dom'
 export default function FazerPedido() {
     return (
         <section className='telaFazerPedido'>
-            <nav>
-                <Link to='/atendimento' className='botaoVoltar'>Voltar</Link>
+            <nav className='botaoSair'>
+                <Link to='/atendimento' className='botaoSair'>Voltar</Link>
             </nav>
-            <span className='resumoDoPedido'>Fazer um novo pedido<img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones" /></span>
-            <div style={{width: '50%', margin: '0'}}>
-  <Cardapio />
-</div>
+            <span className='fazerPedido'>Fazer um novo pedido<img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones" /></span>
+           <div className='componentes'> 
+
+           <Cardapio />
+           </div>
+  
+  
+
         </section>
  
 
