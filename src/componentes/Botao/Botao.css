@@ -1,33 +1,33 @@
 button {
-    position: absolute;
-    align-items: center;
-  
+  position: absolute;
+  align-items: center;
+
 }
 .botao {
-    position: absolute;
-    justify-content: center;
-    background-color: rgba(122, 113, 113, 0.75);
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 200px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: 200px;
-    text-transform: uppercase;
-    white-space: nowrap;
+  position: absolute;
+  justify-content: center;
+  background-color: rgba(122, 113, 113, 0.75);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 200px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 200px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .botao:hover {
-    color: white ;
-    display:inline-block;
-    background-color:rgba(12, 9, 9, 0.87) ;
-  }
-  a{
-    text-decoration: none;
-    font-size: 20px;
-    text-transform: uppercase;
-  }
+  color: white ;
+  display:inline-block;
+  background-color:rgba(12, 9, 9, 0.87) ;
+}
+a{
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+}
