@@ -1,6 +1,6 @@
 import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
-//import Botao from '../Botao/Botao';
+import Botao from '../Botao/Botao';
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../API/Api';
@@ -37,11 +37,6 @@ const Formulario = () => {
     return (
         <section className="formulario">
 
-            <h2>
-                <span className="chaves">{"{"}</span>
-                <span className="titulo-login"> Login </span>
-                <span className="chaves">{"}"}</span>
-            </h2>
 
             <form onSubmit={aoSalvar}>
                 <CampoTexto
@@ -57,7 +52,7 @@ const Formulario = () => {
                     aoAlterado={valor => setSenha(valor)}
                 />
 
-                <button>acessar</button>
+                <Botao>acessar</Botao>
 
             </form>
             {/* <Navegacao>

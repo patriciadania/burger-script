@@ -1,64 +1,8 @@
-/* .body-login{
-    display: flex;
-    background-color: rgba(12, 9, 9, 0.87);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-repeat: no-repeat;
-} 
-.formulario{
-    position: fixed;
-    margin-top: 20rem;
+
+form .formulario{
+   justify-content: center;
     flex-direction: column;
     width: 80%;
     display: flex;
     align-items: center;
-}
-
-.form{
-    
-    border-radius: 10px;
-    left: 50%;
-    width: 50%;
-    justify-content: center;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-   */
-
-
-   .body-login{
-    display: flex;
-    background-color: rgba(12, 9, 9, 0.87);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-repeat: no-repeat;
-} 
-.formulario{
-    position: fixed;
-    margin-top: 20rem;
-    flex-direction: column;
-    width: 80%;
-    display: flex;
-    align-items: center;
-}
-
-.form{
-    
-    border-radius: 10px;
-    left: 50%;
-    width: 50%;
-    justify-content: center;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 3rem;
 }

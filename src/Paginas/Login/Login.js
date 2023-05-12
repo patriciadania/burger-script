@@ -6,10 +6,11 @@ import "./Login.css"
 
 function Login(){
 return (
-    <section className='body-login'>
-        <Logo />
+    <>
+    <Logo />
         <Formulario />
-    </section>
+    </>
+    
 )
 }
 export default Login

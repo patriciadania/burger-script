@@ -1,23 +1,63 @@
  .logo {
     display: flex;
    background-color: transparent;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    margin-top: -10rem;
+  flex-direction: column;
 }
-
   .logo img {
-    max-width: 43rem;
-    margin-bottom: 15rem;
+    margin-top: 3rem;
+    margin-bottom: 10px;
   }
   .titulo-login{
     color:aliceblue;
-    font-size: 6vh;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 .chaves{
   color: #E79315;
-  font-size: 6vh;
-} 
   
+} 
+@media only screen and (max-width: 767px) {
+  .titulo-login .chaves{
+    font-size: 4vh;
+}
+.logo img {
+  width: 28rem;
+ }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .titulo-login {
+    font-size: 4vh;
+}
+.chaves{
+  font-size: 4vh;
+}
+.logo img {
+  width: 30rem;
+ }
+}
+
+@media only screen and (min-width: 1024px) {
+  .chaves{
+    font-size: 6vh;
+}
+.titulo-login{
+  font-size: 6vh;
+}
+.logo img {
+  width: 40rem;
+ }
+}
+
+@media only screen and (min-width: 1200px) {
+  .logo img {
+   width: 50rem;
+  }
+  .chaves{
+    font-size: 6vh;
+}
+.titulo-login{
+  font-size: 6vh;
+}
+}
