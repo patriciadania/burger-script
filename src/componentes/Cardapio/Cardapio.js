@@ -6,13 +6,16 @@ import ResumoPedido from '../ResumoPedido/ResumoPedido';
 
 
 const Cardapio = () => {
-  return (<div className="table-container">
+  return (
+    
+  <div className="cardapio-resumo">
+    <div>
     {restaurantes?.map(item => <TipoRefeicao restaurante={item} key={item.id} />)}
-    <div className='table-cell'>
+    </div>
+    <div className='resumo'>
     <ResumoPedido />
     </div>
    
-    <Botao>enviar pedido</Botao>
   </div>)
 }
 

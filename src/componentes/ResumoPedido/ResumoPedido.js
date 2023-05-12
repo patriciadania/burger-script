@@ -2,7 +2,7 @@ import './ResumoPedido.css'
 
 export default function ResumoPedido() {
     return (
-        <div className='table-cell'>
+        <div className='container-resumo-pedido'>
             <div className='infoPedido'>
                 <h1 className='tituloResumoPedido'>resumo do pedido</h1>
                 <div class="loader"></div>
@@ -39,6 +39,11 @@ export default function ResumoPedido() {
                             <td>3</td>
                             <td>Refrigerante</td>
                             <td>5.00</td>
+                        </tr>
+                        <tr>
+                            <td className='totalPedido'>TOTAL</td>
+                            <td className='totalPedido'></td>  
+                            <td className='totalPedido'>45.00</td>
                         </tr>
                     </tbody>
                 </table>

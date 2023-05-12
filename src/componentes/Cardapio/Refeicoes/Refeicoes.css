@@ -1,4 +1,4 @@
-
+/* 
 
 .containerItens {
   background-color: #fff;
@@ -22,4 +22,26 @@
   font-weight: bold;
 }
 
+ */
+.containerItens{
+  display: flex;
+flex-direction: column;
 
+}
+ .containerItens p {
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.containerItens p:first-child {
+  font-weight: bold;
+}
+.lista-de-produtos{
+  display: flex;
+}
+.dadosProdutos{
+ 
+ margin-top: 10px;
+ border-bottom: 3px solid aliceblue;
+ 
+}
