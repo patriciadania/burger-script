@@ -1,26 +1,39 @@
 import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
-import Botao from '../Botao/Botao';
-import { useState } from 'react';
-//import { Link } from 'react-router-dom';
-import Navegacao from '../Navegacao/Navegacao';
+//import Botao from '../Botao/Botao';
+import { useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../API/Api';
 
 const Formulario = () => {
-    // const cargos = [
-    //     ' ',
-    //     'Administração',
-    //     'Atendimento',
-    //     'Cozinha',
-
-    // ]
+    
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-    //const [cargo, setCargo] = useState('')
 
-    const aoSalvar = (evento) => {
+    const aoSalvar = async (evento) => {
         evento.preventDefault()
         console.log('Form foi submetido =>', email, senha)
+        // console.log('usuário e senha login =>', emailLogin, senhaLogin)
+        const loginUsuario = await login(email, senha)
+        console.log(loginUsuario)
+
+        // TODO: Redirecionar o usuário de acordo com o role.
+        if(loginUsuario.user.role === 'atendimento') { 
+            console.log('redirecionando para atendimento')
+            navigate('/atendimento')
+        }
+        if(loginUsuario.user.role === 'cozinha') { 
+            console.log('redirecionando para cozinha')
+            navigate('/cozinha')
+        }
+        if(loginUsuario.user.role === 'admin') { 
+            console.log('redirecionando para administracao')
+            navigate('/administracao')
+        }
+       
     }
+
     return (
         <section className="formulario">
 
@@ -34,29 +47,22 @@ const Formulario = () => {
                 <CampoTexto
                     obrigatorio={true}
                     label="E-mail: "
-                    //placeholder="nome@dominio.com" 
                     valor={email}
                     aoAlterado={valor => setEmail(valor)}
                 />
                 <CampoTexto
                     obrigatorio={true}
                     label="Senha: "
-                    //placeholder="••••••" 
                     valor={senha}
                     aoAlterado={valor => setSenha(valor)}
                 />
-                {/* <ListaSuspensa
-                    obrigatorio={true}
-                    label="Cargo: "
-                    itens={cargos}
-                    valor={cargo}
-                    aoAlterado={valor => setCargo(valor)}
-                /> */}
+
+                <button>acessar</button>
 
             </form>
-            <Navegacao>
+            {/* <Navegacao>
                 <Botao />
-            </Navegacao>
+            </Navegacao> */}
 
 
 
