@@ -7,7 +7,8 @@ export default function Administracao() {
          <nav className='botaoSair'>
      <Link to='/' className='botaoSair'>Sair</Link>
 </nav>
-<h2 className='msgBoasVindas'>olá,</h2>
+<h2 className='msgBoasVindas'>olá, </h2>
+
 <span className='fazerPedido'>
         <Link to='/colaboradores' className='link'> 
       colaboradores

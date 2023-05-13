@@ -17,7 +17,7 @@ const Refeicoes = ({ produto }) => {
   return (
     <div className="containerItens">
       <div className="lista-de-produtos">
-        <table>
+        <table className='conteudo-tabela-refeicoes'>
           <tbody>
             <tr>
               <td className="dadosProdutos">{produto.nome}</td>
