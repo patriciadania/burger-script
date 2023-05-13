@@ -1,5 +1,5 @@
 import Cardapio from '../../componentes/Cardapio/Cardapio'
-import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido'
+//import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido'
 import './FazerPedido.css'
 import { Link } from 'react-router-dom'
 export default function FazerPedido() {
