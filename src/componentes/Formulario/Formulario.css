@@ -6,3 +6,19 @@ form .formulario{
     display: flex;
     align-items: center;
 }
+
+.msg-erro-login{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  color: #fe4567;
+  padding: 10px;
+  
+}
+.msg-sucesso{
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+}

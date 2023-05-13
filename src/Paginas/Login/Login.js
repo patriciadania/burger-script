@@ -1,5 +1,5 @@
 
-import Formulario from "../../componentes/Formulario/Formulario"
+import FormularioLogin from "../../componentes/Formulario/FormularioLogin"
 import { Logo } from "../../componentes/Logo/Logo"
 import "./Login.css"
 
@@ -8,7 +8,7 @@ function Login(){
 return (
     <>
     <Logo />
-        <Formulario />
+        <FormularioLogin />
     </>
     
 )
