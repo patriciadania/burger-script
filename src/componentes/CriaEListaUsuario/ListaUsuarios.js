@@ -2,9 +2,10 @@
 import './ListaUsuarios.css'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { listarUsuarios } from "../../API/Usuarios";
+import { listarUsuarios, deletarUsuario } from "../../API/Usuarios";
 
 export default function ListaDeUsuarios() {
+
     const [usuarios, setUsuarios] = useState([]);
   
     useEffect(() => {
@@ -19,7 +20,19 @@ export default function ListaDeUsuarios() {
   
       obterUsuarios();
     }, []);
-  
+
+    const btnExcluirUsuario = async (id) => {
+    try {
+      await deletarUsuario(id);
+      console.log('Usuário deletado com sucesso');
+      // Atualizar a lista de usuários após a exclusão, se necessário
+
+      // Recarregar a página
+      window.location.reload();
+    } catch (error) {
+      console.error('Erro ao deletar usuário:', error);
+    }
+  };
     return (
       <div className="telaFazerPedido">
         <nav className="botaoSair">
@@ -35,7 +48,12 @@ export default function ListaDeUsuarios() {
               <p className='dados-usuario'>E-mail: {usuario.email}</p>
               <p className='dados-usuario'>Cargo: {usuario.role}</p>
               <button className='btn-lista-usuarios'>editar</button>  
-              <button className='btn-lista-usuarios'>excluir</button>
+              <button
+              className="btn-lista-usuarios"
+              onClick={() => btnExcluirUsuario(usuario.id)}>
+              excluir
+            </button>
+         
             </div>
             
           ))}

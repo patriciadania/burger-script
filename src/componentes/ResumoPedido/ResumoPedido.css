@@ -1,6 +1,4 @@
-/* .table-cell {
-    display: table-cell;
-  } */
+
   .container-resumo-pedido{
     display: flex;
   
@@ -8,15 +6,10 @@
   .infoPedido{
     text-transform: uppercase;
     color:white;
-  
- 
   }
-  /* .tituloResumoPedido{
-    background-color: red;
-  } */
-  
+
   .infoPedido input{
-    width: 300px;
+    width: 200px;
     display: inline-block;
     margin-left: 12px;
     margin-bottom: 15px;
@@ -65,10 +58,10 @@ text-align: left;
     }
   }
 
-  table {
+  /* table {
     width: 100%;
     border-collapse: collapse;
-  }
+  } */
   
   th, td {
    
@@ -95,3 +88,33 @@ text-align: left;
     background-color: green;
   }
  
+
+  @media only screen and (max-width: 767px) {
+
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .container-resumo-pedido{
+      display: flex;
+    margin-top: -30rem;
+    }
+    .conteudo-tabela-resumo{
+      width: 200px;
+      font-size: 17px;
+      border-collapse: collapse;
+    }
+    .dadosPedido{
+      width: 200px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .container-resumo-pedido{
+      display: flex;
+    margin-top: -30rem;
+    }
+
+  }

@@ -1,3 +1,4 @@
+
 import './ResumoPedido.css'
 
 export default function ResumoPedido() {
@@ -16,7 +17,7 @@ export default function ResumoPedido() {
                     <label>atendente:</label>
                     <input />
                 </div>
-                <table>
+                <table className='conteudo-tabela-resumo'>
                     <thead>
                         <tr>
                             <th>Quantidade</th>
@@ -41,13 +42,12 @@ export default function ResumoPedido() {
                             <td>5.00</td>
                         </tr>
                         <tr>
-                            <td className='totalPedido'>TOTAL</td>
+                            <td className='totalPedido'>TOTAL </td>
                             <td className='totalPedido'></td>  
                             <td className='totalPedido'>45.00</td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
         </div>
     )
