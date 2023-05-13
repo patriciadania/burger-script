@@ -1,7 +1,7 @@
 import './Cardapio.css'
 import TipoRefeicao from "./TipoRefeicao/TipoRefeicao";
 import restaurantes from "../../objetos/api";
-import Botao from '../Botao/Botao';
+//import Botao from '../Botao/Botao';
 import ResumoPedido from '../ResumoPedido/ResumoPedido';
 
 

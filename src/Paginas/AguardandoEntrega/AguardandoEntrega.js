@@ -1,6 +1,7 @@
 //import Botao from '../../componentes/Botao/Botao'
 //import FormularioPedido from '../componentes/ResumoPedido/ResumoPedido'
 
+import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido'
 import './AguardandoEntrega.css'
 import { Link } from 'react-router-dom'
 
@@ -16,7 +17,10 @@ export default function AguardandoEntrega() {
                 aguardando entrega
                 <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones" />
             </span>
-            {/* <FormularioPedido/>  */}
+            <ResumoPedido/>
+            <nav>
+                        <Link to='/' className='botaoEnviar'>ENTREGAR</Link>
+            </nav>
         </section>
 
 
