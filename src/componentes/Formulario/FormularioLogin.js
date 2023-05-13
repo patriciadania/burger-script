@@ -1,37 +1,40 @@
 import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
-import { useState} from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../API/Api';
+import { login } from '../../API/Usuarios';
 
-const Formulario = () => {
-    
+const FormularioLogin = () => {
+
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const [erro, setErro] = useState('');
 
     const aoSalvar = async (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido =>', email, senha)
-        // console.log('usuário e senha login =>', emailLogin, senhaLogin)
-        const loginUsuario = await login(email, senha)
-        console.log(loginUsuario)
-
-        // TODO: Redirecionar o usuário de acordo com o role.
-        if(loginUsuario.user.role === 'atendimento') { 
-            console.log('redirecionando para atendimento')
-            navigate('/atendimento')
-        }
-        if(loginUsuario.user.role === 'cozinha') { 
-            console.log('redirecionando para cozinha')
-            navigate('/cozinha')
-        }
-        if(loginUsuario.user.role === 'admin') { 
-            console.log('redirecionando para administracao')
-            navigate('/administracao')
-        }
+        setErro('');
        
+        try {
+            const loginUsuario = await login(email, senha)
+            console.log(loginUsuario)
+
+            // TODO: Redirecionar o usuário de acordo com o role.
+            if (loginUsuario.user.role === 'Atendimento') {
+                navigate('/atendimento')
+            }
+            if (loginUsuario.user.role === 'Cozinha') {
+                navigate('/cozinha')
+            }
+            if (loginUsuario.user.role === 'Administração') {
+                navigate('/administracao')
+            }
+        } catch (error) {
+            setErro(error.message);
+        }
+
+
     }
 
     return (
@@ -52,17 +55,15 @@ const Formulario = () => {
                     aoAlterado={valor => setSenha(valor)}
                     tipo="password"
                 />
+                <div className='msg-erro-login'>
+                    {erro && <p>{erro}</p>}
+                </div>
 
                 <Botao>acessar</Botao>
 
             </form>
-            {/* <Navegacao>
-                <Botao />
-            </Navegacao> */}
-
-
 
         </section>
     )
 }
-export default Formulario;
+export default FormularioLogin;
