@@ -17,7 +17,7 @@ export default function Administracao() {
       </span>
 
       <span className='fazerPedido'>
-        <Link to='/fazerpedido' className='link'> 
+        <Link to='/produtos' className='link'> 
       produtos
        <img src="../imagens/icones/iconeProdutos.png" alt="Icone de produtos" className="icones"/> 
       </Link>
