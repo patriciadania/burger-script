@@ -29,6 +29,17 @@
     color: aliceblue;
 
 }
+.container-resumo-pedido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container-resumo-pedido {
+    width: 100%;
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+  
 
 
     
