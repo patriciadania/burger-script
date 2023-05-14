@@ -36,7 +36,7 @@ export const criarUsuario = async (nome, email, password, role) => {
 
 export const listarUsuarios = async () => {
     const API_URL = 'http://localhost:8080';
-    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbGV0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE2ODQwMTU2ODMsImV4cCI6MTY4NDAxOTI4Mywic3ViIjoiMzQifQ._Zza1J1CCkCp-c8WGElaAM9FXelgPwXp19MINQtJhlA';
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
   
     const response = await fetch(`${API_URL}/users`, {
       method: "GET",
@@ -76,7 +76,7 @@ export const listarUsuarios = async () => {
   
 export const deletarUsuario = async (id) => {
     const API_URL = 'http://localhost:8080';
-    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbGV0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE2ODQwMTU2ODMsImV4cCI6MTY4NDAxOTI4Mywic3ViIjoiMzQifQ._Zza1J1CCkCp-c8WGElaAM9FXelgPwXp19MINQtJhlA';
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
     const response = await fetch(`${API_URL}/users/${id}`, {
       method: 'DELETE',
       headers: {
@@ -88,5 +88,24 @@ export const deletarUsuario = async (id) => {
     if (!response.ok) {
       throw new Error('Erro ao deletar usuário');
     }
+  };
+  
+
+  export const editarUsuario = async (uid, novoUsuario) => {
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
+    const response = await fetch(`${API_URL}/users/${uid}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify(novoUsuario)
+    });
+  
+    if (!response.ok) {
+      throw new Error('Erro ao editar o usuário');
+    }
+  
+    return response.json();
   };
   
