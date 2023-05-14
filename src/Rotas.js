@@ -10,6 +10,7 @@ import PedidosEntregues from "./Paginas/PedidosEntregues/PedidosEntregues";
 import Colaboradores from "./Paginas/Adm/PagColaboradores/Colaboradores";
 import CriarUsuario from "./componentes/CriaEListaUsuario/CriarUsuario";
 import ListaDeColaboradores from "./componentes/CriaEListaUsuario/ListaUsuarios";
+import Produtos from "./Paginas/Adm/PagProdutos/Produtos";
 
 
 function AppRoutes() {
@@ -26,6 +27,7 @@ function AppRoutes() {
       <Route path="/colaboradores" element={<Colaboradores /> } />
       <Route path="/addcolaborador" element={<CriarUsuario /> } />
       <Route path="/listacolaboradores" element={<ListaDeColaboradores /> } />
+      <Route path="/produtos" element={<Produtos /> } />
 
     </Routes>
     </BrowserRouter>

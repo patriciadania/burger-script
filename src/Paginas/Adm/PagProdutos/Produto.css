@@ -1,0 +1,37 @@
+
+.tabela-produtos{
+    width: 700px;
+    display: grid;
+    color:rgb(242, 226, 226);
+    
+   
+  }
+  .tabela-produtos table{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .titulo-lista-produtos{
+    padding: 16px;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    color:orange;
+    text-align: center;
+  
+  }
+.nome-produto {
+    width: 100px; /* Defina o valor de largura máxima desejado */
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a largura máxima */
+    text-overflow: ellipsis; /* Adiciona reticências (...) para indicar conteúdo cortado */
+    text-align: center;
+  }
+  .valor-produto{
+    width: 100px;
+  }
+  .categoria-produto{
+    width: 130px;
+    text-align: center;
+  }
+  .tipo-refeicao{
+    width: 100px;
+  }
+ 
