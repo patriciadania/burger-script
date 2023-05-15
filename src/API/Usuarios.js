@@ -36,7 +36,7 @@ export const criarUsuario = async (nome, email, password, role) => {
 
 export const listarUsuarios = async () => {
     const API_URL = 'http://localhost:8080';
-    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
   
     const response = await fetch(`${API_URL}/users`, {
       method: "GET",
@@ -76,7 +76,7 @@ export const listarUsuarios = async () => {
   
 export const deletarUsuario = async (id) => {
     const API_URL = 'http://localhost:8080';
-    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
     const response = await fetch(`${API_URL}/users/${id}`, {
       method: 'DELETE',
       headers: {
@@ -92,7 +92,7 @@ export const deletarUsuario = async (id) => {
   
 
   export const editarUsuario = async (uid, novoUsuario) => {
-    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RzZGFuZG9vQHRlc3RlLmNvbSIsImlhdCI6MTY4NDA4ODAxOSwiZXhwIjoxNjg0MDkxNjE5LCJzdWIiOiIxMiJ9.h_oQaBhB-OuvjPuMIPqoLhbCpzcaySXzoV7wn8LfYQM'
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
     const response = await fetch(`${API_URL}/users/${uid}`, {
       method: "PATCH",
       headers: {

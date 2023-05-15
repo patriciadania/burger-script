@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:8080';
 
 export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, titleProduto, idProduto) => {
-  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByb2RzZHNkdW9AdGVzdGUuY29tIiwiaWF0IjoxNjg0MDk1NDM3LCJleHAiOjE2ODQwOTkwMzcsInN1YiI6IjMifQ.41ZSV6SCMS881yaiHzrlW5VPa8hQ8Y4hAmkdB5Tpbmo';
+  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
   const response = await fetch(`${API_URL}/products`, {
       method: "POST",
       headers: {
@@ -22,7 +22,7 @@ export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, 
 }
 
 export const obterProdutos = async () => {
-  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByb2RzZHNkdW9AdGVzdGUuY29tIiwiaWF0IjoxNjg0MDk1NDM3LCJleHAiOjE2ODQwOTkwMzcsInN1YiI6IjMifQ.41ZSV6SCMS881yaiHzrlW5VPa8hQ8Y4hAmkdB5Tpbmo';
+  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
   try {
     const response = await fetch(`${API_URL}/products`, {
       method: 'GET',
