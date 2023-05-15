@@ -1,0 +1,19 @@
+.lista-de-pedidos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    
+}
+.titulo-lista-pedidos{
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 1rem;
+}
+.dados-pedidos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.lista-de-pedidos ul{
+    list-style: none;
+}
