@@ -13,3 +13,5 @@ export const Logo = () => {
         </section>
     )
 }
+
+export default Logo;
