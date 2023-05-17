@@ -1,18 +1,19 @@
 const API_URL = 'http://localhost:8080';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQzMjkwMjYsImV4cCI6MTY4NDMzMjYyNiwic3ViIjoiMSJ9.Tp2_2nlZeuCP0S4WP-CTQfuf2dzbEHGSfLQa1v55hSw';
 
-export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, titleProduto, idProduto) => {
-  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
+export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, categoriaProduto, idProduto) => {
+
   const response = await fetch(`${API_URL}/products`, {
       method: "POST",
       headers: {
           'Content-Type': 'application/json',
-          "Authorization": `Bearer ${authToken}`,
+          "Authorization": `Bearer ${AUTH_TOKEN}`,
       },
       body: JSON.stringify({ 
           name: nomeProduto,
           price: precoProduto,
            type: tipoProduto, 
-           title: titleProduto,
+           category: categoriaProduto,
           id: idProduto })
   });
   const products = await response.json();
@@ -22,13 +23,13 @@ export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, 
 }
 
 export const obterProdutos = async () => {
-  const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpQHRlc3RlLmNvbSIsImlhdCI6MTY4NDEwMzA1NSwiZXhwIjoxNjg0MTA2NjU1LCJzdWIiOiI5In0.7hVuQEHVTDN1nbRqkkFF0icnfMT1EwwApfuYJwZx1JI'
+  
   try {
     const response = await fetch(`${API_URL}/products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authToken}`,
+        'Authorization': `Bearer ${AUTH_TOKEN}`,
       },
     });
     const data = await response.json();
