@@ -47,6 +47,7 @@ const FormularioLogin = () => {
                     label="E-mail: "
                     valor={email}
                     aoAlterado={valor => setEmail(valor)}
+                    name="E-mail"
                 />
                 <CampoTexto
                     obrigatorio={true}
