@@ -1,12 +1,13 @@
 
-   .campo-texto{
+  .campo-texto{
     position: relative;
     top: 50%;
     left: 50%;
     width: 50%;
     transform: translate(-50%, -50%);
    
-   }
+   } 
+
    .campo-texto input {
     width: 100%;
     padding: 10px 0;
@@ -73,4 +74,5 @@
   .campo-texto label {
     font-size: 25px;
   }
+ 
 }

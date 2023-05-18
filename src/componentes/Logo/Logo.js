@@ -5,11 +5,11 @@ export const Logo = () => {
     return (
         <section className="logo">
             <img src="/imagens/tela.png" alt="Logo da pagina de login" className="img-login"/>
-            <h2 className="titulo-login">
+            {/* <h2 className="titulo-login">
                 <span className="chaves">{"{"}</span>
                 <span className="titulo-login"> Login </span>
                 <span className="chaves">{"}"}</span>
-            </h2>
+            </h2> */}
         </section>
     )
 }

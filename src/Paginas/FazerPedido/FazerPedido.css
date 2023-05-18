@@ -1,39 +1,3 @@
-/* .resumoDoPedido {
-    color: rgba(255, 253, 253, 1);
-    background-color: rgba(122, 113, 113, 0.5);
-    margin-bottom: 5rem;
-    text-transform: uppercase;
-    max-width: 35rem;
-    padding: 5px 5px;
-    border-radius: 5px;
-    font-family: Kadwa;
-    font-size: 1.3rem;
-
-  
-}
-.telaFazerPedido{
-    margin-top: 5rem ;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.botaoVoltar {
-    position: absolute; 
-    top: 0;
-    text-align: right;
-    color: rgba(255, 253, 253, 1);
-    font-size: 30px;
-    font-family: Kadwa;
-  
-}
-.botaoResumo {
-    color: rgba(255, 253, 253, 1);
-    font-size: 26px;
-    font-family: Kadwa;
-  
-} */
 
 .telaFazerPedido{
     margin-top: 5rem ;
@@ -44,10 +8,9 @@
     align-items: center;
     text-align: center;
 }
-.componentes{
-    position: relative;
-    width: 100%;
-
+.container-pedido{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 @media only screen and (max-width: 767px) {
     .cardapio-resumo {
@@ -83,7 +46,7 @@
     padding: 0 8rem;
     }
     }
-    
+/*     
     .container-tipo-ref {
     margin-top: 5rem;
     display: flex;
@@ -144,4 +107,4 @@
     margin-top: 10px;
     border-bottom: 3px solid aliceblue;
     max-width: 100%;
-    }
+    } */
