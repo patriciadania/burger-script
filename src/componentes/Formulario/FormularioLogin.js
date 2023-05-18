@@ -4,6 +4,7 @@ import Botao from '../Botao/Botao';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../API/Usuarios';
+import CardTerminal from '../CardTerminal/CardTerminal';
 
 const FormularioLogin = () => {
 
@@ -38,7 +39,15 @@ const FormularioLogin = () => {
     }
 
     return (
+        <>
+       <CardTerminal>
+         <h2 className="titulo-login">
+                <span className="chaves">{"{"}</span>
+                <span className="titulo-login"> Login </span>
+                <span className="chaves">{"}"}</span>
+            </h2>
         <section className="formulario">
+           
 
 
             <form onSubmit={aoSalvar}>
@@ -63,8 +72,10 @@ const FormularioLogin = () => {
                 <Botao>acessar</Botao>
 
             </form>
-
+            
         </section>
+        </CardTerminal>
+        </>
     )
 }
 export default FormularioLogin;

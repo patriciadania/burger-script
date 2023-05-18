@@ -1,5 +1,5 @@
 const API_URL = 'http://localhost:8080';
-const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQzNTg0MzIsImV4cCI6MTY4NDM2MjAzMiwic3ViIjoiMSJ9.p8djzBRmAKtDRC5nUHKrxY71MrfECuA5OyG-EDetxgM';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ0MTYxNjIsImV4cCI6MTY4NDQxOTc2Miwic3ViIjoiMSJ9.VM0ja3N6K0GYbgXEa4LIACq3OiYwZMFfhI5TgL0DTm8';
 
 export const login = async (email, password) => {
     const response = await fetch(`${API_URL}/login`, {

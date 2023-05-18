@@ -1,5 +1,5 @@
 const API_URL = 'http://localhost:8080';
-const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQzNTg0MzIsImV4cCI6MTY4NDM2MjAzMiwic3ViIjoiMSJ9.p8djzBRmAKtDRC5nUHKrxY71MrfECuA5OyG-EDetxgM';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ0MjM3NTUsImV4cCI6MTY4NDQyNzM1NSwic3ViIjoiMSJ9.W2AIJMMYky4lGTmIiDGhlqrfabCYhHoknq98wMK63QA';
 
 export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, categoriaProduto, idProduto) => {
 
