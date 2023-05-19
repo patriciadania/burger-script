@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
 const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ0MTYxNjIsImV4cCI6MTY4NDQxOTc2Miwic3ViIjoiMSJ9.VM0ja3N6K0GYbgXEa4LIACq3OiYwZMFfhI5TgL0DTm8';
 
 export const login = async (email, password) => {
