@@ -2,57 +2,31 @@ import React from 'react';
 import './BtnIncrementaDecrementa.css';
 import { useState } from 'react';
 
-// const BtnIncrementaDecrementa = ({ quantidade, onQuantidadeChange }) => {
-//   const [count, setCount] = useState(0);
-//   const incrementa = () => {
-//     onQuantidadeChange(quantidade + 1);
-//   };
-
-//   const decrementa = () => {
-//     if (quantidade > 0) {
-//       onQuantidadeChange(quantidade - 1);
-//     }
-//   };
-
-//   return (
-//     <div>
-//         <button className="incluiExclui" onClick={incrementa}>+</button>
-       
-//         <span className="resultIncluiExclui">{quantidade}</span>
-//       <button className="incluiExclui" onClick={decrementa}>-</button>
-    
-//     </div>
-//   );
-// };
-
-// export default BtnIncrementaDecrementa;
-
-
-// esse aqui é o código quebrado para ajustar
-
-// import { useState } from 'react';
-
-const BtnIncrementaDecrementa = () => {
+const BtnIncrementaDecrementa = ({ increment }) => {
   const [count, setCount] = useState(0);
 
-  const increment = () => {
+  const handleIncrement = () => {
     setCount(count + 1);
+    increment();
   };
 
-  const decrement = () => {
+  const handleDecrement = () => {
     if (count > 0) {
       setCount(count - 1);
     }
   };
 
   return (
-    <div>
-      <button className="incluiExclui" onClick={increment}>+</button>
+    <div className="btn-incrementa-decrementa">
+      <button className="incluiExclui" onClick={handleIncrement}>
+        +
+      </button>
       <span className="resultIncluiExclui">{count}</span>
-      <button className="incluiExclui" onClick={decrement}>-</button>
+      <button className="incluiExclui" onClick={handleDecrement}>
+        -
+      </button>
     </div>
   );
 };
 
 export default BtnIncrementaDecrementa;
-
