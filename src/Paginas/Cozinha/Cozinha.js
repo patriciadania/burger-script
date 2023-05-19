@@ -21,6 +21,13 @@ export default function Cozinha() {
              <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
              </Link> 
              </span>
+
+             <span className='aguardandoEntrega'>
+           <Link to='/PedidosEntregues' className='link'>
+            lista de pedidos
+             <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
+             </Link> 
+             </span>
          
        </section>
     );
