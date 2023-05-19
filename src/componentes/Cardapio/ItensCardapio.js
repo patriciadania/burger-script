@@ -1,55 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { obterProdutos } from '../../API/Produtos';
-// import BtnIncrementaDecrementa from '../BtnIncrementaDecrementa/index'
-
-
-// const ItensCardapio = (props) => {
-//   const { tipoProduto } = props; 
-//     const [produtos, setProdutos] = useState([]);
-
-//     useEffect(() => {
-//       const buscarProdutos = async () => {
-//         try {
-//           const produtosData = await obterProdutos();
-//           setProdutos(produtosData);
-//         } catch (error) {
-//           console.error(error);
-//         }
-//       };
-
-//       buscarProdutos();
-//     }, []);
-
-//     return (
-//       <div className='tabela-produtos'>
-//         <table>
-//           <thead>
-//             <tr>
-//               <th>Nome do Produto:</th>
-//               <th>Valor R$</th>
-//               <th>Categoria</th>
-
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {produtos
-//             .filter((produto) => (!tipoProduto || produto.type === tipoProduto))
-//             .map((produto) => (
-//               <tr key={produto.id}>
-//                 <td >{produto.name}</td>
-//                 <td >R$ {produto.price}</td>
-//                 <td>{produto.category}</td>
-//             <BtnIncrementaDecrementa />
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     );
-//   };
-
-//   export default ItensCardapio;
-
 import React, { useState, useEffect } from 'react';
 import { obterProdutos } from '../../API/Produtos';
 import BtnIncrementaDecrementa from '../BtnIncrementaDecrementa/index'
@@ -57,13 +5,15 @@ import BtnIncrementaDecrementa from '../BtnIncrementaDecrementa/index'
 
 const ItensCardapio = (props) => {
   const { tipoProduto } = props;
-  const [produtos, setProdutos] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     const buscarProdutos = async () => {
       try {
         const produtosData = await obterProdutos();
-        setProdutos(produtosData);
+        const produtosFiltradosPorTipo = produtosData.filter((produto) => (!tipoProduto || produto.type === tipoProduto))
+        const produtosAgrupadosPorCategoria = agruparPorCategoria(produtosFiltradosPorTipo);
+        setCategorias(produtosAgrupadosPorCategoria);
       } catch (error) {
         console.error(error);
       }
@@ -72,29 +22,50 @@ const ItensCardapio = (props) => {
     buscarProdutos();
   }, []);
 
-  return (
-    <>
-      <div className='container-produtos-pedido'>
+  const categorirasDisplay = [];
+  for (const categoria in categorias) {
+    const produtosDaCategoria = categorias[categoria];
+    const produtosDiplay = produtosDaCategoria.map((produto) => (
+      <ul className='lista-itens-cardapio' key={produto.id}>
+        <li>{produto.name}</li>
+        <li>R$ {produto.price}</li>
+        <BtnIncrementaDecrementa />
+      </ul>
+    ));
 
-        <p>Nome do Produto:</p>
-        <p>Valor R$</p>
-        <p>Categoria</p>
-
-
-        {produtos
-          .filter((produto) => (!tipoProduto || produto.type === tipoProduto))
-          .map((produto) => (
-            <ul className='lista-itens-cardapio' key={produto.id}>
-              <li>{produto.name}</li>
-              <li>R$ {produto.price}</li>
-              <li>{produto.category}</li>
-              <BtnIncrementaDecrementa />
-            </ul>
-          ))}
-
+    const categoriaDisplay = (
+      <div>
+        <h1>{categoria}</h1>
+        <div>{produtosDiplay}</div>
       </div>
-    </>
+    );
+
+    console.log(categoriaDisplay)
+
+    categorirasDisplay.push(categoriaDisplay)
+  }
+
+  return (
+    <div className='container-produtos-pedido'>
+      { categorirasDisplay }
+    </div>
   );
 };
+
+const agruparPorCategoria = (produtos) => {
+  const categorias = {};
+  produtos.forEach(produto => {
+    const categoria = categorias[produto.category];
+
+    if (!categoria) {
+      categorias[produto.category] = [produto];
+    } else {
+      categoria.push(produto)
+    }
+    console.log(categorias);
+  });
+
+  return categorias;
+}
 
 export default ItensCardapio;

@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:8080';
-const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ0MjM3NTUsImV4cCI6MTY4NDQyNzM1NSwic3ViIjoiMSJ9.W2AIJMMYky4lGTmIiDGhlqrfabCYhHoknq98wMK63QA';
+const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ0OTU4MTIsImV4cCI6MTY4NDQ5OTQxMiwic3ViIjoiMSJ9.W0hJ77GHu0YvwPCqCX1B8PAs8LBxkF7n4DSzmjML_kc';
 
 export const adicionarProdutos = async (nomeProduto, precoProduto, tipoProduto, categoriaProduto, idProduto) => {
 
