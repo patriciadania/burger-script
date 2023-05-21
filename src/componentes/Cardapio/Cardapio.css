@@ -1,16 +1,14 @@
 
 
-/* .conteudoCardapio {
-    display: flex;
+.cardapio-resumo {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
-    padding: 0 20px;
+   
   }
-   */
   
+
    .cardapio-resumo {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -20,3 +18,26 @@
     margin-top: 3rem; /* Adicione a margem inferior desejada */
   }
   
+
+  
+/* .cardapio-resumo{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+ padding: 0 2rem;
+ color: white;
+} */
+.container-produtos-pedido{
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lista-itens-cardapio{
+  display: flex;
+  background-color: red;
+  list-style: none;
+}
+

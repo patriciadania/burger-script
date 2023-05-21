@@ -1,6 +1,5 @@
 import './PedidosEntregues.css'
 import { Link } from "react-router-dom";
-//import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 
 export default function PedidosEntregues() {

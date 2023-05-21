@@ -1,56 +1,32 @@
 import React from 'react';
 import './BtnIncrementaDecrementa.css';
+import { useState } from 'react';
 
-const BtnIncrementaDecrementa = ({ quantidade, onQuantidadeChange }) => {
-  const incrementa = () => {
-    onQuantidadeChange(quantidade + 1);
+const BtnIncrementaDecrementa = ({ increment }) => {
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+    increment();
   };
 
-  const decrementa = () => {
-    if (quantidade > 0) {
-      onQuantidadeChange(quantidade - 1);
+  const handleDecrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
     }
   };
 
   return (
-    <div>
-        <button className="incluiExclui" onClick={incrementa}>+</button>
-       
-        <span className="resultIncluiExclui">{quantidade}</span>
-      <button className="incluiExclui" onClick={decrementa}>-</button>
-    
+    <div className="btn-incrementa-decrementa">
+      <button className="incluiExclui" onClick={handleIncrement}>
+        +
+      </button>
+      <span className="resultIncluiExclui">{count}</span>
+      <button className="incluiExclui" onClick={handleDecrement}>
+        -
+      </button>
     </div>
   );
 };
 
 export default BtnIncrementaDecrementa;
-
-
-// esse aqui é o código quebrado para ajustar
-
-// import React, { useState } from 'react';
-
-// const BtnIncrementaDecrementa = () => {
-//   const [count, setCount] = useState(0);
-
-//   const increment = () => {
-//     setCount(count + 1);
-//   };
-
-//   const decrement = () => {
-//     if (count > 0) {
-//       setCount(count - 1);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={decrement}>-</button>
-//       <span>{count}</span>
-//       <button onClick={increment}>+</button>
-//     </div>
-//   );
-// };
-
-// export default BtnIncrementaDecrementa;
-

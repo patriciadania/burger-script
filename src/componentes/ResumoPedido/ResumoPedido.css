@@ -1,72 +1,32 @@
 
-  .container-resumo-pedido{
+  /* .container-resumo-pedido{
     display: flex;
   
-  }
+  } */
   .infoPedido{
     text-transform: uppercase;
-    color:white;
-  }
-
-  .infoPedido input{
-    width: 200px;
-    display: inline-block;
-    margin-left: 12px;
     margin-bottom: 15px;
-    background-color: transparent;
     border: none;
     color: white;
+    display: inline-block;
   }
-  .dadosPedido{
-float: left;
-text-align: left;
+  .labelResumoPedido {
+    display: inline-block;
+    text-align: left;
+   
   }
- 
-  .loader {
-    display: block;
-    --height-of-loader: 4px;
-    --loader-color: rgb(201, 136, 83);
-    width: 100%;
-    height: var(--height-of-loader);
-    border-radius: 30px;
-    background-color: rgba(0,0,0,0.2);
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  
-  .loader::before {
-    content: "";
-    position: absolute;
-    background: var(--loader-color);
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    border-radius: 30px;
-    animation: moving 1s ease-in-out infinite;
-  }
-  
-  @keyframes moving {
-    50% {
-      width: 50%;
-    }
-  
-    100% {
-      width: 0;
-      right: 0;
-      left: unset;
-    }
+  .inputResumoPedido{
+    display: inline-block;
+    margin-bottom: 10px;
+    
   }
 
-  /* table {
-    width: 100%;
+  table {
     border-collapse: collapse;
-  } */
+  }
   
   th, td {
-   
-    padding: 8px;
-    text-align: left;
+  
     border-bottom: 1px solid #ddd;
     white-space: nowrap;
     justify-content: space-between;
@@ -90,31 +50,39 @@ text-align: left;
  
 
   @media only screen and (max-width: 767px) {
+    .conteudo-tabela-resumo{
+      max-width: 80px;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
 
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
+    .conteudo-tabela-resumo{
+      max-width: 80px;
+      font-size: 15px;
+      border-collapse: collapse;
+    }
   }
 
   @media only screen and (min-width: 1024px) {
     .container-resumo-pedido{
       display: flex;
-    margin-top: -30rem;
+  
     }
     .conteudo-tabela-resumo{
-      width: 200px;
+      max-width: 200px;
+      width: 100%;
       font-size: 17px;
       border-collapse: collapse;
     }
-    .dadosPedido{
-      width: 200px;
-    }
+  
   }
 
   @media only screen and (min-width: 1200px) {
     .container-resumo-pedido{
       display: flex;
-    margin-top: -30rem;
+
     }
 
   }

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { obterProdutos } from '../../../API/Produtos';
 import './Produto.css'
 
-const ListaDeProdutos = () => {
+const ListaDeProdutos = (props) => {
+  const { tipoProduto } = props; 
     const [produtos, setProdutos] = useState([]);
   
     useEffect(() => {
@@ -33,7 +34,9 @@ const ListaDeProdutos = () => {
             </tr>
           </thead>
           <tbody>
-            {produtos.map((produto) => (
+            {produtos
+            .filter((produto) => (!tipoProduto || produto.type === tipoProduto))
+            .map((produto) => (
               <tr key={produto.id}>
                 <td className="nome-produto">{produto.name}</td>
                 <td className='valor-produto'>R$ {produto.price}</td>

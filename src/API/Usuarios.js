@@ -1,5 +1,7 @@
 const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
-const AUTH_TOKEN = 'eyJhbGceyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHRyaWNpaWFhQGhvdG1haWwuY29tIiwiaWF0IjoxNjg0NjMwMjQ0LCJleHAiOjE2ODQ2MzM4NDQsInN1YiI6IjQifQ.NqdjxzFnaR7BQ-TxyUwOq8XLIW3LX2njdg7Hqakp5MgiOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQzMjkwMjYsImV4cCI6MTY4NDMzMjYyNiwic3ViIjoiMSJ9.Tp2_2nlZeuCP0S4WP-CTQfuf2dzbEHGSfLQa1v55hSw';
+
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQ1MTM2NjAsImV4cCI6MTY4NDUxNzI2MCwic3ViIjoiMSJ9.wiyOufiJGW1zKIhN6BNKVlYyNKpCyWG-EbLZ9tnd0gs';
+
 
 export const login = async (email, password) => {
     const response = await fetch(`${API_URL}/login`, {
