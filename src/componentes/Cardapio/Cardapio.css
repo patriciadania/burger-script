@@ -8,6 +8,17 @@
    
   }
   
+
+   .cardapio-resumo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-content: center;
+    padding: 0 2rem;
+    color: white;
+    margin-top: 3rem; /* Adicione a margem inferior desejada */
+  }
+  
+
   
 /* .cardapio-resumo{
   display: grid;
@@ -29,3 +40,4 @@
   background-color: red;
   list-style: none;
 }
+
