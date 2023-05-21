@@ -1,6 +1,6 @@
 
 
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
 const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2ODQzMjkwMjYsImV4cCI6MTY4NDMzMjYyNiwic3ViIjoiMSJ9.Tp2_2nlZeuCP0S4WP-CTQfuf2dzbEHGSfLQa1v55hSw';
 
 export const obterPedidos = async () => {

@@ -8,6 +8,8 @@
     border-radius: 5px;
     font-family: Kadwa;
     font-size: 1.3rem;
+    max-width: 50%;
+    width: 100%;
 }
 .telaPedidosEntregues{
     margin-top: 5rem ;
@@ -19,19 +21,21 @@
     text-align: center;
 }
 .botaoVoltar {
-    position: absolute; /* definir posição do botão como absolute */
-    top: 0;
-    right: 10;
-    color: rgba(255, 253, 253, 1);
-    font-size: 30px;
+    margin-top: 5rem;
+    color: aliceblue;
+    text-align: right;
     font-family: Kadwa;
+    display: block;
   
 }
 
 @media only screen and (max-width: 767px) {
     .lista-de-pedidos{
-        width: 90%;
+        width: 100%;
         align-items: center;
+    }
+    .botaoVoltar{
+        width: 90%;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -39,9 +43,9 @@
     width: 90%;
     align-items: center;
 }
-/* .lista-de-pedidos h2{
-
-} */
+.botaoVoltar{
+    width: 90%;
+}
 }
 
 
@@ -56,5 +60,8 @@
     .lista-de-pedidos{
         width: 90%;
         align-items: center;
+    }
+    .botaoVoltar{
+        width: 100%;
     }
 }
