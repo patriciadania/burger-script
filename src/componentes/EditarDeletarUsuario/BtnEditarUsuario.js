@@ -1,26 +1,69 @@
+// import React, { useState } from "react";
+
+// export default function BtnEditarUsuario({ usuario, aoSalvar, onCancel }) {
+//   const [nome, setNome] = useState(usuario.nome);
+//   const [email, setEmail] = useState(usuario.email);
+//   const [cargo, setCargo] = useState(usuario.role);
+
+//   const btnSalvar = () => {
+//     const novoUsuario = {
+//       id: usuario.id,
+//       nome,
+//       email,
+//       role: cargo,
+//     };
+//     window.location.reload();
+//     aoSalvar(novoUsuario);
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         value={nome}
+//         onChange={(e) => setNome(e.target.value)}
+//       />
+//       <input
+//         type="text"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//       />
+//       <input
+//         type="text"
+//         value={cargo}
+//         onChange={(e) => setCargo(e.target.value)}
+//       />
+//       <button onClick={btnSalvar}>Salvar</button>
+//       <button onClick={onCancel}>Cancelar</button>
+//     </div>
+//   );
+// }
+
+
+// BtnEditarUsuario.js
 import React, { useState } from "react";
 
 export default function BtnEditarUsuario({ usuario, aoSalvar, onCancel }) {
-  const [nome, setNome] = useState(usuario.nome);
+  const [name, setNome] = useState(usuario.name);
   const [email, setEmail] = useState(usuario.email);
-  const [cargo, setCargo] = useState(usuario.role);
+  const [role, setCargo] = useState(usuario.role);
 
   const btnSalvar = () => {
     const novoUsuario = {
       id: usuario.id,
-      nome,
+      name,
       email,
-      role: cargo,
+      role,
     };
-    window.location.reload();
+
     aoSalvar(novoUsuario);
   };
 
   return (
-    <div>
+    <>
       <input
         type="text"
-        value={nome}
+        value={name}
         onChange={(e) => setNome(e.target.value)}
       />
       <input
@@ -30,11 +73,15 @@ export default function BtnEditarUsuario({ usuario, aoSalvar, onCancel }) {
       />
       <input
         type="text"
-        value={cargo}
+        value={role}
         onChange={(e) => setCargo(e.target.value)}
       />
-      <button onClick={btnSalvar}>Salvar</button>
-      <button onClick={onCancel}>Cancelar</button>
-    </div>
+      <button className="btn-lista-usuarios" onClick={btnSalvar}>
+        Salvar
+      </button>
+      <button className="btn-lista-usuarios" onClick={onCancel}>
+        Cancelar
+      </button>
+    </>
   );
 }

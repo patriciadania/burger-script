@@ -10,24 +10,23 @@ export default function Colaboradores() {
             <span className='fazerPedido'>
                 colaboradores
                 <img src="../imagens/icones/colaboradores.png" alt="Icone de colaboradores" className="icones" />
-                </span>
+            </span>
 
-                <span className='fazerPedido'>
+            <span className='fazerPedido'>
                 <Link to='/addcolaborador' className="link">
-                adicionar colaborador
-                    </Link>
-                </span>
+                    adicionar colaborador
+                </Link>
+            </span>
 
-                <span className='fazerPedido'>
+            <span className='fazerPedido'>
                 <Link to='/listacolaboradores' className="link">
-               listar colaboradores
-                    </Link>
-                </span>
-       
+                    listar colaboradores
+                </Link>
+            </span>
+
         </section>
- 
+
 
     )
 }
-    
- 
+

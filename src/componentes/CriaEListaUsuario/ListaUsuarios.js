@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import './ListaUsuarios.css'
 import { Link } from "react-router-dom";
-import { listarUsuarios, editarUsuario, deletarUsuario } from "../../API/Usuarios";
+import { listarUsuarios, editarUsuario, deletarUsuario, getAuthToken } from "../../API/Usuarios";
 import BtnEditarUsuario from "../EditarDeletarUsuario/BtnEditarUsuario";
 import BtnDeletarUsuario from "../EditarDeletarUsuario/BtnDeletarUsuario";
 
@@ -29,23 +28,25 @@ export default function ListaDeUsuarios() {
 
   const salvarUsuario = async (novoUsuario) => {
     try {
-      await editarUsuario(novoUsuario.id, novoUsuario);
+      const usuarioAtualizado = { ...novoUsuario };
+      delete usuarioAtualizado.editando;
+  
+      await editarUsuario(usuarioAtualizado.id, usuarioAtualizado);
       console.log("Usuário salvo com sucesso");
       setEditandoUsuarioId(null);
       // Atualizar a lista de usuários após salvar, se necessário
       // obterUsuarios();
+      window.location.reload();
     } catch (error) {
       console.error("Erro ao salvar usuário:", error);
     }
   };
+  
 
   const onDeleteUsuario = async (id) => {
     try {
       await deletarUsuario(id);
-      console.log("Usuário deletado com sucesso");
-      // Atualizar a lista de usuários após a exclusão, se necessário
-
-      // Recarregar a página
+      alert("Usuário deletado com sucesso");
       window.location.reload();
     } catch (error) {
       console.error("Erro ao deletar usuário:", error);
@@ -71,7 +72,7 @@ export default function ListaDeUsuarios() {
               />
             ) : (
               <>
-                <p className="dados-usuario">Nome: {usuario.nome}</p>
+                <p className="dados-usuario">Nome: {usuario.name}</p>
                 <p className="dados-usuario">E-mail: {usuario.email}</p>
                 <p className="dados-usuario">Cargo: {usuario.role}</p>
                 <button
