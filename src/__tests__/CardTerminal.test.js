@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 import React from 'react';
 import { render } from '@testing-library/react';
 import CardTerminal from '../componentes/CardTerminal/CardTerminal';
@@ -11,3 +12,4 @@ describe('CardTerminal', () => {
     expect(cardContent).toBeInTheDocument();
   });
 });
+

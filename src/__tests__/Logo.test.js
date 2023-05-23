@@ -9,3 +9,4 @@ describe('Logo', () => {
       expect(imgElement).toBeInTheDocument();
     });
   });
+  

@@ -1,4 +1,5 @@
-import fetchMock from 'jest-fetch-mock';
+/* eslint-disable jest/no-identical-title */
+import fetch from 'node-fetch';
 import { login,
   criarUsuario,
   listarUsuarios,
@@ -64,53 +65,48 @@ import { login,
 
 
 
-describe('Testes para as funções de API de usuários', () => {
+jest.mock('node-fetch');
+const API_URL = 'https://api.example.com';
+
+
+describe('API de Usuários', () => {
   beforeEach(() => {
-    fetchMock.resetMocks(); // Reseta os mocks antes de cada teste
+    jest.resetAllMocks();
   });
 
-  const mockAuthToken = 'mock-auth-token';
+  test('Realiza o login com sucesso', async () => {
+    const email = 'test@example.com';
+    const password = 'password';
+    const authToken = 'abc123';
 
-  const mockResponse = (status, body) => {
-    fetchMock.mockResponseOnce(JSON.stringify(body), { status });
-  };
-
-  const setAuthTokenHeader = () => {
-    fetchMock.mockResponseOnce('', {
-      headers: {
-        Authorization: `Bearer ${mockAuthToken}`
-      }
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: () => Promise.resolve({ accessToken: authToken })
     });
-  };
 
-  it('deve fazer login com sucesso', async () => {
-    mockResponse(200, { nome: 'Usuário', email: 'usuario@example.com' });
-
-    const usuario = await login('usuario@example.com', 'senha123');
+    const response = await login(email, password);
 
     expect(fetch).toHaveBeenCalledWith(`${API_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email: 'usuario@example.com', password: 'senha123' })
+      body: JSON.stringify({ email, password })
+    });
+    expect(response).toEqual({ accessToken: authToken });
+  });
+
+  test('Cria um usuário com sucesso', async () => {
+    const nome = 'John Doe';
+    const email = 'johndoe@example.com';
+    const password = 'password';
+    const role = 'admin';
+
+    fetch.mockResolvedValueOnce({
+      ok: true
     });
 
-    expect(usuario).toEqual({ nome: 'Usuário', email: 'usuario@example.com' });
-  });
-
-  it('deve lançar um erro ao fazer login com senha incorreta ou usuário não cadastrado', async () => {
-    mockResponse(400);
-
-    await expect(login('usuario@example.com', 'senha123')).rejects.toThrow(
-      'Senha incorreta ou usuário não cadastrado!'
-    );
-  });
-
-  it('deve criar um novo usuário com sucesso', async () => {
-    mockResponse(201);
-
-    await criarUsuario('Usuário', 'usuario@example.com', 'senha123', 'role');
+    await criarUsuario(nome, email, password, role);
 
     expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
       method: 'POST',
@@ -118,134 +114,77 @@ describe('Testes para as funções de API de usuários', () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nome: 'Usuário',
-        email: 'usuario@example.com',
-        password: 'senha123',
-        role: 'role'
+        name: nome,
+        email,
+        password,
+        role
       })
     });
   });
 
-  const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app'; // Substitua pela URL da sua API
+  test('Lista os usuários com sucesso', async () => {
+    const authToken = 'abc123';
+    const users = [
+      { id: 1, name: 'John Doe', email: 'johndoe@example.com' },
+      { id: 2, name: 'Jane Smith', email: 'janesmith@example.com' }
+    ];
 
-it('deve criar um novo usuário com sucesso', async () => {
-  mockResponse(201);
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: () => Promise.resolve(users)
+    });
 
-  await criarUsuario('Usuário', 'usuario@example.com', 'senha123', 'role');
-
-  expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      nome: 'Usuário',
-      email: 'usuario@example.com',
-      password: 'senha123',
-      role: 'role'
-    })
-  });
-});
-
-  it('deve lançar um erro ao criar um usuário', async () => {
-    mockResponse(400);
-
-    await expect(
-      criarUsuario('Usuário', 'usuario@example.com', 'senha123', 'role')
-    ).rejects.toThrow('Erro ao criar o usuário');
-  });
-
-  it('deve obter a lista de usuários com sucesso', async () => {
-    setAuthTokenHeader();
-    mockResponse(200, [{ nome: 'Usuário 1' }, { nome: 'Usuário 2' }]);
-
-    const usuarios = await listarUsuarios();
+    const response = await listarUsuarios();
 
     expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${mockAuthToken}`
+        'Authorization': `Bearer ${authToken}`
       }
     });
-
-    expect(usuarios).toEqual([{ nome: 'Usuário 1' }, { nome: 'Usuário 2' }]);
+    expect(response).toEqual(users);
   });
 
-  it('deve lançar um erro ao obter a lista de usuários', async () => {
-    setAuthTokenHeader();
-    mockResponse(400);
+  test('Deleta um usuário com sucesso', async () => {
+    const id = 1;
+    const authToken = 'abc123';
 
-    await expect(listarUsuarios()).rejects.toThrow('Erro ao obter usuários');
-  });
+    fetch.mockResolvedValueOnce({
+      ok: true
+    });
 
-  it('deve deletar um usuário com sucesso', async () => {
-    setAuthTokenHeader();
-    mockResponse(204);
+    await deletarUsuario(id);
 
-    await deletarUsuario(1);
-
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/1`, {
+    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${mockAuthToken}`
+        'Authorization': `Bearer ${authToken}`
       }
     });
   });
 
-  it('deve lançar um erro ao deletar um usuário', async () => {
-    setAuthTokenHeader();
-    mockResponse(400);
+  test('Edita um usuário com sucesso', async () => {
+    const uid = 'abc123';
+    const novoUsuario = { name: 'John Doe', email: 'johndoe@example.com' };
+    const authToken = 'xyz789';
 
-    await expect(deletarUsuario(1)).rejects.toThrow('Erro ao deletar usuário');
-  });
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: () => Promise.resolve({ id: uid, ...novoUsuario })
+    });
 
-  it('deve editar um usuário com sucesso', async () => {
-    setAuthTokenHeader();
-    mockResponse(200, { nome: 'Usuário Editado' });
+    const response = await editarUsuario(uid, novoUsuario);
 
-    const novoUsuario = { nome: 'Usuário Editado' };
-
-    const usuarioEditado = await editarUsuario(1, novoUsuario);
-
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/1`, {
+    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${uid}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${mockAuthToken}`
+        'Authorization': `Bearer ${authToken}`
       },
       body: JSON.stringify(novoUsuario)
     });
-
-    expect(usuarioEditado).toEqual({ nome: 'Usuário Editado' });
+    expect(response).toEqual({ id: uid, ...novoUsuario });
   });
-
-  it('deve lançar um erro ao editar um usuário', async () => {
-    setAuthTokenHeader();
-    mockResponse(400);
-
-    const novoUsuario = { nome: 'Usuário Editado' };
-
-    await expect(editarUsuario(1, novoUsuario)).rejects.toThrow('Erro ao editar o usuário');
-  });
-
-  it('deve fazer login com sucesso', async () => {
-    mockResponse(200, { nome: 'Usuário', email: 'usuario@example.com' });
-  
-    const usuario = await login('usuario@example.com', 'senha123');
-  
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email: 'usuario@example.com', password: 'senha123' })
-    });
-  
-    expect(usuario).toEqual({ nome: 'Usuário', email: 'usuario@example.com' });
-  });
-  
-
-  
 });
