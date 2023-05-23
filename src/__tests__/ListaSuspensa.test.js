@@ -50,3 +50,4 @@ describe('ListaSuspensa', () => {
     expect(mockAoAlterado).toHaveBeenCalledWith(mockItens[0]);
   });
 });
+

@@ -64,127 +64,215 @@ import { login,
 // });
 
 
-
-jest.mock('node-fetch');
-const API_URL = 'https://api.example.com';
-
+const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
 
 describe('API de Usuários', () => {
+  const authTokenMock = 'mockAuthToken';
+
   beforeEach(() => {
-    jest.resetAllMocks();
+    localStorage.clear();
   });
 
-  test('Realiza o login com sucesso', async () => {
-    const email = 'test@example.com';
-    const password = 'password';
-    const authToken = 'abc123';
+  describe('login', () => {
+    const email = 'example@example.com';
+    const password = '123456';
 
-    fetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve({ accessToken: authToken })
+    it('deve fazer login com sucesso e retornar o token de autenticação', async () => {
+      const loginData = {
+        accessToken: authTokenMock
+      };
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: jest.fn().mockResolvedValue(loginData)
+      });
+
+      const result = await login(email, password);
+
+      expect(fetch).toHaveBeenCalledWith(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+      expect(localStorage.getItem('authToken')).toBe(authTokenMock);
+      expect(result).toEqual(loginData);
     });
 
-    const response = await login(email, password);
+    it('deve lançar um erro ao fazer login com senha incorreta ou usuário não cadastrado', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 400
+      });
 
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
+      await expect(login(email, password)).rejects.toThrow('Senha incorreta ou usuário não cadastrado!');
     });
-    expect(response).toEqual({ accessToken: authToken });
   });
 
-  test('Cria um usuário com sucesso', async () => {
-    const nome = 'John Doe';
-    const email = 'johndoe@example.com';
-    const password = 'password';
+  describe('criarUsuario', () => {
+    const nome = 'Novo Usuário';
+    const email = 'novousuario@example.com';
+    const password = '123456';
     const role = 'admin';
 
-    fetch.mockResolvedValueOnce({
-      ok: true
+    it('deve criar um novo usuário com sucesso', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200
+      });
+
+      await criarUsuario(nome, email, password, role);
+
+      expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: nome,
+          email,
+          password,
+          role
+        })
+      });
     });
 
-    await criarUsuario(nome, email, password, role);
+    it('deve lançar um erro ao criar um novo usuário', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 500
+      });
 
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: nome,
-        email,
-        password,
-        role
-      })
-    });
-  });
-
-  test('Lista os usuários com sucesso', async () => {
-    const authToken = 'abc123';
-    const users = [
-      { id: 1, name: 'John Doe', email: 'johndoe@example.com' },
-      { id: 2, name: 'Jane Smith', email: 'janesmith@example.com' }
-    ];
-
-    fetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve(users)
-    });
-
-    const response = await listarUsuarios();
-
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      }
-    });
-    expect(response).toEqual(users);
-  });
-
-  test('Deleta um usuário com sucesso', async () => {
-    const id = 1;
-    const authToken = 'abc123';
-
-    fetch.mockResolvedValueOnce({
-      ok: true
-    });
-
-    await deletarUsuario(id);
-
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      }
+      await expect(criarUsuario(nome, email, password, role)).rejects.toThrow('Erro ao criar o usuário');
     });
   });
 
-  test('Edita um usuário com sucesso', async () => {
-    const uid = 'abc123';
-    const novoUsuario = { name: 'John Doe', email: 'johndoe@example.com' };
-    const authToken = 'xyz789';
+  describe('listarUsuarios', () => {
+    it('deve retornar a lista de usuários com autenticação válida', async () => {
+      const usuariosMock = [{ id: 1, name: 'Usuário 1' }, { id: 2, name: 'Usuário 2' }];
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: jest.fn().mockResolvedValue(usuariosMock)
+      });
+      localStorage.setItem('authToken', authTokenMock);
 
-    fetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve({ id: uid, ...novoUsuario })
+      const result = await listarUsuarios();
+
+      expect(fetch).toHaveBeenCalledWith(`${API_URL}/users`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authTokenMock}`
+        }
+      });
+      expect(result).toEqual(usuariosMock);
     });
 
-    const response = await editarUsuario(uid, novoUsuario);
+    it('deve lançar um erro ao tentar listar os usuários sem autenticação válida', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 401
+      });
 
-    expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${uid}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      },
-      body: JSON.stringify(novoUsuario)
+      await expect(listarUsuarios()).rejects.toThrow('Usuário não autenticado');
     });
-    expect(response).toEqual({ id: uid, ...novoUsuario });
+
+    it('deve lançar um erro ao tentar listar os usuários e ocorrer um erro na API', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 500
+      });
+      localStorage.setItem('authToken', authTokenMock);
+
+      await expect(listarUsuarios()).rejects.toThrow('Erro ao obter usuários');
+    });
+  });
+
+  describe('deletarUsuario', () => {
+    const usuarioId = 1;
+
+    it('deve deletar o usuário com autenticação válida', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200
+      });
+      localStorage.setItem('authToken', authTokenMock);
+
+      await deletarUsuario(usuarioId);
+
+      expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${usuarioId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authTokenMock}`
+        }
+      });
+    });
+
+    it('deve lançar um erro ao tentar deletar o usuário sem autenticação válida', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 401
+      });
+
+      await expect(deletarUsuario(usuarioId)).rejects.toThrow('Usuário não autenticado');
+    });
+
+    it('deve lançar um erro ao tentar deletar o usuário e ocorrer um erro na API', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 500
+      });
+      localStorage.setItem('authToken', authTokenMock);
+
+      await expect(deletarUsuario(usuarioId)).rejects.toThrow('Erro ao deletar usuário');
+    });
+  });
+
+  describe('editarUsuario', () => {
+    const usuarioId = 1;
+    const novoUsuario = { id: 1, name: 'Usuário Editado' };
+
+    it('deve editar o usuário com autenticação válida', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: jest.fn().mockResolvedValue(novoUsuario)
+      });
+      localStorage.setItem('authToken', authTokenMock);
+
+      const result = await editarUsuario(usuarioId, novoUsuario);
+
+      expect(fetch).toHaveBeenCalledWith(`${API_URL}/users/${usuarioId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authTokenMock}`
+        },
+        body: JSON.stringify(novoUsuario)
+      });
+      expect(result).toEqual(novoUsuario);
+    });
+
+    it('deve lançar um erro ao tentar editar o usuário sem autenticação válida', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 401
+      });
+
+      await expect(editarUsuario(usuarioId, novoUsuario)).rejects.toThrow('Usuário não autenticado');
+    });
+
+    it('deve lançar um erro ao tentar editar o usuário e ocorrer um erro na API', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 500
+      });
+      localStorage.setItem('authToken', authTokenMock);
+
+      await expect(editarUsuario(usuarioId, novoUsuario)).rejects.toThrow('Erro ao editar o usuário');
+    });
   });
 });
