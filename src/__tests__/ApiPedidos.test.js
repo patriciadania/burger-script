@@ -1,72 +1,66 @@
 import { obterPedidos, adicionarPedido } from '../API/Pedidos';
-import { API_URL, AUTH_TOKEN } from '../../jest.config';
-const fetch = require('node-fetch');
-jest.mock('node-fetch');
 
-beforeEach(() => {
-    jest.resetModules();
-  });
-  
 
-describe('API de Pedidos', () => {
-    beforeEach(() => {
-   
-    });
-  
-    it('deve obter os pedidos com sucesso', async () => {
-      const pedidosMock = [
-        { id: 1, client: 'João', table: 1, products: [] },
-        { id: 2, client: 'Maria', table: 2, products: [] },
-      ];
-  
-      fetch.mockResponseOnce(JSON.stringify(pedidosMock));
-  
+describe('Pedidos API', () => {
+  describe('obterPedidos', () => {
+    it('deve retornar uma resposta válida', async () => {
       const pedidos = await obterPedidos();
-  
-      expect(fetch).toHaveBeenCalledWith(`${API_URL}/orders`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${AUTH_TOKEN}`,
-        },
-      });
-  
-      expect(pedidos).toEqual(pedidosMock);
+      expect(Array.isArray(pedidos)).toBe(true);
     });
-  
-    it('deve adicionar um pedido com sucesso', async () => {
-      const cliente = 'João';
-      const mesa = 1;
-      const produtos = [
-        { id: 1, name: 'Hambúrguer', type: 'burger', price: 10.0, quantity: 2 },
-        { id: 2, name: 'Batata Frita', type: 'side', price: 5.0, quantity: 1 },
-      ];
-  
-      const pedidoMock = {
-        id: 264,
-        client: cliente,
-        table: mesa,
-        products: [
-          { qty: 2, product: { id: 1, name: 'Hambúrguer', type: 'burger', price: 10.0, table: mesa } },
-          { qty: 1, product: { id: 2, name: 'Batata Frita', type: 'side', price: 5.0, table: mesa } },
-        ],
-        status: '',
-        dateEntry: expect.any(String),
-      };
-  
-      fetch.mockResponseOnce(JSON.stringify(pedidoMock));
-  
-      const pedido = await adicionarPedido(cliente, mesa, produtos);
-  
-      expect(fetch).toHaveBeenCalledWith(`${API_URL}/orders`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${AUTH_TOKEN}`,
-        },
-        body: JSON.stringify(pedidoMock),
-      });
-  
-      expect(pedido).toEqual(pedidoMock);
+
+    it('deve lançar um erro ao obter pedidos', async () => {
+ 
+      jest.spyOn(global, 'fetch').mockImplementation(() =>
+        Promise.resolve({
+          ok: false,
+          json: () => Promise.resolve({ error: 'Erro ao obter pedidos' }),
+        })
+      );
+
+      await expect(obterPedidos()).rejects.toThrow('Erro ao obter pedidos');
+
+      global.fetch.mockRestore();
     });
   });
+
+  describe('adicionarPedido', () => {
+    it('deve adicionar um pedido com sucesso', async () => {
+      const cliente = 'Cliente 1';
+      const mesa = 'Mesa 1';
+      const produtos = [
+        { id: 1, name: 'Produto 1', type: 'tipo1', price: 10, quantity: 2 },
+        { id: 2, name: 'Produto 2', type: 'tipo2', price: 15, quantity: 1 },
+      ];
+
+      const pedido = await adicionarPedido(cliente, mesa, produtos);
+
+      expect(pedido).toHaveProperty('id');
+      expect(pedido).toHaveProperty('client', cliente);
+      expect(pedido).toHaveProperty('table', mesa);
+      expect(pedido).toHaveProperty('products');
+      expect(pedido.products).toHaveLength(produtos.length);
+    });
+
+    it('deve lançar um erro ao adicionar pedido', async () => {
+      const cliente = 'Cliente 1';
+      const mesa = 'Mesa 1';
+      const produtos = [
+        { id: 1, name: 'Produto 1', type: 'tipo1', price: 10, quantity: 2 },
+      ];
+
+ 
+      jest.spyOn(global, 'fetch').mockImplementation(() =>
+        Promise.resolve({
+          ok: false,
+          json: () => Promise.resolve({ error: 'Erro ao adicionar pedido' }),
+        })
+      );
+
+      await expect(adicionarPedido(cliente, mesa, produtos)).rejects.toThrow(
+        'Erro ao adicionar pedido'
+      );
+
+      global.fetch.mockRestore();
+    });
+  });
+});

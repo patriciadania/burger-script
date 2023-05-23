@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './ListaUsuarios.css'
 import { Link } from "react-router-dom";
-import { listarUsuarios, editarUsuario, deletarUsuario, getAuthToken } from "../../API/Usuarios";
+import { listarUsuarios, editarUsuario, deletarUsuario} from "../../API/Usuarios";
 import BtnEditarUsuario from "../EditarDeletarUsuario/BtnEditarUsuario";
 import BtnDeletarUsuario from "../EditarDeletarUsuario/BtnDeletarUsuario";
 
