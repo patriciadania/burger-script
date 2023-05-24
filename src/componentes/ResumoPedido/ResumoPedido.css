@@ -1,25 +1,29 @@
-
-  /* .container-resumo-pedido{
-    display: flex;
-  
-  } */
+ 
   .infoPedido{
     text-transform: uppercase;
     margin-bottom: 15px;
     border: none;
     color: white;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .labelResumoPedido {
     display: inline-block;
     text-align: left;
-   
+    flex-grow: 1;
   }
   .inputResumoPedido{
     display: inline-block;
     margin-bottom: 10px;
-    
+    align-items: center;
   }
+  .linha-resumo {
+    display: flex;
+   justify-content: center;
+
+  }
+  
 
   table {
     border-collapse: collapse;
@@ -46,6 +50,13 @@
 
   .totalPedido{
     background-color: green;
+  }
+  .conteudo-tabela-resumo{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   text-align: center;
+
   }
  
 
@@ -82,7 +93,9 @@
   @media only screen and (min-width: 1200px) {
     .container-resumo-pedido{
       display: flex;
-
+    }
+    .conteudo-tabela-resumo{
+      max-width: 300px;
     }
 
   }

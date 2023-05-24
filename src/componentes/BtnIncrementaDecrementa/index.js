@@ -30,3 +30,5 @@ const BtnIncrementaDecrementa = ({ increment }) => {
 };
 
 export default BtnIncrementaDecrementa;
+
+

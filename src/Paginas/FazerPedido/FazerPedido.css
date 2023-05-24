@@ -1,4 +1,6 @@
 
+/* 
+código antigo, antes de testar deixar resumo do pedido ao lado dos itens
 .telaFazerPedido{
     margin-top: 5rem ;
     margin:0;
@@ -40,8 +42,6 @@
     
     @media only screen and (min-width: 1024px) {
     .cardapio-resumo {
-  
-  
     max-width: 90%;
     width: 100%;
     }
@@ -53,66 +53,33 @@
         width: 100%;
     
     }
-    }
-/*     
-    .container-tipo-ref {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    }
-    
-    .tipoRefecao {
-    text-transform: uppercase;
-    color: white;
-    padding: 10px;
-    background-color: rgba(122, 113, 113, 0.75);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-    border-radius: 5px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    width: 400px;
-    }
-    
-    .categoria-titulo {
-    text-transform: uppercase;
-    margin: 5px;
-    color: white;
-    border-bottom: 3px solid;
-    max-width: 12rem;
-    text-align: center;
-    margin-top: 1rem;
-    }
-    
-    .containerItens {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    }
-    
-    .containerItens p {
-    font-size: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    }
-    
-    .containerItens p:first-child {
-    font-weight: bold;
-    }
-    
-    .lista-de-produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    }
-    
-    .dadosProdutos {
-    margin-top: 10px;
-    border-bottom: 3px solid aliceblue;
-    max-width: 100%;
     } */
+
+
+    .telaFazerPedido{
+        margin-top: 5rem ;
+        margin:0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    @media only screen and (max-width: 767px) {
+     
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+       
+        }
+        
+        @media only screen and (min-width: 1024px) {
+    
+        }
+        
+        @media only screen and (min-width: 1200px) {
+            .container-pedido{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }

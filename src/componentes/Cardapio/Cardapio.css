@@ -1,4 +1,4 @@
-
+/* 
 
 .cardapio-resumo {
     flex-wrap: wrap;
@@ -15,19 +15,9 @@
     justify-content: center;
     padding: 0 2rem;
     color: white;
-    margin-top: 3rem; /* Adicione a margem inferior desejada */
+    margin-top: 3rem;
   }
   
-
-  
-/* .cardapio-resumo{
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
- padding: 0 2rem;
- color: white;
-} */
 .container-produtos-pedido{
   display: flex;
   width: 80%;
@@ -40,4 +30,113 @@
   background-color: red;
   list-style: none;
 }
+ */
 
+
+ .cardapio-resumo{
+  display: grid;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  grid-template-columns:  2fr;
+  
+ }
+ .card-itens-cardapio{
+  background-color: #7A7171;
+  border: 4px solid #7A7171;
+ }
+ .lista-itens-cardapio{
+  display: flex;
+  list-style: none;
+  color: white;
+ }
+ .preco{
+  flex-direction: column;
+  text-align: center;
+ }
+ .titulo-tipo-refeicao{
+  text-align: right;
+  color: #FFD85A;
+  border-bottom: 3px solid #15616D;
+ }
+ .colchetes{
+  color: #FF5757;
+  font-weight: bold;
+ }
+ .titulo-categoria{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #011522;
+ }
+.categoria-chaves{
+  color: #15616D;
+}
+ @media only screen and (max-width: 767px) {
+  .cardapio-resumo{
+    max-width: 400px;
+    margin: 1rem;
+  }
+  .lista-itens-cardapio{
+    max-width: 350px;
+    font-size: 0.9em;
+   }
+   .card-itens-cardapio{
+    max-width: 350px;
+    margin: 1rem;
+   }
+   .titulo-tipo-refeicao{
+    font-size: 1.1rem;
+   }
+   .titulo-categoria{
+    font-size: 1em;
+   }
+
+ }
+ @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .cardapio-resumo{
+    max-width: 600px;
+    margin: 1rem;
+  }
+  .lista-itens-cardapio{
+    max-width: 550px;
+    font-size: 0.9em;
+    white-space: nowrap;
+   }
+   .card-itens-cardapio{
+    max-width: 550px;
+    margin: 2rem;
+   }
+   .titulo-tipo-refeicao{
+    font-size: 1.4em;
+   }
+   .titulo-categoria{
+    font-size: 1em;
+   }
+ }
+
+ @media only screen and (min-width: 1024px) {
+  .cardapio-resumo {
+    max-width: 500px;
+
+    }
+
+ }
+
+ @media only screen and (min-width: 1200px) {
+  .cardapio-resumo{
+    max-width: 700px;
+    margin: 3rem;
+  }
+  .lista-itens-cardapio{
+    max-width: 650px;
+    font-size: 1.1em;
+    white-space: nowrap;
+
+   }
+   .card-itens-cardapio{
+    max-width: 650px;
+    margin: 3rem;
+   }
+
+ }

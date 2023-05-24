@@ -35,32 +35,35 @@ const ResumoPedido = ({ produtosSelecionados }) => {
         </h2>
 
         <div className="infoPedido">
-          <label className="labelResumoPedido" htmlFor="mesa">
-            mesa:
-          </label>
-          <input
-            className="inputResumoPedido"
-            id="mesa"
-            value={mesa}
-            onChange={(e) => setMesa(e.target.value)}
-          />
-          <br />
-          <label className="labelResumoPedido" htmlFor="cliente">
-            cliente:
-          </label>
-          <input
-            className="inputResumoPedido"
-            id="cliente"
-            value={nomeCliente}
-            onChange={(e) => setNomeCliente(e.target.value)}
-          />
-
-          <table className="conteudo-tabela-resumo">
+          <div className='linha-resumo'>
+            <label className="labelResumoPedido" htmlFor="mesa">
+              mesa:
+            </label>
+            <input
+              className="inputResumoPedido"
+              id="mesa"
+              value={mesa}
+              onChange={(e) => setMesa(e.target.value)}
+            />
+          </div>
+          <div className='linha-resumo'>
+            <label className="labelResumoPedido" htmlFor="cliente">
+              cliente:
+            </label>
+            <input
+              className="inputResumoPedido"
+              id="cliente"
+              value={nomeCliente}
+              onChange={(e) => setNomeCliente(e.target.value)}
+            />
+          </div>
+          <div className="conteudo-tabela-resumo">
+          <table >
             <thead>
               <tr>
                 <th>Quantidade</th>
                 <th>Descrição</th>
-                <th>Valor R$</th>
+                <th>Valor</th>
               </tr>
             </thead>
             <tbody>
@@ -68,11 +71,13 @@ const ResumoPedido = ({ produtosSelecionados }) => {
                 <tr key={produto.id}>
                   <td>{produto.quantity}</td>
                   <td>{produto.name}</td>
-                  <td>R$ {produto.price}</td>
+                  <td>R$ {produto.total}</td>
+                  <td></td>
                 </tr>
               ))}
             </tbody>
           </table>
+          </div>
         </div>
         <Botao onClick={enviarPedido}>Enviar</Botao>
       </CardTerminal>
