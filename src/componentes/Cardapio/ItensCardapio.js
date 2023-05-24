@@ -34,20 +34,25 @@ const ItensCardapio = ({ tipoProduto, handleProdutoSelecionado }) => {
     }
   };
 
+
   const categoriasDisplay = Object.entries(categorias).map(([categoria, produtosDaCategoria]) => (
     <div key={categoria}>
-      <h1>{categoria}</h1>
+      <h3 className='titulo-categoria'>
+        {categoria}
+        </h3>
       <div>
+      
         {produtosDaCategoria.map((produto) => (
-          <ul className='lista-itens-cardapio' key={produto.id}>
-            <li>{produto.name}</li>
-            <li>R$ {produto.price}</li>
+          <ul key={produto.id} className='lista-itens-cardapio'>
+            <li>{produto.name}</li> 
+            <li className='preco'>R$ {produto.price}</li>
             <BtnIncrementaDecrementa
               increment={() => handleIncrement({ ...produto, quantity: (produto.quantity || 0) + 1 })}
-              decrement={() => handleDecrement(produto)}
+              decrement={() => handleDecrement({ ...produto, quantity: (produto.quantity > 1) - 1 })}
             />
           </ul>
         ))}
+
       </div>
     </div>
   ));

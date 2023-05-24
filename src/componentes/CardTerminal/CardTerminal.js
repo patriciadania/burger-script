@@ -49,29 +49,3 @@ const CardTerminal = ({ children }) => {
 };
 
 export default CardTerminal;
-
-
-// import React from 'react';
-// import './CardTerminal.css';
-
-// const CardTerminal = ({ children }) => {
-//   return (
-//     <>
-//     <div className="card-terminal">
-// <div className="circles">
-//   <div className="c"></div>
-//   <div className="c"></div>
-//   <div className="c"></div>
-// </div>
-//    <p className='msgBoasVindas'>Olá, </p>
-//   <div>
-//   <div className="card__content">
-//         {children}
-//    </div>
-// </div>
-// </div>
-//     </>
-//   );
-// };
-
-// export default CardTerminal;

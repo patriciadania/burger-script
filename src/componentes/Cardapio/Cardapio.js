@@ -39,18 +39,30 @@ import ItensCardapio from './ItensCardapio';
 
 const Cardapio = ({ handleProdutoSelecionado }) => {
   return (
-    <div className='cardapio-resumo'>
-      <h2>Café da Manhã</h2>
+    <section className='cardapio-resumo'>
+      <div className='card-itens-cardapio'>
+     <h2 className='titulo-tipo-refeicao'> 
+     <span className="colchetes">{"["}</span> 
+     Café da Manhã 
+     <span className="colchetes">{"]"}</span>
+     </h2>
       <ItensCardapio
         tipoProduto='café da manhã'
         handleProdutoSelecionado={handleProdutoSelecionado}
       />
-      <h2>Menu Principal</h2>
+      </div>
+      <div className='card-itens-cardapio'>
+      <h2 className='titulo-tipo-refeicao'>
+      <span className="colchetes">{"["}</span>
+        Menu Principal
+        <span className="colchetes">{"]"}</span>
+        </h2>
       <ItensCardapio
         tipoProduto='menu principal'
         handleProdutoSelecionado={handleProdutoSelecionado}
       />
-    </div>
+      </div>
+    </section>
   );
 };
 
