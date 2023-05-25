@@ -16,13 +16,13 @@ export default function Atendimento() {
        <img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones"/> 
       </Link>
       </span>
-      <span className='aguardandoEntrega'>
+      <span className='fazerPedido'>
         <Link to='/aguardandoentrega' className='link'>
           aguardando entrega 
           <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
           </Link> 
           </span>
-      <span className='pedidosEntregues'>
+      <span className='fazerPedido'>
       <Link to='/pedidosentregues' className='link'>
         pedidos entregues 
         <img src="../imagens/icones/check.png" alt="Icone de entregue" className="icones"/>

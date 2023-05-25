@@ -1,52 +1,3 @@
-/* 
-  .telaAtendimento{
-  margin-top: 10rem ;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
- 
-}
-.msgBoasVindas{
-  text-transform: uppercase;
-  font-size: 1.8em;
-  color: rgba(255, 253, 253, 1);
-}
-
-.fazerPedido,
-.pedidosEntregues,
-.aguardandoPedidos{
-  color: rgba(255, 253, 253, 1);
-  background-color: rgba(122, 113, 113, 0.5);
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-  max-width: 35rem;
-  padding: 5px 5px;
-  border-radius: 5px;
-  font-family: Kadwa;
-  font-size: 1.3rem;
-}
-
-.icones{
-  width: 5rem;
-  justify-content: center;
-  vertical-align: -20px;
-}
-.link{
-  text-decoration: none;
-  color: rgba(255, 253, 253, 1);
-}
-
-.botaoSair {
-  position: absolute; 
-  top: 0;
-  right: 10;
-  color: rgba(255, 253, 253, 1);
-  font-size: 30px;
-  font-family: Kadwa;
-} */
 
 .telaAtendimento{
   display: flex;
@@ -76,9 +27,7 @@ margin-right: 3rem;
   white-space: nowrap;
 }
 
-.fazerPedido,
-.pedidosEntregues,
-.aguardandoEntrega{
+.fazerPedido{
   color: rgba(255, 253, 253, 1);
   background-color: rgba(122, 113, 113, 0.5);
   margin-bottom: 5rem;
@@ -86,11 +35,9 @@ margin-right: 3rem;
   padding: 5px 5px;
   border-radius: 5px;
   font-family: Kadwa;
- 
 }
 
 .icones{
- 
   justify-content: center;
   vertical-align: -20px;
 }
@@ -103,17 +50,10 @@ margin-right: 3rem;
     width: 3.2rem;
   }
   .link,.fazerPedido{
-    width: 20rem;
+    max-width: 20rem;
   font-size: 18px;
 }
-.link,.aguardandoEntrega{
-  width: 20rem;
-  font-size: 18px;
-}
-.link,.pedidosEntregues{
-  width: 20rem;
-  font-size: 18px;
-}
+
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .msgBoasVindas{
@@ -126,15 +66,7 @@ margin-right: 3rem;
     width: 5rem;
   }
   .link,.fazerPedido{
-    width: 30rem;
-  font-size: 25px;
-}
-.link,.aguardandoEntrega{
-  width: 30rem;
-  font-size: 25px;
-}
-.link,.pedidosEntregues{
-  width: 30rem;
+    max-width: 30rem;
   font-size: 25px;
 }
 }
@@ -149,11 +81,9 @@ margin-right: 3rem;
   .icones{
     width: 5rem;
   }
-  .link,.fazerPedido,
-.pedidosEntregues,
-.aguardandoEntrega{
+  .link,.fazerPedido{
   font-size: 1.2em;
-  width: 35rem;
+  max-width: 35rem;
 }
 }
 
@@ -162,15 +92,13 @@ margin-right: 3rem;
     font-size: 1.8em;
   }
   .botaoSair{
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .icones{
     width: 5rem;
   }
-  .link,.fazerPedido,
-.pedidosEntregues,
-.aguardandoPedidos{
+  .link,.fazerPedido{
   font-size: 1.2em;
-  width: 35rem;
+  max-width: 35rem;
 }
 }
