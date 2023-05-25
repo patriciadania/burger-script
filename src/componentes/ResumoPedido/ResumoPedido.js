@@ -12,8 +12,11 @@ const ResumoPedido = ({ produtosSelecionados }) => {
     try {
       const produtos = produtosSelecionados.map((produto) => ({
         id: produto.id,
+        name: produto.name,
         quantity: produto.quantity,
+        total: produto.total,
       }));
+      console.log(produtos)
 
       const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
       console.log('Pedido registrado:', novoPedido);

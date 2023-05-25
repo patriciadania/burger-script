@@ -25,6 +25,7 @@ const ListaPedidos = () => {
     <thead>
       <tr>
         <th>ID do Pedido:</th>
+        <th>Atendente:</th>
         <th>Cliente:</th>
         <th>Mesa:</th>
         <th>Status:</th>
@@ -37,8 +38,9 @@ const ListaPedidos = () => {
       {pedidos.map((pedido) => (
         <tr key={pedido.id}>
           <td>{pedido.id}</td>
+          <td>{pedido.waiter}</td>
           <td>{pedido.client}</td>
-          <td>{pedido.products[0].product.table}</td>
+          <td>{pedido.table}</td>
           <td>{pedido.status}</td>
           <td>{pedido.dateEntry}</td>
           <td>
