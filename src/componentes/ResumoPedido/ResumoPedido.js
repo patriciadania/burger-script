@@ -61,25 +61,39 @@ const ResumoPedido = ({ produtosSelecionados }) => {
             />
           </div>
           <div className="conteudo-tabela-resumo">
-          <table >
-            <thead>
-              <tr>
-                <th>Quantidade</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-              </tr>
-            </thead>
-            <tbody>
-              {produtosSelecionados.map((produto) => (
-                <tr key={produto.id}>
-                  <td>{produto.quantity}</td>
-                  <td>{produto.name}</td>
-                  <td>R$ {produto.total}</td>
-                  <td></td>
+            <table >
+              <thead>
+                <tr>
+                  <th>Quantidade</th>
+                  <th>Descrição</th>
+                  <th>Valor</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {produtosSelecionados.map((produto) => (
+                  <tr key={produto.id}>
+                    <td>{produto.quantity}</td>
+                    <td>{produto.name}</td>
+                    <td>R$ {produto.total}</td>
+                    <td></td>
+                  </tr>
+                ))}
+              </tbody>
+              <tr>
+                <th className='th-total'>total</th>
+                <th className='th-total'></th>
+                <th className='th-total'>
+                  R$  
+                  {produtosSelecionados.reduce((total, produto) => {
+                    total += (produto.quantity*produto.price);
+                    return total
+                  }, 0
+                  )}
+
+                </th>
+              </tr>
+            </table>
+
           </div>
         </div>
         <Botao onClick={enviarPedido}>Enviar</Botao>
@@ -89,3 +103,5 @@ const ResumoPedido = ({ produtosSelecionados }) => {
 };
 
 export default ResumoPedido;
+
+

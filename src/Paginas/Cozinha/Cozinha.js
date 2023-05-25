@@ -15,14 +15,14 @@ export default function Cozinha() {
           <img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones"/> 
          </Link>
          </span>
-         <span className='aguardandoEntrega'>
+         <span className='fazerPedido'>
            <Link to='/' className='link'>
              Pedidos Enviados
              <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
              </Link> 
              </span>
 
-             <span className='aguardandoEntrega'>
+             <span className='fazerPedido'>
            <Link to='/PedidosEntregues' className='link'>
             lista de pedidos
              <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>

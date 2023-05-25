@@ -1,4 +1,4 @@
- 
+
   .infoPedido{
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -17,11 +17,14 @@
     display: inline-block;
     margin-bottom: 10px;
     align-items: center;
+    background-color: transparent;
+    border:none;
+    color: white;
   }
+  
   .linha-resumo {
     display: flex;
-   justify-content: center;
-
+   justify-content: left;
   }
   
 
@@ -48,7 +51,7 @@
     background-color:#494848;
   }
 
-  .totalPedido{
+  .th-total{
     background-color: green;
   }
   .conteudo-tabela-resumo{
@@ -98,4 +101,4 @@
       max-width: 300px;
     }
 
-  }
+  } 
