@@ -27,10 +27,10 @@ const FazerPedido = () => {
         <Link to='/atendimento' className='botaoSair'>Voltar</Link>
       </nav>
       <span className='fazerPedido'>Fazer um novo pedido<img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones" /></span>
-      <div className='container-pedido'>
+      
         <Cardapio handleProdutoSelecionado={handleProdutoSelecionado} />
         <ResumoPedido produtosSelecionados={produtosSelecionados} />
-      </div>
+     
     </section>
   );
 };
