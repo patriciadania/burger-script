@@ -1,29 +1,25 @@
 
 import './Colaboradores.css'
 import { Link } from 'react-router-dom'
+import MenuNagevacao from '../../../componentes/MenuNagegacao/MenuNavegacao'
+
 export default function Colaboradores() {
     return (
         <section className='telaFazerPedido'>
             <nav className='botaoSair'>
                 <Link to='/administracao' className='botaoSair'>Voltar</Link>
             </nav>
-            <span className='fazerPedido'>
-                colaboradores
-                <img src="../imagens/icones/colaboradores.png" alt="Icone de colaboradores" className="icones" />
-            </span>
+            <MenuNagevacao
+                to='/addcolaborador'
+                texto='adicionar colaborador'
+                imagemSrc='adicionar-colaborador.png'
+            />
 
-            <span className='fazerPedido'>
-                <Link to='/addcolaborador' className="link">
-                    adicionar colaborador
-                </Link>
-            </span>
-
-            <span className='fazerPedido'>
-                <Link to='/listacolaboradores' className="link">
-                    listar colaboradores
-                </Link>
-            </span>
-
+            <MenuNagevacao
+                to='/listacolaboradores'
+                texto='listar colaboradores'
+                imagemSrc='lista.png'
+            />
         </section>
 
 

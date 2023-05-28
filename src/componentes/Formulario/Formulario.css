@@ -1,11 +1,10 @@
-
 form .formulario{
-   justify-content: center;
-    flex-direction: column;
-    width: 80%;
-    display: flex;
-    align-items: center;
-}
+  justify-content: center;
+   flex-direction: column;
+   width: 80%;
+   display: flex;
+   align-items: center;
+} 
 
 .msg-erro-login{
     display: flex;
@@ -14,53 +13,22 @@ form .formulario{
     justify-content: center;
     align-items: center;
   color: #fe4567;
-  padding: 10px;
-  
-}
+  margin-bottom: 1em;
+} 
 .msg-sucesso{
   margin-top: 1rem;
   color: green;
   font-weight: bold;
-}
-
-.titulo-login{
-  color:aliceblue;
-  text-align: center;
-  margin-bottom: 3rem;
-  text-align: right;
-  border-bottom: 1px solid;
- 
-}
-.chaves{
-color: #E79315;
-
 } 
 @media only screen and (max-width: 767px) {
-.titulo-login {
-  font-size: 3vh;
-  margin-bottom: 3rem;
-border-bottom: 1px solid;
-}
 
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-.titulo-login {
-  font-size: 3vh;
-}
-.chaves{
-font-size: 3vh;
-}
+
 }
 
 @media only screen and (min-width: 1024px) {
-.chaves{
-  font-size: 3vh;
-}
-.titulo-login{
-font-size: 3vh;
-text-align: right;
-margin-bottom: 3rem;
-border-bottom: 1px solid;
 
 }
-}
+

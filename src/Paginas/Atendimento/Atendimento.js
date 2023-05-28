@@ -1,34 +1,45 @@
+
 import { Link } from 'react-router-dom';
 
 import './Atendimento.css'
+import MenuNagevacao from '../../componentes/MenuNagegacao/MenuNavegacao';
+import Footer from '../../componentes/Footer/Footer';
+import Header from '../../componentes/Header/Header';
 
 export default function Atendimento() {
   return (
+    <>
+    <Header
+    msgBoasVindas='Olá, você está na seção de atendimento' />
     <section className='telaAtendimento'>
-     <nav className='botaoSair'>
-     <Link to='/' className='botaoSair'>Sair</Link>
-</nav>
+      <nav className='botaoSair'>
+        <Link to='/' className='botaoSair'>Sair</Link>
+      </nav>
 
-      <h2 className='msgBoasVindas'>olá,</h2>
-      <span className='fazerPedido'>
-        <Link to='/fazerpedido' className='link'> 
-      fazer um novo pedido
-       <img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones"/> 
-      </Link>
-      </span>
-      <span className='fazerPedido'>
-        <Link to='/aguardandoentrega' className='link'>
-          aguardando entrega 
-          <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones"/>
-          </Link> 
-          </span>
-      <span className='fazerPedido'>
-      <Link to='/pedidosentregues' className='link'>
-        pedidos entregues 
-        <img src="../imagens/icones/check.png" alt="Icone de entregue" className="icones"/>
-    </Link>
-    </span>
+
+      <MenuNagevacao
+        to='/fazerpedido'
+        texto='registrar pedido'
+        imagemSrc='fazer-pedido.png'
+      />
+      <MenuNagevacao
+        to='/aguardandoentrega'
+        texto='aguardando entrega'
+        imagemSrc='relogio.png'
+      />
+      <MenuNagevacao
+      to='/pedidosentregues'
+      texto='pedidos entregues'
+      imagemSrc='pedido-entregue.png'
+      />
+      
     </section>
+    <Footer 
+    imagemSrc='../imagens/img-footer/3.png'
+    imagemAlt='Banner atendimento'
+    />
+    </>
+    
 
   );
 }

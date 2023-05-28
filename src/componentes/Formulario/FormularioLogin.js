@@ -4,7 +4,6 @@ import Botao from '../Botao/Botao';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../API/Usuarios';
-import CardTerminal from '../CardTerminal/CardTerminal';
 
 const FormularioLogin = () => {
 
@@ -16,7 +15,7 @@ const FormularioLogin = () => {
     const aoSalvar = async (evento) => {
         evento.preventDefault()
         setErro('');
-       
+
         try {
             const loginUsuario = await login(email, senha)
             console.log(loginUsuario)
@@ -39,43 +38,31 @@ const FormularioLogin = () => {
     }
 
     return (
-        <>
-       <CardTerminal>
-         <h2 className="titulo-login">
-                <span className="chaves">{"{"}</span>
-                <span className="titulo-login"> Login </span>
-                <span className="chaves">{"}"}</span>
-            </h2>
-        <section className="formulario">
-           
+    
+            <section className="formulario">
+                <form onSubmit={aoSalvar}>
+                    <CampoTexto
+                        obrigatorio={true}
+                        label="E-mail: "
+                        valor={email}
+                        aoAlterado={valor => setEmail(valor)}
+                        name="E-mail"
+                    />
+                    <CampoTexto
+                        obrigatorio={true}
+                        label="Senha: "
+                        valor={senha}
+                        aoAlterado={valor => setSenha(valor)}
+                        tipo="password"
+                    />
+                    <div className='msg-erro-login'>
+                        {erro && <p>{erro}</p>}
+                    </div>
+                    <Botao>acessar</Botao>
+                </form>
+            </section>
 
-
-            <form onSubmit={aoSalvar}>
-                <CampoTexto
-                    obrigatorio={true}
-                    label="E-mail: "
-                    valor={email}
-                    aoAlterado={valor => setEmail(valor)}
-                    name="E-mail"
-                />
-                <CampoTexto
-                    obrigatorio={true}
-                    label="Senha: "
-                    valor={senha}
-                    aoAlterado={valor => setSenha(valor)}
-                    tipo="password"
-                />
-                <div className='msg-erro-login'>
-                    {erro && <p>{erro}</p>}
-                </div>
-
-                <Botao>acessar</Botao>
-
-            </form>
-            
-        </section>
-        </CardTerminal>
-        </>
+       
     )
 }
 export default FormularioLogin;

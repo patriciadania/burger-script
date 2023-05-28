@@ -7,17 +7,12 @@
   text-align: center;
 }
 .botaoSair{
-  margin-top: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 margin-right: 3rem;
   color: aliceblue;
   text-align: right;
   font-family: Kadwa;
-}
-
-.msgBoasVindas{
-  text-transform: uppercase;
-  color: rgba(255, 253, 253, 1);
-  margin-bottom: 1rem;
 }
 
 .link{
@@ -27,78 +22,9 @@ margin-right: 3rem;
   white-space: nowrap;
 }
 
-.fazerPedido{
-  color: rgba(255, 253, 253, 1);
-  background-color: rgba(122, 113, 113, 0.5);
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-  padding: 5px 5px;
-  border-radius: 5px;
-  font-family: Kadwa;
-}
 
 .icones{
   justify-content: center;
   vertical-align: -20px;
 }
 
-@media only screen and (max-width: 767px) {
-  .msgBoasVindas{
-    font-size: 1.2em;
-  }
-  .icones{
-    width: 3.2rem;
-  }
-  .link,.fazerPedido{
-    max-width: 20rem;
-  font-size: 18px;
-}
-
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .msgBoasVindas{
-    font-size: 2.2em;
-  }
-  .botaoSair{
-    font-size: 1.5em;
-  }
-  .icones{
-    width: 5rem;
-  }
-  .link,.fazerPedido{
-    max-width: 30rem;
-  font-size: 25px;
-}
-}
-
-@media only screen and (min-width: 1024px) {
-  .msgBoasVindas{
-    font-size: 2.8em;
-  }
-  .botaoSair{
-    font-size: 1.5em;
-  }
-  .icones{
-    width: 5rem;
-  }
-  .link,.fazerPedido{
-  font-size: 1.2em;
-  max-width: 35rem;
-}
-}
-
-@media only screen and (min-width: 1200px) {
-  .msgBoasVindas{
-    font-size: 1.8em;
-  }
-  .botaoSair{
-    font-size: 1.2em;
-  }
-  .icones{
-    width: 5rem;
-  }
-  .link,.fazerPedido{
-  font-size: 1.2em;
-  max-width: 35rem;
-}
-}
