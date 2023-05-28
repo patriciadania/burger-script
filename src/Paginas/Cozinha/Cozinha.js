@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../../componentes/Header/Header";
-import MenuNagevacao from "../../componentes/MenuNagegacao/MenuNavegacao";
+import MenuNavegacao from "../../componentes/MenuNavegacao/MenuNavegacao";
 import Footer from "../../componentes/Footer/Footer";
 
 
@@ -13,19 +13,19 @@ export default function Cozinha() {
         <nav className='botaoSair'>
           <Link to='/' className='botaoSair'>Sair</Link>
         </nav>
-        <MenuNagevacao
+        <MenuNavegacao
           to='/'
           texto='aguardando produção'
           imagemSrc='preparando-pedido.png'
         />
 
-        <MenuNagevacao
+        <MenuNavegacao
           to='/'
           texto='pronto para servir'
           imagemSrc='pronto-para-servir.png'
         />
 
-        <MenuNagevacao
+        <MenuNavegacao
           to='/PedidosEntregues'
           texto='lista de pedidos'
           imagemSrc='lista.png'
