@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #011522;
+    background-color: var(--azul-escuro);
     border-radius: 8px;
     padding: 10px;
  

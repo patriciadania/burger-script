@@ -1,5 +1,5 @@
 
-  .campo-texto{
+.campo-texto{
     position: relative;
     top: 50%;
     left: 50%;
@@ -12,10 +12,10 @@
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: var(--cor-da-fonte);
     margin-bottom: 20px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--cor-da-fonte);
     outline: none;
     background: transparent;
   }
@@ -24,7 +24,7 @@
   top: 0;
   left: 0;
   padding: 10px 0;
-  color: #fff;
+  color: var(--cor-da-fonte);
   pointer-events: none;
   transition: .5s;
   }
@@ -33,8 +33,15 @@
 .campo-texto input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #bdb8b8;
+  color:  #fff;
 }
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 20px var(--cinza-escuro) inset;
+  -webkit-text-fill-color: #fff;
+  outline: none;
+}
+
 
 @media only screen and (max-width: 767px) {
   .campo-texto label {

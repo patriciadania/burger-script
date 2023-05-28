@@ -1,19 +1,26 @@
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+--cinza-escuro: #2c2c2c;
+--cinza-medio: rgba(122, 113, 113, 0.5);
+--cinza-claro:#c3b9b2;
+--cor-da-fonte: #fff;
+--nude: #e4d4cc;
+--verde: #468F4B;
+--azul-escuro: #011522;
+--sombra-destaque: 15px 15px 30px rgb(25, 25, 25);
+--sombra-sombreada: -15px -15px 30px rgb(60, 60, 60);
+--gradiente: radial-gradient(circle, #1c3a32, #09100e, #142824, #111c1c, #14241c);
+--preto: #151515;
+
+}
  body{
   margin:0;
-  display: flex;
-      background:  #2c2c2c;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-repeat: no-repeat;
+  padding: 0;
+      background: var(--cinza-escuro);
+      background-size: cover;
 } 
-main {
-  padding: 0 0 53px 0;
-  width: 100%;
-}

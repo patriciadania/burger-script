@@ -32,13 +32,13 @@ a{
 @media only screen and (max-width: 767px) {
   .botao{
     font-size: 1.5vh;
-    width: 100px;
+    max-width: 100px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .botao{
     font-size: 1.8vh;
-    width: 150px;
+    max-width: 150px;
   }
 
 }
@@ -46,13 +46,13 @@ a{
 @media only screen and (min-width: 1024px) {
   .botao{
     font-size: 20px;
-    width: 200px;
+    max-width: 200px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .botao{
     font-size: 20px;
-    width: 200px;
+    max-width: 200px;
   }
 }

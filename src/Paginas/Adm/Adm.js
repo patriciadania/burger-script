@@ -1,27 +1,34 @@
 
 import { Link } from 'react-router-dom';
+import Header from '../../componentes/Header/Header';
+import MenuNagevacao from '../../componentes/MenuNagegacao/MenuNavegacao';
+import Footer from '../../componentes/Footer/Footer';
 
 export default function Administracao() {
   return (
-    <div className='telaAtendimento'>
-      <nav className='botaoSair'>
-        <Link to='/' className='botaoSair'>Sair</Link>
-      </nav>
-      <h2 className='msgBoasVindas'>olá, </h2>
-
-      <span className='fazerPedido'>
-        <Link to='/colaboradores' className='link'>
-          colaboradores
-          <img src="../imagens/icones/colaboradores.png" alt="Icone de colaboradores" className="icones" />
-        </Link>
-      </span>
-
-      <span className='fazerPedido'>
-        <Link to='/produtos' className='link'>
-          produtos
-          <img src="../imagens/icones/iconeProdutos.png" alt="Icone de produtos" className="icones" />
-        </Link>
-      </span>
-    </div>
+    <>
+      <Header
+        msgBoasVindas='Olá, você está na seção de admnistração'
+      />
+      <section className='telaAtendimento'>
+        <nav className='botaoSair'>
+          <Link to='/' className='botaoSair'>Sair</Link>
+        </nav>
+        <MenuNagevacao
+          to='/colaboradores'
+          texto='colaboradores'
+          imagemSrc='colaboradores.png'
+        />
+        <MenuNagevacao
+          to='/produtos'
+          texto='produtos'
+          imagemSrc='lista-de-produtos.png'
+        />
+      </section>
+      <Footer 
+      imagemSrc='../imagens/img-footer/2.png'
+      imagemAlt='Banner administração'
+      />
+    </>
   );
 }

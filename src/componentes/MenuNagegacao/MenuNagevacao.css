@@ -1,0 +1,61 @@
+.menu-nav{
+    color: rgba(255, 253, 253, 1);
+    background-color: rgba(122, 113, 113, 0.5);
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-family: Kadwa;
+    box-shadow: var(--sombra-destaque), var(--sombra-sombreada);
+}
+
+@media only screen and (max-width: 767px) {
+  
+    .icones{
+      width: 3.2rem;
+    }
+    .link,.menu-nav{
+      max-width: 20rem;
+    font-size: 18px;
+  }
+  
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .botaoSair{
+      font-size: 1.5em;
+    }
+    .icones{
+      width: 5rem;
+    }
+    .link,.menu-nav{
+      max-width: 30rem;
+    font-size: 25px;
+  }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .botaoSair{
+      font-size: 1.5em;
+    }
+    .icones{
+      width: 5rem;
+    }
+    .link,.menu-nav{
+    font-size: 1.2em;
+    max-width: 35rem;
+  }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .botaoSair{
+      font-size: 1.2em;
+    }
+    .icones{
+      width: 5rem;
+    }
+    .link,.menu-nav{
+    font-size: 1.2em;
+    max-width: 35rem;
+  }
+  }
+
