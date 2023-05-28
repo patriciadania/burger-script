@@ -11,20 +11,13 @@
   }
  
 @media only screen and (max-width: 767px) {
-  /* .titulo-login .chaves{
-    font-size: 4vh;
-} */
+
 .logo img {
   width: 28rem;
  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  /* .titulo-login {
-    font-size: 4vh;
-}
-.chaves{
-  font-size: 4vh;
-} */
+
 .logo img {
   width: 40rem;
  }

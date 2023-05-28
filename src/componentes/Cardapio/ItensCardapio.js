@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { obterProdutos } from '../../API/Produtos';
 import BtnIncrementaDecrementa from '../BtnIncrementaDecrementa/index'
 
-const ItensCardapio = ({ tipoProduto, handleProdutoSelecionado }) => {
+const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
   const [produtos, setProdutos] = useState([]);
   const [categorias, setCategorias] = useState([]);
 
@@ -17,20 +17,19 @@ const ItensCardapio = ({ tipoProduto, handleProdutoSelecionado }) => {
         const produtosAgrupadosPorCategoria = agruparPorCategoria(produtosFiltradosPorTipo);
         setCategorias(produtosAgrupadosPorCategoria);
       } catch (error) {
-        console.error(error);
       }
     };
 
     buscarProdutos();
   }, [tipoProduto]);
 
-  const handleIncrement = (produto) => {
-    handleProdutoSelecionado(produto);
+  const incrementarContador = (produto) => {
+    manipularProdutoSelecionado(produto);
   };
 
-  const handleDecrement = (produto) => {
+  const decrementarContador = (produto) => {
     if (produto.quantity > 0) {
-      handleProdutoSelecionado({ ...produto, quantity: produto.quantity - 1 });
+      manipularProdutoSelecionado({ ...produto, quantity: produto.quantity - 1 });
     }
   };
 
@@ -40,15 +39,16 @@ const ItensCardapio = ({ tipoProduto, handleProdutoSelecionado }) => {
       <h3 className='titulo-categoria'>
         {categoria}
         </h3>
-      <div>
+      <div className='produtos-do-cardapio'>
       
         {produtosDaCategoria.map((produto) => (
           <ul key={produto.id} className='lista-itens-cardapio'>
+            <img className='imagens-do-cardapio' src={produto.image} alt={produto.name} />
             <li>{produto.name}</li> 
             <li className='preco'>R$ {produto.price}</li>
             <BtnIncrementaDecrementa
-              increment={() => handleIncrement({ ...produto, quantity: (produto.quantity || 0) + 1 })}
-              decrement={() => handleDecrement({ ...produto, quantity: (produto.quantity > 1) - 1 })}
+              incrementa={() => incrementarContador({ ...produto, quantity: (produto.quantity || 0) + 1 })}
+              decrement={() => decrementarContador({ ...produto, quantity: (produto.quantity > 1) - 1 })}
             />
           </ul>
         ))}

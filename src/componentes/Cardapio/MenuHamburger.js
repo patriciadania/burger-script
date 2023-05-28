@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 const MenuHamburger = ({ conteudo, tipoRefeicao }) => {
   const [menuAberto, setMenuAberto] = useState(false);
 
-  const toggleMenu = () => {
+  const alternarMenu = () => {
     setMenuAberto(!menuAberto);
   };
 
   return (
     <div className="menu-hamburger">
-      <div className={`hamburger-icon ${menuAberto ? 'aberto' : ''}`} onClick={toggleMenu}>
+      <div className={`hamburger-icon ${menuAberto ? 'aberto' : ''}`} onClick={alternarMenu}>
         <h4 className='span-menu-hamburger'>{tipoRefeicao}</h4>
         
       </div>

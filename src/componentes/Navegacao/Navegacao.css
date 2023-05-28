@@ -6,18 +6,6 @@ nav{
 li{
     list-style: none;
 }
-/* a{
-    text-decoration: none;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgba(122, 113, 113, 0.75);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}  */
 
 .acessar {
     display: inline-block;

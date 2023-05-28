@@ -2,7 +2,6 @@ import './Formulario.css'
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import { adicionarProdutos } from '../../API/Produtos';
 
