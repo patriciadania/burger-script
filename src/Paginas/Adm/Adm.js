@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import Header from '../../componentes/Header/Header';
-import MenuNagevacao from '../../componentes/MenuNagegacao/MenuNavegacao';
+import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Footer from '../../componentes/Footer/Footer';
 
 export default function Administracao() {
@@ -14,12 +14,12 @@ export default function Administracao() {
         <nav className='botaoSair'>
           <Link to='/' className='botaoSair'>Sair</Link>
         </nav>
-        <MenuNagevacao
+        <MenuNavegacao
           to='/colaboradores'
           texto='colaboradores'
           imagemSrc='colaboradores.png'
         />
-        <MenuNagevacao
+        <MenuNavegacao
           to='/produtos'
           texto='produtos'
           imagemSrc='lista-de-produtos.png'

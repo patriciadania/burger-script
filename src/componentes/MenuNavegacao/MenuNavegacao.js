@@ -2,7 +2,7 @@ import './MenuNagevacao.css';
 
 import { Link } from 'react-router-dom';
 
-const MenuNagevacao = ({to, texto, imagemSrc}) =>{
+const MenuNavegacao = ({to, texto, imagemSrc}) =>{
     const caminhoBase = '../imagens/icones/';
     const imagemAlt = `icone de ${texto}`;
     return(
@@ -15,4 +15,4 @@ const MenuNagevacao = ({to, texto, imagemSrc}) =>{
     )
 }
 
-export default MenuNagevacao;
+export default MenuNavegacao;

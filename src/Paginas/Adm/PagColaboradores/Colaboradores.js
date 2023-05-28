@@ -1,7 +1,7 @@
 
 import './Colaboradores.css'
 import { Link } from 'react-router-dom'
-import MenuNagevacao from '../../../componentes/MenuNagegacao/MenuNavegacao'
+import MenuNavegacao from '../../../componentes/MenuNavegacao/MenuNavegacao'
 
 export default function Colaboradores() {
     return (
@@ -9,13 +9,13 @@ export default function Colaboradores() {
             <nav className='botaoSair'>
                 <Link to='/administracao' className='botaoSair'>Voltar</Link>
             </nav>
-            <MenuNagevacao
+            <MenuNavegacao
                 to='/addcolaborador'
                 texto='adicionar colaborador'
                 imagemSrc='adicionar-colaborador.png'
             />
 
-            <MenuNagevacao
+            <MenuNavegacao
                 to='/listacolaboradores'
                 texto='listar colaboradores'
                 imagemSrc='lista.png'

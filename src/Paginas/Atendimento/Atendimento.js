@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 import './Atendimento.css'
-import MenuNagevacao from '../../componentes/MenuNagegacao/MenuNavegacao';
+import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Footer from '../../componentes/Footer/Footer';
 import Header from '../../componentes/Header/Header';
 
@@ -17,17 +17,17 @@ export default function Atendimento() {
       </nav>
 
 
-      <MenuNagevacao
+      <MenuNavegacao
         to='/fazerpedido'
         texto='registrar pedido'
         imagemSrc='fazer-pedido.png'
       />
-      <MenuNagevacao
+      <MenuNavegacao
         to='/aguardandoentrega'
         texto='aguardando entrega'
         imagemSrc='relogio.png'
       />
-      <MenuNagevacao
+      <MenuNavegacao
       to='/pedidosentregues'
       texto='pedidos entregues'
       imagemSrc='pedido-entregue.png'

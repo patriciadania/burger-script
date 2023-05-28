@@ -3,7 +3,7 @@ import ResumoPedido from '../../componentes/ResumoPedido/ResumoPedido'
 import { useState } from 'react'
 import './FazerPedido.css'
 import { Link } from 'react-router-dom'
-import MenuNagevacao from '../../componentes/MenuNagegacao/MenuNavegacao'
+import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao'
 
 const FazerPedido = () => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
@@ -27,7 +27,7 @@ const FazerPedido = () => {
       <nav className='botaoSair'>
         <Link to='/atendimento' className='botaoSair'>Voltar</Link>
       </nav>
-      <MenuNagevacao
+      <MenuNavegacao
         to='/fazerpedido'
         texto='registrar pedido'
         imagemSrc='fazer-pedido.png'

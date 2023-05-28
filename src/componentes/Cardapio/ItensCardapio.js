@@ -36,10 +36,12 @@ const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
 
   const categoriasDisplay = Object.entries(categorias).map(([categoria, produtosDaCategoria]) => (
     <div key={categoria}>
+      <div className='produtos-do-cardapio'>
       <h3 className='titulo-categoria'>
         {categoria}
         </h3>
-      <div className='produtos-do-cardapio'>
+        </div>
+      <div className='container-dos-produtos'>
       
         {produtosDaCategoria.map((produto) => (
           <ul key={produto.id} className='lista-itens-cardapio'>
