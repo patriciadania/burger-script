@@ -3,7 +3,7 @@ import ItensCardapio from './ItensCardapio';
 import MenuHamburger from './MenuHamburger';
 
 
-const Cardapio = ({ handleProdutoSelecionado }) => {
+const Cardapio = ({ manipularProdutoSelecionado }) => {
   return (
     <section className='cardapio-resumo'>
       <div className='card-itens-cardapio'>
@@ -18,7 +18,7 @@ const Cardapio = ({ handleProdutoSelecionado }) => {
           conteudo={
             <ItensCardapio
               tipoProduto='café da manhã'
-              handleProdutoSelecionado={handleProdutoSelecionado}
+              manipularProdutoSelecionado={manipularProdutoSelecionado}
             />
 
           }
@@ -37,7 +37,7 @@ const Cardapio = ({ handleProdutoSelecionado }) => {
 
           <ItensCardapio
             tipoProduto='menu principal'
-            handleProdutoSelecionado={handleProdutoSelecionado}
+            manipularProdutoSelecionado={manipularProdutoSelecionado}
           />
       
       }

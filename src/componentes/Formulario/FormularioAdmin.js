@@ -1,4 +1,4 @@
-// FormularioAdmin.js
+
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';

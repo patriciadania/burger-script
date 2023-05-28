@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const FazerPedido = () => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
-  const handleProdutoSelecionado = (produto) => {
+  const manipularProdutoSelecionado = (produto) => {
     const produtoSelecionado = produtosSelecionados.find(produtoSelecionado => produtoSelecionado.id === produto.id);
     console.log(produtoSelecionado)
     if (produtoSelecionado) {
@@ -28,7 +28,7 @@ const FazerPedido = () => {
       </nav>
       <span className='fazerPedido'>Fazer um novo pedido<img src="../imagens/icones/hamburger.png" alt="Icone de hamburger" className="icones" /></span>
       
-        <Cardapio handleProdutoSelecionado={handleProdutoSelecionado} />
+        <Cardapio manipularProdutoSelecionado={manipularProdutoSelecionado} />
         <ResumoPedido produtosSelecionados={produtosSelecionados} />
      
     </section>
