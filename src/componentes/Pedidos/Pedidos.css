@@ -1,8 +1,10 @@
 .lista-de-pedidos{
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     color: white;
+   gap: 30px;
     
 }
 .titulo-lista-pedidos{

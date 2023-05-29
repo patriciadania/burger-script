@@ -14,21 +14,15 @@ export default function Cozinha() {
           <Link to='/' className='botaoSair'>Sair</Link>
         </nav>
         <MenuNavegacao
-          to='/aguardandoentrega'
+          to='/aguardandoproducao'
           texto='aguardando produção'
           imagemSrc='preparando-pedido.png'
         />
 
         <MenuNavegacao
-          to='/'
+          to='/pedidosprontos'
           texto='pronto para servir'
           imagemSrc='pronto-para-servir.png'
-        />
-
-        <MenuNavegacao
-          to='/pedidosentregues'
-          texto='lista de pedidos'
-          imagemSrc='lista.png'
         />
 
       </section>

@@ -13,10 +13,9 @@ export default function PedidosEntregues() {
       texto='pedidos entregues'
       imagemSrc='pedido-entregue.png'
       />
-        <ListaPedidos />
-            <nav>
-                        <Link to='/' className='botaoEnviar'>ENTREGUE</Link>
-            </nav>
+        <ListaPedidos status="entregue" 
+        props={'Data de entrega'}
+        />
     </section>
         )
 

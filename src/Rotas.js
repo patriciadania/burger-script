@@ -11,6 +11,8 @@ import Colaboradores from "./Paginas/Adm/PagColaboradores/Colaboradores";
 import CriarUsuario from "./componentes/CriaEListaUsuario/CriarUsuario";
 import ListaDeColaboradores from "./componentes/CriaEListaUsuario/ListaUsuarios";
 import Produtos from "./Paginas/Adm/PagProdutos/Produtos";
+import AgrProducao from "./Paginas/Cozinha/AgrProducao";
+import PedidosProntos from "./Paginas/Cozinha/PedidosProntos";
 
 
 function AppRoutes() {
@@ -28,6 +30,8 @@ function AppRoutes() {
       <Route path="/addcolaborador" element={<CriarUsuario /> } />
       <Route path="/listacolaboradores" element={<ListaDeColaboradores /> } />
       <Route path="/produtos" element={<Produtos /> } />
+      <Route path="/aguardandoproducao" element={<AgrProducao /> } />
+      <Route path="/pedidosprontos" element={<PedidosProntos /> } />
 
     </Routes>
     </BrowserRouter>

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { obterPedidos } from '../../API/Pedidos';
 import './Pedidos.css'
 
-const ListaPedidos = () => {
-  const [pedidos, setPedidos] = useState([]);
 
+const ListaPedidos = ({ status, btnStatus, props }) => {
+  const [pedidos, setPedidos] = useState([]);
+  console.log(pedidos)
   useEffect(() => {
     carregarPedidos();
   }, []);
@@ -18,56 +19,35 @@ const ListaPedidos = () => {
     }
   };
 
+  const pedidosFiltrados = pedidos.filter((pedido) => 
+  pedido.status.toLowerCase() === status.toLowerCase());
+
   return (
-    <div className='lista-de-pedidos'>
-  <h2 className='titulo-lista-pedidos'>Lista de Pedidos</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID do Pedido:</th>
-        <th>Atendente:</th>
-        <th>Cliente:</th>
-        <th>Mesa:</th>
-        <th>Status:</th>
-        <th>Data de Entrada:</th>
-        <th>Produto:</th>
-        <th>Quantidade:</th>
-      </tr>
-    </thead>
-    <tbody>
-      {pedidos.map((pedido) => (
-        <tr key={pedido.id}>
-          <td>{pedido.id}</td>
-          <td>{pedido.waiter}</td>
-          <td>{pedido.client}</td>
-          <td>{pedido.table}</td>
-          <td>{pedido.status}</td>
-          <td>{pedido.dateEntry}</td>
-          <td>
-            <ul>
-              {pedido.products.map((item) => (
+    <>
+      <div className='lista-de-pedidos'>
+        {pedidosFiltrados.map((pedido) => (
+          <ul key={pedido.id}>
+            <li>ID do Pedido: {pedido.id} </li>
+            <li>Atendente: {pedido.waiter}</li>
+            <li>Cliente: {pedido.client} </li>
+            <li>Mesa: {pedido.table}</li>
+            <li>Data de Entrada: {pedido.dataEntry}</li>
+            <li>Produtos:
+
+            {pedido.products.map((item) => (
                 <li key={item.product.id}>
-                  {item.product.name}
+                  {item.product.name} - Quantidade: {item.qty}
                 </li>
               ))}
-            </ul>
-          </td>
-          <td>
-            <ul>
-              {pedido.products.map((item) => (
-                <li key={item.product.id}>
-                  {item.qty}
-                </li>
-              ))}
-            </ul>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-
-
+            </li>
+            <li>Status: {pedido.status}</li>
+            <li>{props}: {pedido.dateProcessed}</li>
+            {btnStatus}
+          </ul>
+        ))}
+        
+      </div>
+    </>
   );
 };
 
