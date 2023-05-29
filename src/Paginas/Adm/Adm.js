@@ -8,7 +8,7 @@ export default function Administracao() {
   return (
     <>
       <Header
-        msgBoasVindas='Olá, você está na seção de admnistração'
+        msgBoasVindas='Olá, você está na seção de administração'
       />
       <section className='telaAtendimento'>
         <nav className='botaoSair'>

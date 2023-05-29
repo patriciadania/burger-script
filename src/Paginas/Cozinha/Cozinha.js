@@ -14,7 +14,7 @@ export default function Cozinha() {
           <Link to='/' className='botaoSair'>Sair</Link>
         </nav>
         <MenuNavegacao
-          to='/'
+          to='/aguardandoentrega'
           texto='aguardando produção'
           imagemSrc='preparando-pedido.png'
         />
@@ -26,7 +26,7 @@ export default function Cozinha() {
         />
 
         <MenuNavegacao
-          to='/PedidosEntregues'
+          to='/pedidosentregues'
           texto='lista de pedidos'
           imagemSrc='lista.png'
         />

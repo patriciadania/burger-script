@@ -5,7 +5,7 @@ const CardTerminal = ({ children }) => {
   return (
     <div className="card-container">
       <div className="card">
-        <div className="tools">
+        <div className="ferramentas">
           <div className="circulos">
             <span className="c"></span>
             <span className="c"></span>

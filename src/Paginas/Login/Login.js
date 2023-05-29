@@ -4,15 +4,15 @@ import { Logo } from "../../componentes/Logo/Logo"
 import "./Login.css"
 
 
-function Login(){
-return (
-    <>
-    <Logo />
-   
-    <FormularioLogin />
-     
-    </>
-    
-)
+function Login() {
+    return (
+        <>
+            <Logo />
+
+            <FormularioLogin />
+
+        </>
+
+    )
 }
 export default Login

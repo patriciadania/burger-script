@@ -19,20 +19,20 @@
   
   }
 .nome-produto {
-    width: 100px; /* Defina o valor de largura máxima desejado */
-    white-space: nowrap; /* Impede a quebra de linha */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa a largura máxima */
-    text-overflow: ellipsis; /* Adiciona reticências (...) para indicar conteúdo cortado */
+    max-width: 100px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
     text-align: center;
   }
   .valor-produto{
-    width: 100px;
+    max-width: 100px;
   }
   .categoria-produto{
-    width: 130px;
+    max-width: 130px;
     text-align: center;
   }
   .tipo-refeicao{
-    width: 100px;
+    max-width: 100px;
   }
  

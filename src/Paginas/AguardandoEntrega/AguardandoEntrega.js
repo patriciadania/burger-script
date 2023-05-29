@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { obterPedidos} from '../../API/Pedidos';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import './AguardandoEntrega.css';
+import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 
 const AguardandoEntrega = () => {
   const [cliente, ] = useState('');
@@ -37,10 +38,10 @@ const AguardandoEntrega = () => {
         </Link>
       </nav>
 
-      <span className='aguardandoEntrega'>
-        aguardando entrega
-        <img src="../imagens/icones/relogio.png" alt="Icone de relogio" className="icones" />
-      </span>
+      <MenuNavegacao
+          texto='aguardando produção'
+          imagemSrc='preparando-pedido.png'
+        />
       <ListaPedidos pedidos={pedidos} />
 
       <nav>
