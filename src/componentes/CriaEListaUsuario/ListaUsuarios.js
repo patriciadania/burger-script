@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { listarUsuarios, editarUsuario, deletarUsuario} from "../../API/Usuarios";
 import BtnEditarUsuario from "../EditarDeletarUsuario/BtnEditarUsuario";
 import BtnDeletarUsuario from "../EditarDeletarUsuario/BtnDeletarUsuario";
+import MenuNavegacao from "../MenuNavegacao/MenuNavegacao";
 
 export default function ListaDeUsuarios() {
   const [usuarios, setUsuarios] = useState([]);
@@ -32,10 +33,8 @@ export default function ListaDeUsuarios() {
       delete usuarioAtualizado.editando;
   
       await editarUsuario(usuarioAtualizado.id, usuarioAtualizado);
-      console.log("Usuário salvo com sucesso");
+      alert("Dados alterados com sucesso")
       setEditandoUsuarioId(null);
-      // Atualizar a lista de usuários após salvar, se necessário
-      // obterUsuarios();
       window.location.reload();
     } catch (error) {
       console.error("Erro ao salvar usuário:", error);
@@ -60,7 +59,10 @@ export default function ListaDeUsuarios() {
           Voltar
         </Link>
       </nav>
-      <span className="fazerPedido">Listar colaboradores</span>
+      <MenuNavegacao
+                texto='listar colaboradores'
+                imagemSrc='lista.png'
+            />
       <div className="listaUsuarios">
         {usuarios.map((usuario) => (
           <div key={usuario.id} className="cardUsuario">

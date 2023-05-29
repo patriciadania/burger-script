@@ -17,7 +17,7 @@
     color: white;
     border-bottom: solid 2px white;
     box-sizing: border-box;
-    width: 200px;
+    max-width: 200px;
     margin-bottom: 2rem;
   }
   select:hover{

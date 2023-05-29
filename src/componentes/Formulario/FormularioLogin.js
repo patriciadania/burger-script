@@ -18,9 +18,6 @@ const FormularioLogin = () => {
 
         try {
             const loginUsuario = await login(email, senha)
-            console.log(loginUsuario)
-
-            // TODO: Redirecionar o usuário de acordo com o role.
             if (loginUsuario.user.role === 'Atendimento') {
                 navigate('/atendimento')
             }
@@ -33,8 +30,6 @@ const FormularioLogin = () => {
         } catch (error) {
             setErro(error.message);
         }
-
-
     }
 
     return (

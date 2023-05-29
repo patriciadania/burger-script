@@ -1,6 +1,7 @@
-// CriarUsuario.js
+
 import FormularioAdmin from "../Formulario/FormularioAdmin";
 import { Link } from "react-router-dom";
+import MenuNavegacao from "../MenuNavegacao/MenuNavegacao";
 
 export default function CriarUsuario() {
   return (
@@ -10,7 +11,11 @@ export default function CriarUsuario() {
           Voltar
         </Link>
       </nav>
-      <span className="fazerPedido">adicionar colaborador</span>
+      <MenuNavegacao
+                to='/addcolaborador'
+                texto='adicionar colaborador'
+                imagemSrc='adicionar-colaborador.png'
+            />
       <FormularioAdmin />
     </div>
   );

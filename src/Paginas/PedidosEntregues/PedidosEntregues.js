@@ -1,13 +1,12 @@
-import './PedidosEntregues.css'
 import { Link } from "react-router-dom";
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 
 export default function PedidosEntregues() {
     return (
-        <section className='telaPedidosEntregues'>
-            <nav>
-                        <Link to='/atendimento' className='botaoVoltar'>Voltar</Link>
+        <section className='telaFazerPedido'>
+            <nav className='botaoSair'>
+                        <Link to='/atendimento' className='botaoSair'>Voltar</Link>
             </nav>
             <MenuNavegacao
       to='/pedidosentregues'

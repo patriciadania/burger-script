@@ -32,7 +32,6 @@ const FazerPedido = () => {
         texto='registrar pedido'
         imagemSrc='fazer-pedido.png'
       />
-      
         <Cardapio manipularProdutoSelecionado={manipularProdutoSelecionado} />
         <ResumoPedido produtosSelecionados={produtosSelecionados} />
      

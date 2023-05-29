@@ -1,6 +1,4 @@
-
 import { Link } from 'react-router-dom';
-
 import './Atendimento.css'
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Footer from '../../componentes/Footer/Footer';
@@ -15,8 +13,6 @@ export default function Atendimento() {
       <nav className='botaoSair'>
         <Link to='/' className='botaoSair'>Sair</Link>
       </nav>
-
-
       <MenuNavegacao
         to='/fazerpedido'
         texto='registrar pedido'

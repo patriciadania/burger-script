@@ -15,7 +15,7 @@
  
   }
   
-  .tools {
+  .ferramentas {
     display: flex;
     justify-content: flex-start;
    
@@ -26,15 +26,6 @@
     align-items: center;
     gap: 8px;
   }
-  
-  .box {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 2px;
-  }
-  
- 
   
   .card__content {
     flex: 1;

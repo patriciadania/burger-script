@@ -20,11 +20,8 @@ const ResumoPedido = ({ produtosSelecionados }) => {
 
       const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
       console.log('Pedido registrado:', novoPedido);
-
-      // Limpar campos ou redirecionar para outra página, se necessário
     } catch (error) {
       console.error('Erro ao registrar pedido:', error);
-      // Lidar com o erro de acordo com a sua lógica de tratamento de erros
     }
   };
 

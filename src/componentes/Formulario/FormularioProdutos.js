@@ -41,8 +41,6 @@ const FormularioProdutos = () => {
   
     return (
         <section className="formulario">
-
-
             <form onSubmit={aoSalvar}>
             <CampoTexto
                     obrigatorio={true}
