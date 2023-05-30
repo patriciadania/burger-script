@@ -75,8 +75,7 @@ const ResumoPedido = ({ produtosSelecionados }) => {
                     <td></td>
                   </tr>
                 ))}
-              </tbody>
-              <tr>
+                   <tr>
                 <th className='th-total'>total</th>
                 <th className='th-total'></th>
                 <th className='th-total'>
@@ -89,6 +88,8 @@ const ResumoPedido = ({ produtosSelecionados }) => {
 
                 </th>
               </tr>
+              </tbody>
+           
             </table>
 
           </div>
