@@ -22,7 +22,7 @@
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .botaoSair{
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
     .icones{
       width: 5rem;
@@ -35,7 +35,7 @@
   
   @media only screen and (min-width: 1024px) {
     .botaoSair{
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
     .icones{
       width: 5rem;
