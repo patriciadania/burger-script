@@ -39,7 +39,7 @@ export const adicionarPedido = async (cliente, mesa,produtos) => {
           table: produto.table,
         },
       })),
-      status: '',
+      status: 'pendente',
       dateEntry: new Date().toISOString(),
       id: Math.floor(Math.random() * 1000),
     };
