@@ -7,21 +7,31 @@ import Botao from '../Botao/Botao';
 const ResumoPedido = ({ produtosSelecionados }) => {
   const [nomeCliente, setNomeCliente] = useState('');
   const [mesa, setMesa] = useState('');
-
+ 
   const enviarPedido = async () => {
-    try {
-      const produtos = produtosSelecionados.map((produto) => ({
-        id: produto.id,
-        name: produto.name,
-        quantity: produto.quantity,
-        total: produto.total,
-      }));
-      console.log(produtos)
+    if (nomeCliente && mesa && produtosSelecionados.length > 0) {
+      try {
+        const produtos = produtosSelecionados.map((produto) => ({
+          id: produto.id,
+          name: produto.name,
+          quantity: produto.quantity,
+          total: produto.total,
+        }));
 
-      const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
-      console.log('Pedido registrado:', novoPedido);
-    } catch (error) {
-      console.error('Erro ao registrar pedido:', error);
+        const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
+        console.log('Pedido registrado:', novoPedido);
+
+        setTimeout(() => {
+          setNomeCliente('');
+          setMesa('');
+          window.location.reload();
+        }, 1000);
+        alert('Pedido enviado com sucesso!');
+      } catch (error) {
+        console.error('Erro ao registrar pedido:', error);
+      }
+    } else {
+      alert('Preencha todos os campos do pedido antes de enviar.');
     }
   };
 
