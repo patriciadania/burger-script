@@ -12,7 +12,7 @@
     background-color: var(--azul-escuro);
     border-radius: 8px;
     padding: 10px;
- 
+    box-shadow: var(--sombra-destaque), var(--sombra-sombreada);
   }
   
   .ferramentas {
@@ -27,13 +27,6 @@
     gap: 8px;
   }
   
-  .card__content {
-    flex: 1;
-    width: 100%;
-  }
- 
-
-   
    .c {
     border-radius: 50%;
     box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);

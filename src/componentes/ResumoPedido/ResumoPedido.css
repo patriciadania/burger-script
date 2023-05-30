@@ -1,104 +1,118 @@
-
-  .infoPedido{
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    border: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .labelResumoPedido {
-    display: inline-block;
-    text-align: left;
-    flex-grow: 1;
-  }
-  .inputResumoPedido{
-    display: inline-block;
-    margin-bottom: 10px;
-    align-items: center;
-    background-color: transparent;
-    border:none;
-    color: white;
-  }
-  
-  .linha-resumo {
-    display: flex;
-   justify-content: left;
-  }
-  
-
-  table {
-    border-collapse: collapse;
-  }
-  
-  th, td {
-  
-    border-bottom: 1px solid #ddd;
-    white-space: nowrap;
-    justify-content: space-between;
-  }
- 
-  thead th {
-    background-color: rgb(34, 33, 33);
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #494848;
-  }
-  
-  tbody tr:hover {
-    background-color:#494848;
+.titulo-login{
+  color: var(--cor-da-fonte);
+  margin-bottom: 1rem;
+}
+ .chaves{
+  color: rgb(204, 167, 4);
+ }
+.container-label-input{
+    align-items: center; 
+    text-align: center;
   }
 
-  .th-total{
-    background-color: green;
+ .linha-label-input label{
+  color: rgb(204, 167, 4);
+ }
+.inputResumoPedido{
+max-width: 10rem;
+background-color: transparent;
+border-style: none;
+outline: none;
+color: var(--cor-da-fonte);
+border-bottom: 1px solid;
+}
+
+.conteudo-tabela-resumo {
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+  color: var(--nude);
+  text-align: center;
+}
+
+.tabela-resumo {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.tabela-resumo th,
+.tabela-resumo td {
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tabela-resumo th {
+  font-weight: bold;
+}
+
+.tabela-resumo tfoot th,
+.tabela-resumo tfoot td {
+  text-align: right;
+}
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  justify-content: space-between;
+  background-color: #494848;
+}
+
+thead th {
+  background-color: rgb(34, 33, 33);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #494848;
+}
+
+tbody tr:hover {
+  background-color:#494848;
+}
+
+.th-total{
+  background-color: green;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 600px) {
+  .conteudo-tabela-resumo {
+    overflow-x: auto;
   }
+
+  .tabela-resumo {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
   .conteudo-tabela-resumo{
-    display: flex;
-    justify-content: center;
-   align-items: center;
-   text-align: center;
-
+    font-size: 0.8em;
   }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
  
+}
 
-  @media only screen and (max-width: 767px) {
-    .conteudo-tabela-resumo{
-      max-width: 80px;
-      font-size: 13px;
-      border-collapse: collapse;
-    }
+@media only screen and (min-width: 1024px) {
 
+  .conteudo-tabela-resumo{
+    font-size: 1em;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .conteudo-tabela-resumo{
-      max-width: 80px;
-      font-size: 15px;
-      border-collapse: collapse;
-    }
+}
+
+@media only screen and (min-width: 1200px) {
+  .conteudo-tabela-resumo{
+    font-size: 1em;
   }
 
-  @media only screen and (min-width: 1024px) {
-    .container-resumo-pedido{
-      display: flex;
-  
-    }
-    .conteudo-tabela-resumo{
-      max-width: 200px;
-      width: 100%;
-      font-size: 17px;
-      border-collapse: collapse;
-    }
-  
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .container-resumo-pedido{
-      display: flex;
-    }
-    .conteudo-tabela-resumo{
-      max-width: 300px;
-    }
-
-  } 
+} 

@@ -24,13 +24,11 @@ const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
   }, [tipoProduto]);
 
   const incrementarContador = (produto) => {
-    manipularProdutoSelecionado(produto);
+    manipularProdutoSelecionado(produto, 'incrementar');
   };
 
   const decrementarContador = (produto) => {
-    if (produto.quantity > 0) {
-      manipularProdutoSelecionado({ ...produto, quantity: produto.quantity - 1 });
-    }
+    manipularProdutoSelecionado(produto, 'decrementar');
   };
 
 
@@ -53,7 +51,7 @@ const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
            
             <BtnIncrementaDecrementa
               incrementa={() => incrementarContador({ ...produto, quantity: (produto.quantity || 0) + 1 })}
-              decrement={() => decrementarContador({ ...produto, quantity: (produto.quantity > 1) - 1 })}
+              decrementa={() => decrementarContador({ ...produto, quantity: (produto.quantity > 1) - 1 })}
             />
           </ul>
         ))}

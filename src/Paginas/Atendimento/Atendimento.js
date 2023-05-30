@@ -31,7 +31,7 @@ export default function Atendimento() {
       
     </section>
     <Footer 
-    imagemSrc='../imagens/img-footer/3.png'
+    imagemSrc='../imagens/img-footer/1.png'
     imagemAlt='Banner atendimento'
     />
     </>

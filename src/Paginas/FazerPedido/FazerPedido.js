@@ -8,16 +8,32 @@ import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao'
 const FazerPedido = () => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
-  const manipularProdutoSelecionado = (produto) => {
+  const manipularProdutoSelecionado = (produto, operacao) => {
     const produtoSelecionado = produtosSelecionados.find(produtoSelecionado => produtoSelecionado.id === produto.id);
-    console.log(produtoSelecionado)
-    if (produtoSelecionado) {
-      produtoSelecionado.quantity++;
-      produtoSelecionado.total = produtoSelecionado.quantity * produtoSelecionado.price;
-    } else {
-      produto.total = produto.quantity * produto.price;
-      produtosSelecionados.push(produto)
+    console.log(operacao)
+
+    if (operacao === 'incrementar') {
+      if (produtoSelecionado) {
+        produtoSelecionado.quantity++;
+        produtoSelecionado.total = produtoSelecionado.quantity * produtoSelecionado.price;
+      } else {
+        produto.total = produto.quantity * produto.price;
+        produtosSelecionados.push(produto)
+      }
+    } else if (operacao === 'decrementar') {
+      if (produtoSelecionado) {
+        if (produtoSelecionado.quantity > 1) {
+          produtoSelecionado.quantity--;
+          produtoSelecionado.total = produtoSelecionado.quantity * produtoSelecionado.price;
+        } else {
+          const indexProdutoSelecionado = produtosSelecionados.indexOf(produtoSelecionado)
+          console.log(indexProdutoSelecionado);
+          produtosSelecionados.splice(indexProdutoSelecionado, 1);
+          console.log(produtosSelecionados)
+        }
+      }
     }
+
 
     setProdutosSelecionados([...produtosSelecionados]);
   };
@@ -32,9 +48,9 @@ const FazerPedido = () => {
         texto='registrar pedido'
         imagemSrc='fazer-pedido.png'
       />
-        <Cardapio manipularProdutoSelecionado={manipularProdutoSelecionado} />
-        <ResumoPedido produtosSelecionados={produtosSelecionados} />
-     
+      <Cardapio manipularProdutoSelecionado={manipularProdutoSelecionado} />
+      <ResumoPedido produtosSelecionados={produtosSelecionados} />
+
     </section>
   );
 };

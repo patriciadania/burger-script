@@ -27,7 +27,7 @@ export default function Cozinha() {
 
       </section>
       <Footer 
-    imagemSrc='../imagens/img-footer/4.png'
+    imagemSrc='../imagens/img-footer/3.png'
     imagemAlt='Banner cozinha'
     />
     </>

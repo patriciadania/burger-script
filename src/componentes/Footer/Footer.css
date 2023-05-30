@@ -1,8 +1,6 @@
 .img-footer{
-height: 20rem; 
-
+max-height: 20rem; 
 }
-footer{
+ footer{
     width:100%;
-  bottom: 0;
 }
