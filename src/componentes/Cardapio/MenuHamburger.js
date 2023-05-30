@@ -9,9 +9,11 @@ const MenuHamburger = ({ conteudo, tipoRefeicao, imagemSrc, imagemAlt}) => {
 
   return (
     <div className="menu-hamburger">
+      <div className='container-menu-fechado'>
       <img src={imagemSrc} className='img-tipo-refeicao' alt={imagemAlt} />
       <div className={`hamburger-icon ${menuAberto ? 'aberto' : ''}`} onClick={alternarMenu}>
-        <h2 className='titulo-tipo-refeicao'>{tipoRefeicao}</h2>
+      <h2 className='titulo-tipo-refeicao'>{tipoRefeicao}</h2>
+      </div>
       </div>
       <div className='manu-aberto'>
       {menuAberto && (
