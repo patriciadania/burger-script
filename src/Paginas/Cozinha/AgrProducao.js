@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
@@ -27,9 +27,9 @@ export default function AgrProducao() {
       <ListaPedidos
         status="pendente"
         props={'Data de envio'}
-        btnStatus={
-          <Botao onClick={concluirPedido}>concluído</Botao>
-        }
+        btnStatus={(pedido) => (
+          <Botao onClick={() => concluirPedido(pedido)}>concluído</Botao>
+        )}
       />
     </section>
   );
