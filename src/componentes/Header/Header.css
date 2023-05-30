@@ -1,120 +1,101 @@
-header{
-  text-align: left;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-header {
+.browser{
+    text-align: center;
+    flex-direction: column;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  header {
     background: var(--preto);
     overflow: hidden;
-    display: flex;
-   
    }
-   
-   
-   .circulos-btn,
-   .browser {
-    max-height: 30px;
-    display: flex;
-    align-items: center;
-   }
-   
-   
+
    .circulos-btn {
-    width: 20%;
-    gap: 8px;
-    padding: 10px;
-   }
-   
-   
-   .btn-ferramentas {
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
-   }
-   
-   
-   .btn-ferramentas:first-child {
-    background-color: red;
-   }
-   
-   
-   .btn-ferramentas:nth-child(2) {
-    background-color: rgb(204, 167, 4);
-   }
-   
-   
-   .btn-ferramentas:last-child {
-    background-color: var(--verde);
-   }
-   
-   
-   .browser {
-    width: 80%;
-    padding: 15px;
-    display: flex;
-    gap: 10px;
-   }
-   
-   
-   .msgBoasVindas{
+      max-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 20%;
+      gap: 8px;
+      padding: 10px;
+     }
+
+     .btn-ferramentas {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
+     }
+     
+     
+     .btn-ferramentas:first-child {
+      background-color: red;
+     }
+     
+     
+     .btn-ferramentas:nth-child(2) {
+      background-color: rgb(204, 167, 4);
+     }
+     
+     
+     .btn-ferramentas:last-child {
+      background-color: var(--verde);
+     }
+     .msgBoasVindas{
+      font-weight: lighter;
+      color: var(--verde);
+      font-family: lato;
+     }
+     
+    .terminal-cursor {
+      display: inline-flex;
+      height: 20px;
+      width: 5px;
+      animation: curbl 1200ms linear infinite;
+    }
+
+    @keyframes curbl {
     
-    font-size: 25px;
-    color: var(--verde);
-    font-family: lato;
-   }
-   
-  .terminal-cursor {
-    display: inline-flex;
-    height: 20px;
-    width: 5px;
-    animation: curbl 1200ms linear infinite;
-  }
-  
-  @keyframes curbl {
+      0% {
+        background: var(--cinza-claro);
+      }
     
-    0% {
-      background: var(--cinza-claro);
+      49% {
+          background: var(--cinza-claro);
+      }
+    
+      60% {
+        background: transparent;
+      }
+    
+      99% {
+        background: transparent;
+      }
+    
+      100% {
+          background: var(--cinza-claro);
+      }
+    } 
+
+    @media only screen and (max-width: 767px) {
+      .msgBoasVindas{
+        font-size: 1.2em;
+      }
     }
   
-    49% {
-        background: var(--cinza-claro);
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      .msgBoasVindas{
+        font-size: 1.5em;
+      }
     }
   
-    60% {
-      background: transparent;
+    @media only screen and (min-width: 1024px) {
+      .msgBoasVindas{
+        font-size: 1.8em;
+      }
     }
   
-    99% {
-      background: transparent;
-    }
-  
-    100% {
-        background: var(--cinza-claro);
-    }
-  } 
-
-  @media only screen and (max-width: 767px) {
-    .msgBoasVindas{
-      font-size: 1.2em;
-    }
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .msgBoasVindas{
-      font-size: 1.2em;
-    }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    .msgBoasVindas{
-      font-size: 1.8em;
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .msgBoasVindas{
-      font-size: 1.8em;
-    }
-  }
+    @media only screen and (min-width: 1200px) {
+      .msgBoasVindas{
+        font-size: 1.8em;
+      }
+    } 
