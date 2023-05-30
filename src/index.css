@@ -14,7 +14,7 @@ code {
 --azul-escuro: #011522;
 --sombra-destaque: 15px 15px 30px rgb(25, 25, 25);
 --sombra-sombreada: -15px -15px 30px rgb(60, 60, 60);
---gradiente: radial-gradient(circle, #1c3a32, #09100e, #142824, #111c1c, #14241c);
+--gradiente: linear-gradient(to left #1c3a32, #09100e, #142824, #111c1c, #14241c);
 --preto: #151515;
 
 }

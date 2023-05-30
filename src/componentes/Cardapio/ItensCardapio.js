@@ -37,17 +37,20 @@ const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
   const categoriasDisplay = Object.entries(categorias).map(([categoria, produtosDaCategoria]) => (
     <div key={categoria}>
       <div className='produtos-do-cardapio'>
-      <h3 className='titulo-categoria'>
+        <h3 className='titulo-categoria'>
         {categoria}
         </h3>
+  
         </div>
       <div className='container-dos-produtos'>
-      
         {produtosDaCategoria.map((produto) => (
           <ul key={produto.id} className='lista-itens-cardapio'>
             <img className='imagens-do-cardapio' src={produto.image} alt={produto.name} />
+            <div className='nome-preco'>
             <li>{produto.name}</li> 
             <li className='preco'>R$ {produto.price}</li>
+            </div>
+           
             <BtnIncrementaDecrementa
               incrementa={() => incrementarContador({ ...produto, quantity: (produto.quantity || 0) + 1 })}
               decrement={() => decrementarContador({ ...produto, quantity: (produto.quantity > 1) - 1 })}

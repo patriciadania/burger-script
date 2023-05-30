@@ -1,4 +1,4 @@
- 
+/*  
  .menu-hamburger{
   background: var(--nude);
   justify-content: center;
@@ -38,7 +38,6 @@ max-width: 400px;
  }
  .titulo-tipo-refeicao{
   color: var(--cinza-escuro);
-
  }
 
  @media only screen and (max-width: 767px) {
@@ -62,14 +61,115 @@ max-width: 400px;
 @media only screen and (min-width: 1200px) {
  
 }
+ */
 
-/* .lista-itens-cardapio{
+ .hamburger-icon{
   display: flex;
-  list-style: none;
-  color: white;
-  text-align: left;
- }
- .preco{
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+
+
+
+ .img-tipo-refeicao{
+  max-width: 20rem;
+  width: 100%;
+  justify-content: flex-start;
+ }
+
+ .nome-preco{
+  list-style: none;
+  display: inline-block;
   text-align: center;
- }  */
+}
+
+ .imagens-do-cardapio{
+  max-width: 8rem;
+  width: 100%;
+ }
+ .menu-hamburger{
+  background: var(--cinza-claro);
+  border-right: 2rem solid var(--cinza-claro);
+  max-width: 80%;
+  margin-bottom: 4rem;
+  box-shadow: var(--sombra-destaque), var(--sombra-sombreada);
+ }
+.container-menu-fechado{
+  display: flex;
+  text-align: center;
+}
+
+.titulo-categoria{
+  text-transform: uppercase;
+  margin: 1rem;
+  color: var(--cinza-escuro);
+  border-bottom: 3px solid;
+}
+.preco{
+  color: var(--verde);
+  font-weight: bold;
+}
+.titulo-tipo-refeicao{
+  color: var(--azul-escuro);
+  font-family: Georgia;
+}
+.container-dos-produtos{
+  border-bottom: 1rem solid var(--cinza-claro) ;
+}
+
+@media only screen and (max-width: 767px) {
+  .img-tipo-refeicao{
+    max-width: 10rem;
+   }
+   .container-dos-produtos{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    text-align: center;
+   }
+   .imagens-do-cardapio{
+    max-width: 5rem;
+    width: 100%;
+   }
+   .lista-itens-cardapio{
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .img-tipo-refeicao{
+    max-width: 10rem;
+   }
+  
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .img-tipo-refeicao{
+    max-width: 20rem;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+ 
+  .lista-itens-cardapio{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .container-dos-produtos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .titulo-tipo-refeicao{
+    font-size: 1.8em;
+  }
+  .nome-preco{
+    font-size: 20px;
+  }
+}
