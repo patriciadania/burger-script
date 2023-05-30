@@ -1,7 +1,7 @@
 .incluiExclui{
     white-space: nowrap;
     align-items: center;
-    background-color: gray;
+    background-color: var(--nude);
     border: none;
     color:#011522;
     font-weight: bold;
