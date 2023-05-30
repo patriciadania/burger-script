@@ -1,25 +1,29 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 
 export default function PedidosEntregues() {
-    return (
-        <section className='telaFazerPedido'>
-            <nav className='botaoSair'>
-                        <Link to='/atendimento' className='botaoSair'>Voltar</Link>
-            </nav>
-            <MenuNavegacao
-      to='/pedidosentregues'
-      texto='pedidos entregues'
-      imagemSrc='pedido-entregue.png'
+ 
+  return (
+    <section className="telaFazerPedido">
+      <nav className="botaoSair">
+        <Link to="/atendimento" className="botaoSair">
+          Voltar
+        </Link>
+      </nav>
+      <MenuNavegacao
+        to="/pedidosentregues"
+        texto="pedidos entregues"
+        imagemSrc="pedido-entregue.png"
       />
-        <ListaPedidos status="entregue" 
+      <ListaPedidos
+        status="pedido entregue"
         props={'Data de entrega'}
-        />
+        btnStatus={(pedido) => (
+            <span>PEDIDO ENTREGUE</span>
+        )}
+      />
     </section>
-        )
-
-
+  );
 }
-
-

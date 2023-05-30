@@ -42,7 +42,7 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
             </li>
             <li>Status: {pedido.status}</li>
             <li>{props}: {pedido.dateProcessed}</li>
-            {btnStatus}
+            {btnStatus(pedido)}
             
           </ul>
         ))}
