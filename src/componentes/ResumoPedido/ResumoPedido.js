@@ -1,105 +1,81 @@
-import './ResumoPedido.css';
-import CardTerminal from '../CardTerminal/CardTerminal';
-import { useState } from 'react';
-import { adicionarPedido } from '../../API/Pedidos';
-import Botao from '../Botao/Botao';
+import React, { useState, useEffect } from 'react';
+import { obterProdutos } from '../../API/Produtos';
+import BtnIncrementaDecrementa from '../BtnIncrementaDecrementa/index'
 
-const ResumoPedido = ({ produtosSelecionados }) => {
-  const [nomeCliente, setNomeCliente] = useState('');
-  const [mesa, setMesa] = useState('');
+const ItensCardapio = ({ tipoProduto, manipularProdutoSelecionado }) => {
+  const [produtos, setProdutos] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
-  const enviarPedido = async () => {
-    try {
-      const produtos = produtosSelecionados.map((produto) => ({
-        id: produto.id,
-        name: produto.name,
-        quantity: produto.quantity,
-        total: produto.total,
-      }));
-      console.log(produtos)
+  useEffect(() => {
+    const buscarProdutos = async () => {
+      try {
+        const produtosData = await obterProdutos();
+        const produtosFiltradosPorTipo = produtosData.filter(
+          (produto) => !tipoProduto || produto.type === tipoProduto
+        );
+        setProdutos(produtosFiltradosPorTipo);
+        const produtosAgrupadosPorCategoria = agruparPorCategoria(produtosFiltradosPorTipo);
+        setCategorias(produtosAgrupadosPorCategoria);
+      } catch (error) {
+      }
+    };
 
-      const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
-      console.log('Pedido registrado:', novoPedido);
-    } catch (error) {
-      console.error('Erro ao registrar pedido:', error);
-    }
+    buscarProdutos();
+  }, [tipoProduto]);
+
+  const incrementarContador = (produto) => {
+    manipularProdutoSelecionado(produto, 'incrementar');
   };
 
-  return (
-    <div className="container-resumo-pedido">
-      <CardTerminal>
-        <h2 className="titulo-login">
-          <span className="chaves">{"{"}</span>
-          <span className="titulo-login"> Resumo do Pedido </span>
-          <span className="chaves">{"}"}</span>
-        </h2>
+  const decrementarContador = (produto) => {
+    manipularProdutoSelecionado(produto, 'decrementar');
+  };
 
-        <div className="infoPedido">
-          <div className='linha-resumo'>
-            <label className="labelResumoPedido" htmlFor="mesa">
-              mesa:
-            </label>
-            <input
-              className="inputResumoPedido"
-              id="mesa"
-              value={mesa}
-              onChange={(e) => setMesa(e.target.value)}
-            />
-          </div>
-          <div className='linha-resumo'>
-            <label className="labelResumoPedido" htmlFor="cliente">
-              cliente:
-            </label>
-            <input
-              className="inputResumoPedido"
-              id="cliente"
-              value={nomeCliente}
-              onChange={(e) => setNomeCliente(e.target.value)}
-            />
-          </div>
-          <div className="conteudo-tabela-resumo">
-            <table >
-              <thead>
-                <tr>
-                  <th>Quantidade</th>
-                  <th>Descrição</th>
-                  <th>Valor</th>
-                </tr>
-              </thead>
-              <tbody>
-                {produtosSelecionados.map((produto) => (
-                  <tr key={produto.id}>
-                    <td>{produto.quantity}</td>
-                    <td>{produto.name}</td>
-                    <td>R$ {produto.total}</td>
-                    <td></td>
-                  </tr>
-                ))}
-                   <tr>
-                <th className='th-total'>total</th>
-                <th className='th-total'></th>
-                <th className='th-total'>
-                  R$  
-                  {produtosSelecionados.reduce((total, produto) => {
-                    total += (produto.quantity*produto.price);
-                    return total
-                  }, 0
-                  )}
 
-                </th>
-              </tr>
-              </tbody>
-           
-            </table>
-
-          </div>
+  const categoriasDisplay = Object.entries(categorias).map(([categoria, produtosDaCategoria]) => (
+    <div key={categoria}>
+      <div className='produtos-do-cardapio'>
+        <h3 className='titulo-categoria'>
+        {categoria}
+        </h3>
+  
         </div>
-        <Botao onClick={enviarPedido}>Enviar</Botao>
-      </CardTerminal>
+      <div className='container-dos-produtos'>
+        {produtosDaCategoria.map((produto) => (
+          <ul key={produto.id} className='lista-itens-cardapio'>
+            <img className='imagens-do-cardapio' src={produto.image} alt={produto.name} />
+            <div className='nome-preco'>
+            <li>{produto.name}</li> 
+            <li className='preco'>R$ {produto.price}</li>
+            </div>
+           
+            <BtnIncrementaDecrementa
+              incrementa={() => incrementarContador({ ...produto, quantity: (produto.quantity || 0) + 1 })}
+              decrementa={() => decrementarContador({ ...produto, quantity: (produto.quantity > 1) - 1 })}
+            />
+          </ul>
+        ))}
+
+      </div>
     </div>
-  );
+  ));
+
+  return <div className='container-produtos-pedido'>{categoriasDisplay}</div>;
 };
 
-export default ResumoPedido;
+const agruparPorCategoria = (produtos) => {
+  const categorias = {};
+  produtos.forEach((produto) => {
+    const categoria = categorias[produto.category];
 
+    if (!categoria) {
+      categorias[produto.category] = [produto];
+    } else {
+      categoria.push(produto);
+    }
+  });
 
+  return categorias;
+};
+
+export default ItensCardapio;

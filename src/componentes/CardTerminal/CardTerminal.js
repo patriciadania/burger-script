@@ -21,3 +21,5 @@ const CardTerminal = ({ children }) => {
 };
 
 export default CardTerminal;
+
+
