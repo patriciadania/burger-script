@@ -3,27 +3,33 @@ import CardTerminal from '../CardTerminal/CardTerminal';
 import { useState } from 'react';
 import { adicionarPedido } from '../../API/Pedidos';
 import Botao from '../Botao/Botao';
+import obterNomeUsuario from '../../API/Usuarios';
 
 const ResumoPedido = ({ produtosSelecionados }) => {
+  const nomeUsuario = obterNomeUsuario();
+  console.log(nomeUsuario)
   const [nomeCliente, setNomeCliente] = useState('');
   const [mesa, setMesa] = useState('');
+  const [nomeAtendente, setNomeAtendente] = useState(obterNomeUsuario());
  
   const enviarPedido = async () => {
     if (nomeCliente && mesa && produtosSelecionados.length > 0) {
       try {
         const produtos = produtosSelecionados.map((produto) => ({
           id: produto.id,
+          waiter: produto.userId,
           name: produto.name,
           quantity: produto.quantity,
           total: produto.total,
         }));
 
-        const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos);
+        const novoPedido = await adicionarPedido(nomeCliente, mesa, produtos, nomeAtendente);
         console.log('Pedido registrado:', novoPedido);
 
         setTimeout(() => {
           setNomeCliente('');
           setMesa('');
+          setNomeAtendente('');
           window.location.reload();
         }, 1000);
         alert('Pedido enviado com sucesso!');

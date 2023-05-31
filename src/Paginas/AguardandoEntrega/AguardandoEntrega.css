@@ -1,4 +1,4 @@
-.aguardandoEntrega{
+/* .aguardandoEntrega{
     color: rgba(255, 253, 253, 1);
     background-color: rgba(122, 113, 113, 0.5);
     margin-bottom: 5rem;
@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+} */
 .botaoVoltar{
     margin-top: 5rem;
     color: aliceblue;
@@ -33,7 +33,7 @@
     color: aliceblue;
 
 }
-.container-resumo-pedido{
+/* .container-resumo-pedido{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -42,7 +42,7 @@
     width: 100%;
     max-width: 35rem;
     margin: 0 auto;
-  }
+  } */
   
 
   @media only screen and (max-width: 767px) {

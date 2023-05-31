@@ -5,33 +5,42 @@ const pegarAuthToken = () => {
   return token;
 };
 
-const setAuthToken = (token) => {
-  if(token) {
+// const setAuthToken = (token) => {
+//   if(token) {
+//     localStorage.setItem('authToken', token);
+//     localStorage.setItem('userName', token.name);
+//   }
+// };
+
+const setAuthToken = (token, user) => {
+  if (token && user) {
     localStorage.setItem('authToken', token);
+    localStorage.setItem('user', JSON.stringify(user));
   }
 };
 
 
-export const login = async (email, password) => {
+export const login = async (email, password, name) => {
   const response = await fetch(`${API_URL}/login`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ email, password })
+    body: JSON.stringify({ email, password, name })
   });
-
   if (response.status === 400) {
     throw new Error('Senha incorreta ou usuário não cadastrado!');
   }
 
   const data = await response.json();
   const authToken = data.accessToken;
+  const user = data.user;
+  console.log(user)
 
 
-  setAuthToken(authToken);
-
+  setAuthToken(authToken, user);
   return data;
+
 };
 
 
@@ -130,3 +139,15 @@ export const editarUsuario = async (uid, novoUsuario) => {
 };
 
 
+const obterNomeUsuario = () => {
+  const authToken = localStorage.getItem('authToken');
+  const userData = localStorage.getItem('user');
+  const user = userData ? JSON.parse(userData) : null;
+
+  if (authToken && user && user.name) {
+    return user.name; // Retorna o nome do usuário
+  }
+
+  return null; // Retorna null caso o token, usuário ou nome do usuário não estejam disponíveis no localStorage
+};
+export default obterNomeUsuario;

@@ -1,45 +1,27 @@
-
-.titulo-lista-pedidos{
-    text-transform: uppercase;
-    padding: 10px;
-    margin-top: 1rem;
-}
-.dados-pedidos{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.lista-de-pedidos ul{
-    list-style: none;
-}
-
 .lista-de-pedidos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: white;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr, 1fr ));
+  gap: 20px;
+  justify-content: center;
+}
+
+.lista-de-pedidos ul {
+  list-style: none;
+  background-color: var(--cinza-claro);
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  padding: 20px;
+  box-sizing: border-box;
+  color: black;
   
-  .lista-de-pedidos ul {
-    list-style: none;
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lista-de-pedidos ul li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .lista-de-pedidos {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr, 1fr));
   }
-  
-  .lista-de-pedidos li {
-    margin-bottom: 5px;
-  }
-  
-  .lista-de-pedidos li:last-child {
-    margin-bottom: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .lista-de-pedidos ul {
-      width: 100%;
-    }
-  }
-  
+}
