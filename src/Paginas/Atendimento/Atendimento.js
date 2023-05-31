@@ -3,12 +3,15 @@ import './Atendimento.css'
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Footer from '../../componentes/Footer/Footer';
 import Header from '../../componentes/Header/Header';
+import obterNomeUsuario from '../../API/Usuarios';
 
 export default function Atendimento() {
+  const nomeUsuario = obterNomeUsuario();
+  console.log(nomeUsuario)
   return (
     <>
     <Header
-    msgBoasVindas='Olá, você está na seção de atendimento' />
+    msgBoasVindas={`Olá, ${nomeUsuario}`} />
     <section className='telaAtendimento'>
       <nav className='botaoSair'>
         <Link to='/' className='botaoSair'>Sair</Link>

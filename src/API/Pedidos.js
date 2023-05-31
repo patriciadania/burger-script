@@ -22,10 +22,11 @@ export const obterPedidos = async () => {
   return response.json();
 };
 
-export const adicionarPedido = async (cliente, mesa,produtos) => {
+export const adicionarPedido = async (cliente, mesa,produtos, atendente) => {
   const authToken = getAuthToken();
   try {
     const pedido = {
+      waiter: atendente,
       client: cliente,
       table: mesa,
       products: produtos.map((produto) => ({

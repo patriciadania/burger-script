@@ -11,13 +11,15 @@ const FormularioLogin = () => {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [erro, setErro] = useState('');
+    const [nome] = useState('');
 
     const aoSalvar = async (evento) => {
         evento.preventDefault()
         setErro('');
 
         try {
-            const loginUsuario = await login(email, senha)
+            const loginUsuario = await login(email, senha, nome)
+            console.log(loginUsuario)
             if (loginUsuario.user.role === 'Atendimento') {
                 navigate('/atendimento')
             }

@@ -25,6 +25,7 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
   return (
     <>
       <div className='lista-de-pedidos'>
+        
         {pedidosFiltrados.map((pedido) => (
           <ul key={pedido.id}>
             <li>ID do Pedido: {pedido.id} </li>
