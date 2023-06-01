@@ -3,6 +3,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr, 1fr ));
   gap: 20px;
   justify-content: center;
+
+
 }
 
 .lista-de-pedidos ul {
@@ -13,11 +15,12 @@
   padding: 20px;
   box-sizing: border-box;
   color: black;
-  
+ 
 }
 
 .lista-de-pedidos ul li {
   margin-bottom: 10px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 768px) {

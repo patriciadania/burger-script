@@ -21,7 +21,9 @@ export default function PedidosEntregues() {
         status="pedido entregue"
         props={'Data de entrega'}
         btnStatus={(pedido) => (
-            <span>PEDIDO ENTREGUE</span>
+          <button style={{ cursor: 'default', color: 'black' }} disabled>
+          <strong>PEDIDO ENTREGUE</strong>
+        </button>
         )}
       />
     </section>

@@ -5,13 +5,6 @@ const pegarAuthToken = () => {
   return token;
 };
 
-// const setAuthToken = (token) => {
-//   if(token) {
-//     localStorage.setItem('authToken', token);
-//     localStorage.setItem('userName', token.name);
-//   }
-// };
-
 const setAuthToken = (token, user) => {
   if (token && user) {
     localStorage.setItem('authToken', token);
