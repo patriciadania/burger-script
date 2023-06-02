@@ -13,29 +13,89 @@ import ListaDeColaboradores from "./componentes/CriaEListaUsuario/ListaUsuarios"
 import Produtos from "./Paginas/Adm/PagProdutos/Produtos";
 import AgrProducao from "./Paginas/Cozinha/AgrProducao";
 import PedidosProntos from "./Paginas/Cozinha/PedidosProntos";
+import { Navigate } from "react-router-dom";
+import { verificarAutenticacao } from "./Autenticação/Auth";
+
+
+const PrivateRoute = ({ children, roles }) => {
+  try {
+    const user = verificarAutenticacao();
+
+    if (roles && !roles.includes(user.role)) {
+      return <Navigate to="/" />;
+    }
+
+    return children
+  } catch (error) {
+    return <Navigate to="/" />;
+  }
+}
 
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route index element={<Login />} />
-      <Route path="/atendimento" element={<Atendimento />} />
-      <Route path="/cozinha" element={<Cozinha />} />
-      <Route path="/administracao" element={<Administracao />} />
-      <Route path="/fazerpedido" element={<FazerPedido />} />
-      <Route path= "/aguardandoentrega" element={<AguardandoEntrega/>}/>
-      <Route path= "/pedidosentregues" element={<PedidosEntregues/>}/>
-      <Route path="/colaboradores" element={<Colaboradores /> } />
-      <Route path="/addcolaborador" element={<CriarUsuario /> } />
-      <Route path="/listacolaboradores" element={<ListaDeColaboradores /> } />
-      <Route path="/produtos" element={<Produtos /> } />
-      <Route path="/aguardandoproducao" element={<AgrProducao /> } />
-      <Route path="/pedidosprontos" element={<PedidosProntos /> } />
+      <Routes>
+        <Route index element={<Login />} />
+        <Route path="/atendimento" element={
+          <PrivateRoute roles={["Atendimento"]}>
+            <Atendimento />
+          </PrivateRoute>
+        } />
 
-    </Routes>
+        <Route path="/cozinha" element={
+          <PrivateRoute roles={["Cozinha"]}>
+            <Cozinha />
+          </PrivateRoute>
+        } />
+        <Route path="/administracao" element={
+          <PrivateRoute roles={["Administração"]}>
+          <Administracao/>
+        </PrivateRoute>
+        }/>
+        <Route path="/fazerpedido" element={
+          <PrivateRoute roles={["Atendimento"]}>
+          <FazerPedido />
+        </PrivateRoute>
+      } />
+        <Route path="/aguardandoentrega" element={
+          <PrivateRoute roles={["Atendimento"]}>
+          <AguardandoEntrega />
+        </PrivateRoute>
+      } /> 
+        <Route path="/pedidosentregues" element={
+          <PrivateRoute roles={["Atendimento"]}>
+          <PedidosEntregues />
+        </PrivateRoute>
+      } />
+        <Route path="/colaboradores" element={
+          <PrivateRoute roles={["Administração"]}>
+          <Colaboradores/>
+        </PrivateRoute>} />
+        <Route path="/addcolaborador" element={
+          <PrivateRoute roles={["Administração"]}>
+          <CriarUsuario/>
+        </PrivateRoute>} />
+        <Route path="/listacolaboradores" element={
+          <PrivateRoute roles={["Administração"]}>
+          <ListaDeColaboradores/>
+        </PrivateRoute>} />
+        <Route path="/produtos" element={
+          <PrivateRoute roles={["Administração"]}>
+          <Produtos/>
+        </PrivateRoute>} />
+        <Route path="/aguardandoproducao" element={
+          <PrivateRoute roles={["Cozinha"]}>
+          <AgrProducao />
+        </PrivateRoute>} />
+        <Route path="/pedidosprontos" element={
+          <PrivateRoute roles={["Cozinha"]}>
+          <PedidosProntos />
+        </PrivateRoute>} />
+
+      </Routes>
     </BrowserRouter>
-    
+
   )
 }
 
