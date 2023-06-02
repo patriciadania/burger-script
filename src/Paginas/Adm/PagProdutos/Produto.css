@@ -80,7 +80,9 @@ background: var(--azul-escuro);
 color: var(--cor-da-fonte);
  }
 
-
+.icone-deletar{
+ color: rgb(204, 167, 4);
+}
  .tabela-produtos-itens:nth-child(even) {
   background-color: var(--cinza-medio);
 }

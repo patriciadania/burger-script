@@ -1,3 +1,42 @@
+// const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
+
+// const pegarAuthToken = () => {
+//   const token = localStorage.getItem('authToken');
+//   return token;
+// };
+
+// const setAuthToken = (token, user) => {
+//   if (token && user) {
+//     localStorage.setItem('authToken', token);
+//     localStorage.setItem('user', JSON.stringify(user));
+//   }
+// };
+
+
+// export const login = async (email, password, name) => {
+//   const response = await fetch(`${API_URL}/login`, {
+//     method: "POST",
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ email, password, name })
+//   });
+//   if (response.status === 400) {
+//     throw new Error('Senha incorreta ou usuário não cadastrado!');
+//   }
+
+//   const data = await response.json();
+//   const authToken = data.accessToken;
+//   const user = data.user;
+//   console.log(user)
+
+
+//   setAuthToken(authToken, user);
+//   return data;
+
+// };
+
+
 const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
 
 const pegarAuthToken = () => {
@@ -11,7 +50,6 @@ const setAuthToken = (token, user) => {
     localStorage.setItem('user', JSON.stringify(user));
   }
 };
-
 
 export const login = async (email, password, name) => {
   const response = await fetch(`${API_URL}/login`, {
@@ -28,12 +66,19 @@ export const login = async (email, password, name) => {
   const data = await response.json();
   const authToken = data.accessToken;
   const user = data.user;
-  console.log(user)
-
+  console.log(user);
 
   setAuthToken(authToken, user);
-  return data;
 
+  const expirationTime = new Date(user.exp * 1000); // converter timestamp para milissegundos
+  const currentTime = new Date();
+  const timeRemaining = expirationTime - currentTime;
+
+  const timeRemainingMinutes = Math.floor(timeRemaining / 60000); // converter milissegundos para minutos
+
+  console.log('Duração do token de acesso:', timeRemainingMinutes, 'minutos');
+
+  return data;
 };
 
 

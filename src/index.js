@@ -4,7 +4,6 @@ import './index.css';
 import AppRoutes from './Rotas';
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
