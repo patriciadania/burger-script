@@ -11,5 +11,6 @@ describe('CardTerminal', () => {
     const cardContent = getByText('Conteúdo do card');
     expect(cardContent).toBeInTheDocument();
   });
+  
 });
 

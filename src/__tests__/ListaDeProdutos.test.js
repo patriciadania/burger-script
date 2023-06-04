@@ -5,6 +5,8 @@ import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import ListaDeProdutos from '../Paginas/Adm/PagProdutos/ListaDeProdutos';
 import { obterProdutos } from '../API/Produtos';
+import '@testing-library/jest-dom/extend-expect'; 
+
 
 jest.mock('../API/Produtos');
 

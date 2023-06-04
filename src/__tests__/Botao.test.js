@@ -1,12 +1,23 @@
-import { render, screen } from "@testing-library/react";
+/* eslint-disable testing-library/prefer-screen-queries */
+import { render, fireEvent } from "@testing-library/react";
 import Botao from '../componentes/Botao/Botao.js'
 import React from "react";
 import '@testing-library/jest-dom/extend-expect'; 
 
-describe("Botao", () => {
-  it("se está renderizando corretamente", () => {
-    render(<Botao>acessar</Botao>);
-    const elementoBotao = screen.getByRole('button');
-    expect(elementoBotao).toBeInTheDocument();
-  });
+
+
+test('renderiza o componente Botao corretamente', () => {
+  const onClickMock = jest.fn();
+
+  const { getByText } = render(
+    <Botao onClick={onClickMock}>
+      Clique aqui
+    </Botao>
+  );
+
+  const botao = getByText('Clique aqui');
+  expect(botao).toBeInTheDocument();
+
+  fireEvent.click(botao);
+  expect(onClickMock).toHaveBeenCalledTimes(1);
 });

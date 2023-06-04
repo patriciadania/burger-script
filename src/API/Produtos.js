@@ -45,4 +45,5 @@ export const obterProdutos = async () => {
   } catch (error) {
     throw error;
   }
+  
 };

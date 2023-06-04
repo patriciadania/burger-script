@@ -14,5 +14,6 @@ describe("CampoTexto", () => {
       expect(aoAlteradoMock).toHaveBeenCalledTimes(1);
       expect(aoAlteradoMock).toHaveBeenCalledWith('valor de teste');
     });
+    
   });
   
