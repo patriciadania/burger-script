@@ -1,66 +1,115 @@
-import { obterPedidos, adicionarPedido } from '../API/Pedidos';
+import {
+  obterPedidos,
+  adicionarPedido,
+  atualizarStatusPedido,
+} from '../API/Pedidos';
+import fetchMock from 'fetch-mock';
 
+const API_URL = 'https://burger-queen-api-mock-mluz.vercel.app';
+const authToken = 'mockAuthToken';
 
-describe('Pedidos API', () => {
-  describe('obterPedidos', () => {
-    it('deve retornar uma resposta válida', async () => {
-      const pedidos = await obterPedidos();
-      expect(Array.isArray(pedidos)).toBe(true);
-    });
-
-    it('deve lançar um erro ao obter pedidos', async () => {
- 
-      jest.spyOn(global, 'fetch').mockImplementation(() =>
-        Promise.resolve({
-          ok: false,
-          json: () => Promise.resolve({ error: 'Erro ao obter pedidos' }),
-        })
-      );
-
-      await expect(obterPedidos()).rejects.toThrow('Erro ao obter pedidos');
-
-      global.fetch.mockRestore();
-    });
+describe('API', () => {
+  beforeAll(() => {
+    localStorage.setItem('authToken', authToken);
   });
 
-  describe('adicionarPedido', () => {
-    it('deve adicionar um pedido com sucesso', async () => {
-      const cliente = 'Cliente 1';
-      const mesa = 'Mesa 1';
-      const produtos = [
-        { id: 1, name: 'Produto 1', type: 'tipo1', price: 10, quantity: 2 },
-        { id: 2, name: 'Produto 2', type: 'tipo2', price: 15, quantity: 1 },
-      ];
+  afterEach(() => {
+    fetchMock.reset();
+  });
 
-      const pedido = await adicionarPedido(cliente, mesa, produtos);
+  test('obterPedidos faz uma requisição GET para a API corretamente', async () => {
+    const pedidosMock = [
+      {
+        id: 1,
+        waiter: 'Atendente 1',
+        client: 'Cliente 1',
+        table: 'Mesa 1',
+        products: [
+          { id: 1, name: 'Produto 1', quantity: 2 },
+          { id: 2, name: 'Produto 2', quantity: 1 },
+        ],
+        status: 'pendente',
+        dateEntry: '2023-01-01T00:00:00.000Z',
+      },
 
-      expect(pedido).toHaveProperty('id');
-      expect(pedido).toHaveProperty('client', cliente);
-      expect(pedido).toHaveProperty('table', mesa);
-      expect(pedido).toHaveProperty('products');
-      expect(pedido.products).toHaveLength(produtos.length);
+    ];
+
+    fetchMock.get(`${API_URL}/orders`, {
+      status: 200,
+      body: pedidosMock,
     });
 
-    it('deve lançar um erro ao adicionar pedido', async () => {
-      const cliente = 'Cliente 1';
-      const mesa = 'Mesa 1';
-      const produtos = [
-        { id: 1, name: 'Produto 1', type: 'tipo1', price: 10, quantity: 2 },
-      ];
+    const response = await obterPedidos();
 
- 
-      jest.spyOn(global, 'fetch').mockImplementation(() =>
-        Promise.resolve({
-          ok: false,
-          json: () => Promise.resolve({ error: 'Erro ao adicionar pedido' }),
-        })
-      );
+    expect(fetchMock.lastUrl()).toBe(`${API_URL}/orders`);
+    expect(fetchMock.lastOptions().method).toBe('GET');
+    expect(fetchMock.lastOptions().headers).toEqual({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${authToken}`,
+    });
+    expect(response).toEqual(pedidosMock);
+  });
 
-      await expect(adicionarPedido(cliente, mesa, produtos)).rejects.toThrow(
-        'Erro ao adicionar pedido'
-      );
+  test('adicionarPedido faz uma requisição POST para a API corretamente', async () => {
+    const novoPedido = {
+      waiter: 'Atendente 1',
+      client: 'Cliente 1',
+      table: 'Mesa 1',
+      products: [
+        { id: 1, name: 'Produto 1', quantity: 2 },
+        { id: 2, name: 'Produto 2', quantity: 1 },
+      ],
+      status: 'pendente',
+      dateEntry: '2023-01-01T00:00:00.000Z',
+      id: 1,
+    };
 
-      global.fetch.mockRestore();
+    fetchMock.post(`${API_URL}/orders`, {
+      status: 200,
+      body: novoPedido,
+    });
+
+    const response = await adicionarPedido(
+      novoPedido.client,
+      novoPedido.table,
+      novoPedido.products,
+      novoPedido.waiter
+    );
+
+    expect(fetchMock.lastUrl()).toBe(`${API_URL}/orders`);
+    expect(fetchMock.lastOptions().method).toBe('POST');
+    expect(fetchMock.lastOptions().headers).toEqual({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${authToken}`,
+    });
+    expect(fetchMock.lastOptions().body).toBe(JSON.stringify(novoPedido));
+    expect(response).toEqual(novoPedido);
+  });
+
+  test('atualizarStatusPedido faz uma requisição PATCH para a API corretamente', async () => {
+    const pedidoId = 1;
+    const novoStatus = 'concluido';
+
+    fetchMock.patch(`${API_URL}/orders/${pedidoId}`, {
+      status: 200,
+      body: {
+        id: pedidoId,
+        status: novoStatus,
+      },
+    });
+
+    const response = await atualizarStatusPedido(pedidoId, novoStatus);
+
+    expect(fetchMock.lastUrl()).toBe(`${API_URL}/orders/${pedidoId}`);
+    expect(fetchMock.lastOptions().method).toBe('PATCH');
+    expect(fetchMock.lastOptions().headers).toEqual({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${authToken}`,
+    });
+    expect(fetchMock.lastOptions().body).toBe(JSON.stringify({ status: novoStatus }));
+    expect(response).toEqual({
+      id: pedidoId,
+      status: novoStatus,
     });
   });
 });

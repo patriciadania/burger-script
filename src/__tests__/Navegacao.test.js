@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Navegacao from '../componentes/Navegacao/Navegacao';
 import '@testing-library/jest-dom/extend-expect';
 
-
 describe('Navegacao', () => {
   test('deve renderizar corretamente', () => {
     render(

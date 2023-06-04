@@ -275,4 +275,5 @@ describe('API de Usuários', () => {
       await expect(editarUsuario(usuarioId, novoUsuario)).rejects.toThrow('Erro ao editar o usuário');
     });
   });
+  
 });

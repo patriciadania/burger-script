@@ -4,38 +4,72 @@ import { render, fireEvent } from '@testing-library/react';
 import BtnIncrementaDecrementa from '../componentes/BtnIncrementaDecrementa';
 import '@testing-library/jest-dom/extend-expect';
 
-test('Incrementa corretamente ao clicar no botão de incremento', () => {
-  const incrementMock = jest.fn();
+
+test('incrementa o contador ao clicar no botão +', () => {
+  const incrementaMock = jest.fn();
+  const decrementaMock = jest.fn();
+
   const { getByText } = render(
-    <BtnIncrementaDecrementa increment={incrementMock} />
+    <BtnIncrementaDecrementa incrementa={incrementaMock} decrementa={decrementaMock} />
   );
 
-  const incrementButton = getByText('+');
-  fireEvent.click(incrementButton);
+  const botaoIncrementa = getByText('+');
+  expect(botaoIncrementa).toBeInTheDocument();
 
-  expect(incrementMock).toHaveBeenCalledTimes(1);
+  fireEvent.click(botaoIncrementa);
+  expect(incrementaMock).toHaveBeenCalledTimes(1);
 });
 
-test('Decrementa corretamente ao clicar no botão de decremento', () => {
-  const incrementMock = jest.fn();
+test('decrementa o contador ao clicar no botão -', () => {
+  const incrementaMock = jest.fn();
+  const decrementaMock = jest.fn();
+
   const { getByText } = render(
-    <BtnIncrementaDecrementa increment={incrementMock} />
+    <BtnIncrementaDecrementa incrementa={incrementaMock} decrementa={decrementaMock} />
   );
 
-  const decrementButton = getByText('-');
-  fireEvent.click(decrementButton);
+  const botaoDecrementa = getByText('-');
+  expect(botaoDecrementa).toBeInTheDocument();
 
-  expect(incrementMock).not.toHaveBeenCalled();
+  fireEvent.click(botaoDecrementa);
+  expect(decrementaMock).toHaveBeenCalledTimes(1);
 });
 
-test('Não decrementa abaixo de zero', () => {
-  const incrementMock = jest.fn();
+test('não decrementa o contador abaixo de zero', () => {
+  const incrementaMock = jest.fn();
+  const decrementaMock = jest.fn();
+
   const { getByText } = render(
-    <BtnIncrementaDecrementa increment={incrementMock} />
+    <BtnIncrementaDecrementa incrementa={incrementaMock} decrementa={decrementaMock} />
   );
 
-  const decrementButton = getByText('-');
-  fireEvent.click(decrementButton);
+  const botaoDecrementa = getByText('-');
+  expect(decrementaMock).toHaveBeenCalledTimes(1);
 
-  expect(incrementMock).not.toHaveBeenCalled();
+  fireEvent.click(botaoDecrementa);
+  expect(decrementaMock).toHaveBeenCalledTimes(1); 
 });
+
+test('exibe o valor correto do contador', () => {
+  const incrementaMock = jest.fn();
+  const decrementaMock = jest.fn();
+
+  const { getByText } = render(
+    <BtnIncrementaDecrementa incrementa={incrementaMock} decrementa={decrementaMock} />
+  );
+
+  const contador = getByText('0');
+  expect(contador).toBeInTheDocument();
+
+ 
+  const botaoIncrementa = getByText('+');
+  fireEvent.click(botaoIncrementa);
+  expect(contador.textContent).toBe('1');
+
+  
+  const botaoDecrementa = getByText('-');
+  fireEvent.click(botaoDecrementa);
+  expect(contador.textContent).toBe('0');
+
+});
+
