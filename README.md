@@ -36,4 +36,39 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 </div>
  
 ***
+## Índice
+
+* [1. Definição de Produto](#1-definicao-de-produto) 🗒️
+* [2. Histórias de Usuários](#2-historias-de-usuarios) 📌
+* [3. Protótipo Versão Desktop](#3-prototipo-versao-desktop) 📽️
+* [4. Protótipo Versão Mobile](#4-prototipo-versao-mobile) 📽️
+* [5. Interface](#5-interface)💻
+* [6. Testes](#6-testes) 📊
+* [7. Checklists de Objetivos Alcançados](#7-checklist-de-objetivos-alcançados) 🏆
+
+***
+## 1. Definição de Produto 🗒️
+O projeto Burger Script é um pequeno restaurante de hambúrgueres que está crescendo e necessita de uma interface em que se possa realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
+
+Este projeto tem duas áreas: a interface (cliente) e a API (servidor). A interface está sendo desenvolvida utilizando o framework React.
+
+As informações do cliente são as seguintes:
+
+-  Temos 2 menus: um para o café da manhã e outro para o restante do dia.
+-  Os clientes podem ser indecisos e mudar o pedido várias vezes antes de finalizá-lo.
+-  A interface deve mostrar os dois menus, permitir a seleção de produtos e mostrar o resumo do pedido com o custo total.
+-  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface.
+
+***
+## 2. Histórias de Usuários 📝
+De acordo com os requisitos do projeto e cenário escolhido para o desenvolvimento da aplicação, na imagem abaixo se encontra as histórias de usuários.
+
+<div align="center">
+  <img alt="tela das historias de usuarios" src="https://github.com/patriciadania/burger-script/assets/120285942/089860ed-c7f5-4042-82ed-95adb68a2f54"/><br>
+  Tela 1: Histórias de usuários.
+</div>
+
+
+***
+<br>
 Em construção :construction:
