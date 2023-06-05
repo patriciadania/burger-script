@@ -5,8 +5,6 @@ import ModeEditTwoToneIcon from '@mui/icons-material/ModeEditTwoTone';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-
-
 const ListaDeProdutos = (props) => {
   const { tipoProduto } = props;
   const [produtos, setProdutos] = useState([]);

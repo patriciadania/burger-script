@@ -6,6 +6,7 @@ import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import { atualizarStatusPedido } from '../../API/Pedidos';
 import Botao from '../../componentes/Botao/Botao';
 
+
 const customStyles = {
   content: {
     top: '50%',
