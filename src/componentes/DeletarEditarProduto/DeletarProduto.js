@@ -15,6 +15,7 @@ export default function DeletarProduto({ produto, onDelete }) {
   };
 
   const executarDelecaoProduto = async () => {
+    console.log(executarDelecaoProduto)
     try {
       await onDelete(produto.id);
       alert("Produto deletado com sucesso");
