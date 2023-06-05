@@ -1,0 +1,32 @@
+.btn-deletar-produto{
+  background-color: transparent;
+  border-style: none;
+  width: 50px;
+  cursor: pointer;
+  color: var(--cinza-claro);
+}
+.btn-deletar-produto:hover{
+  color:var(--verde);
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  max-width: 50rem;
+  gap: 3rem;
+}
+.modal-buttons{
+  max-width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.modal-buttons button{
+  margin-bottom: 1rem;
+  background-color: var(--cinza-claro);
+  border: 3px solid var(--cinza-claro);
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}

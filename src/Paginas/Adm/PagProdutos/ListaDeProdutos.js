@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { obterProdutos } from '../../../API/Produtos';
+import { obterProdutos, deletarProduto } from '../../../API/Produtos';
 import './Produto.css';
 import ModeEditTwoToneIcon from '@mui/icons-material/ModeEditTwoTone';
-import DeleteIcon from '@mui/icons-material/Delete';
-
-
-
+import DeletarProduto from '../../../componentes/DeletarEditarProduto/DeletarProduto';
 
 const ListaDeProdutos = (props) => {
   const { tipoProduto } = props;
@@ -20,9 +17,18 @@ const ListaDeProdutos = (props) => {
         console.error(error);
       }
     };
-
     buscarProdutos();
   }, []);
+
+  const onDelete= async (id) => {
+    try {
+      await deletarProduto(id);
+      
+      window.location.reload();
+    } catch (error) {
+      console.error("Erro ao deletar Produto:", error);
+    }
+  };
 
   return (
     <div className='tabela-produtos'>
@@ -45,8 +51,15 @@ const ListaDeProdutos = (props) => {
               <span className='tabela-produtos-direita'>R$ {produto.price}</span>
               <span>{produto.qty}</span>
               <span className='icone-deletar'>
-                <ModeEditTwoToneIcon />
-               <DeleteIcon />
+                <ModeEditTwoToneIcon 
+               
+                />
+               
+                <DeletarProduto 
+                produto={produto}
+                onDelete={() => onDelete(produto.id)}
+                />
+               
 
                 </span>
 
