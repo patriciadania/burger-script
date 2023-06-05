@@ -24,41 +24,37 @@ export const login = async (email, password, name) => {
     throw new Error('Senha incorreta ou usuário não cadastrado!');
   }
 
+
   const data = await response.json();
   const authToken = data.accessToken;
   const user = data.user;
-  console.log(user);
-
   setAuthToken(authToken, user);
-
-  const expirationTime = new Date(user.exp * 1000); // converter timestamp para milissegundos
-  const currentTime = new Date();
-  const timeRemaining = expirationTime - currentTime;
-
-  const timeRemainingMinutes = Math.floor(timeRemaining / 60000); // converter milissegundos para minutos
-
-  console.log('Duração do token de acesso:', timeRemainingMinutes, 'minutos');
 
   return data;
 };
 
 
 export const criarUsuario = async (nome, email, password, role) => {
-      const response = await fetch(`${API_URL}/users`, {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ 
-              name: nome,
-              email: email,
-               password: password, 
-               role: role })
-      });
-      if (!response.ok) {
-          throw new Error('Erro ao criar o usuário');
-        }
+  const response = await fetch(`${API_URL}/users`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: nome,
+      email: email,
+      password: password,
+      role: role
+    })
+  });
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error('O token expirou, faça login novamente!');
+    }
+    throw new Error('Erro ao criar o usuário');
   }
+}
 
 export const listarUsuarios = async () => {
   try {
@@ -77,6 +73,9 @@ export const listarUsuarios = async () => {
     });
 
     if (!response.ok) {
+      if(response.status === 401) {
+        throw new Error('O token expirou, faça login novamente!');
+      }
       throw new Error('Erro ao obter usuários');
     }
 
@@ -103,6 +102,9 @@ export const deletarUsuario = async (id) => {
     });
 
     if (!response.ok) {
+      if(response.status === 401) {
+        throw new Error('O token expirou, faça login novamente!');
+      }
       throw new Error('Erro ao deletar usuário');
     }
   } catch (error) {
@@ -128,6 +130,9 @@ export const editarUsuario = async (uid, novoUsuario) => {
     });
 
     if (!response.ok) {
+      if(response.status === 401) {
+        throw new Error('O token expirou, faça login novamente!');
+      }
       throw new Error('Erro ao editar o usuário');
     }
     const respostaApi = await response.json();
@@ -144,9 +149,9 @@ const obterNomeUsuario = () => {
   const user = userData ? JSON.parse(userData) : null;
 
   if (authToken && user && user.name) {
-    return user.name; // Retorna o nome do usuário
+    return user.name;
   }
 
-  return null; // Retorna null caso o token, usuário ou nome do usuário não estejam disponíveis no localStorage
+  return null;
 };
 export default obterNomeUsuario;
