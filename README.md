@@ -64,10 +64,64 @@ As informações do cliente são as seguintes:
 De acordo com os requisitos do projeto e cenário escolhido para o desenvolvimento da aplicação, na imagem abaixo se encontra as histórias de usuários.
 
 <div align="center">
-  <img alt="tela das historias de usuarios" src="https://github.com/patriciadania/burger-script/assets/120285942/089860ed-c7f5-4042-82ed-95adb68a2f54"/><br>
+  <img alt="tela das historias de usuarios" src="https://github.com/patriciadania/burger-script/assets/120285942/821aafaa-fe00-47d1-a2d1-ccfebb83d275"/><br>
   Tela 1: Histórias de usuários.
-</div>
+  </div>
 
+  ***
+##### Historia de usuario 1  
+O que deve acontecer para satisfazer as necessidades do usuário?<br>
+
+  - Acessar uma tela de login.
+  - Inserir email e senha.
+  - Receber mensagens de erros compreensíveis, conforme o erro e as informações inseridas.
+  - Entrar no sistema de pedidos caso as credenciais forem corretas. 
+  ***
+
+##### História de usuário 2
+O que deve acontecer para satisfazer as necessidades do usuário?  <br>
+
+- Anotar o nome do cliente.
+- Adicionar produtos aos pedidos.
+- Excluir produtos.
+- Ver resumo e o total da compra.
+- Enviar o pedido para a cozinha (guardar em algum banco de dados).
+- Funcionar bem em um tablet.
+
+
+***
+##### História de usuário 3
+O que deve acontecer para satisfazer as necessidades do usuário?  <br>
+
+* Ver os pedidos ordenados à medida em que são feitos.
+* Marcar os pedidos que foram preparados e estão prontos para serem servidos.
+* Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado
+  como concluído
+
+
+***
+##### História de usuário 4
+O que deve acontecer para satisfazer as necessidades do usuário?  <br>
+
+* Ver a lista de pedidos prontos para servir.
+* Marcar os pedidos que foram entregues.
+
+
+***
+##### História de usuário 5
+O que deve acontecer para satisfazer as necessidades do usuário?  <br>
+* Ver lista de funcionários.
+* Adicionar funcionários.
+* Excluir funcionários.
+* Atualizar dados dos funcionários.
+
+***
+##### História de usuário 6
+O que deve acontecer para satisfazer as necessidades do usuário?  <br>
+* Ver lista de produtos.
+* Adicionar produtos.
+* Excluir produtos.
+* Atualizar dados de produtos.
 
 ***
 <br>
