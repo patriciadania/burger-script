@@ -21,6 +21,7 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root');
+
 const ResumoPedido = ({ produtosSelecionados }) => {
   const nomeUsuario = obterNomeUsuario();
   console.log(nomeUsuario)

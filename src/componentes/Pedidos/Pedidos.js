@@ -4,7 +4,6 @@ import './Pedidos.css';
 
 const ListaPedidos = ({ status, btnStatus, props }) => {
   const [pedidos, setPedidos] = useState([]);
-  console.log(pedidos);
 
   useEffect(() => {
     carregarPedidos();
@@ -19,9 +18,38 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
     }
   };
 
-  const pedidosFiltrados = pedidos.filter(
-    (pedido) => pedido.status.toLowerCase() === status.toLowerCase()
-  );
+  const ordenarPorDataHora = (a, b) => {
+    const dataA = new Date(a.dateEntry);
+    const dataB = new Date(b.dateEntry);
+
+    if (dataA < dataB) {
+      return -1;
+    } else if (dataA > dataB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  const formatarData = (data) => {
+    if (!data) {
+      return "Indisponível";
+    }
+
+    const date = new Date(data);
+    const dia = String(date.getDate()).padStart(2, '0');
+    const mes = String(date.getMonth() + 1).padStart(2, '0');
+    const ano = date.getFullYear();
+    const horas = String(date.getHours()).padStart(2, '0');
+    const minutos = String(date.getMinutes()).padStart(2, '0');
+
+    return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
+  };
+
+  const pedidosFiltrados = pedidos
+    .filter((pedido) => pedido.status.toLowerCase() === status.toLowerCase())
+    .sort(ordenarPorDataHora)
+    .reverse();
 
   return (
     <>
@@ -41,21 +69,23 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
               <strong>Mesa:</strong> {pedido.table}
             </li>
             <li>
-              <strong>Data de Entrada:</strong> {pedido.dataEntry}
+              <strong>Data de Entrada:</strong> {formatarData(pedido.dateEntry)}
             </li>
             <li>
               <strong>Produtos:</strong>
-              {pedido.products.map((item) => (
-                <li key={item.product.id}>
-                  {item.product.name} - Quantidade: {item.qty}
-                </li>
-              ))}
+              <div>
+                {pedido.products.map((item) => (
+                  <div key={item.product.id}>
+                    {item.product.name} - Quantidade: {item.qty}
+                  </div>
+                ))}
+              </div>
             </li>
             <li>
               <strong>Status:</strong> {pedido.status}
             </li>
             <li>
-              {props}: {pedido.dateProcessed}
+              {props}: {pedido.dateProcessed ? formatarData(pedido.dateProcessed) : 'Em processamento'}
             </li>
             {btnStatus(pedido)}
           </ul>

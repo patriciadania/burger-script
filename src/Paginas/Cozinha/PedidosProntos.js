@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
@@ -19,6 +19,7 @@ const customStyles = {
     textAlign: 'center',
   },
 };
+
 Modal.setAppElement('#root');
 
 export default function PedidosProntos() {
@@ -27,17 +28,14 @@ export default function PedidosProntos() {
     try {
       await atualizarStatusPedido(pedido.id, 'enviado');
       setModalIsOpen(true);
-    
     } catch (error) {
       console.error('Erro ao enviar pedido:', error);
     }
   };
   const closeModal = () => {
     setModalIsOpen(false);
- 
     window.location.reload();
   };
-
 
   return (
     <section className="telaFazerPedido">
@@ -54,7 +52,7 @@ export default function PedidosProntos() {
           <Botao onClick={() => enviarPedido(pedido)}>enviar</Botao>
         )}
       />
-       <Modal
+      <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Pedido Entregue"
