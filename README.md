@@ -57,7 +57,37 @@ As informações do cliente são as seguintes:
 -  Temos 2 menus: um para o café da manhã e outro para o restante do dia.
 -  Os clientes podem ser indecisos e mudar o pedido várias vezes antes de finalizá-lo.
 -  A interface deve mostrar os dois menus, permitir a seleção de produtos e mostrar o resumo do pedido com o custo total.
--  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface.
+-  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface. <br>
+
+Para entrar na aplicação, segue abaixo o usuário e a senha, de acordo com suas respectivas roles.<br>
+
+<div align="center">
+  <table>
+    <tr>
+      <th>Setor</th>
+      <th>Email</th>
+      <th>Senha</th>
+    </tr>
+    <tr>
+      <td>Administração</td>
+      <td>adm@bs.com</td>
+      <td>1234567</td>
+    </tr>
+    <tr>
+      <td>Cozinha</td>
+      <td>cozinha@bs.com</td>
+      <td>1234567</td>
+    </tr>
+    <tr>
+      <td>Atendimento</td>
+      <td>atendimento@bs.com</td>
+      <td>1234567</td>
+    </tr>
+  </table>
+</div>
+
+
+<br>
 
 ***
 ## 2. Histórias de Usuários 📝
