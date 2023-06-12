@@ -87,8 +87,6 @@ Para entrar na aplicação, segue abaixo o usuário e a senha, de acordo com sua
 </div>
 
 
-<br>
-
 ***
 ## 2. Histórias de Usuários 📝
 De acordo com os requisitos do projeto e cenário escolhido para o desenvolvimento da aplicação, na imagem abaixo se encontra as histórias de usuários.
