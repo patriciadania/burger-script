@@ -61,7 +61,7 @@ As informações do cliente são as seguintes:
 Não há uma aba específica para cadastro de novos usuários. Isso ocorre porque a responsabilidade de registrar novos usuários é atribuída exclusivamente ao administrador do sistema.<br>
 
 Caso você queira testar a aplicação, pode fazer login utilizando alguma das credenciais abaixo.
-Destaco que essas são contas de teste e têm permissões restritas, com base nos perfis de usuário predefinidos.
+Destaco que essas são contas de teste e têm permissões restritas, com base nos perfis de usuário predefinidos.<br>
 Para entrar na aplicação, segue abaixo o usuário e a senha, de acordo com suas respectivas roles.<br>
 
 <div align="center">
