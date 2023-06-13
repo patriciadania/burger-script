@@ -40,7 +40,7 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 * [1. Definição de Produto](#1-definição-de-produto) 
 * [2. Histórias de Usuários](#2-histórias-de-usuários) 
 * [3. Funcionalidades](#3-funcionalidades) 
-* [4. Protótipo Versão Mobile](#4-prototipo-versao-mobile) 
+* [4. Considerações técnicas](#4-considerações-técnicas) 
 * [5. Interface](#5-interface)
 * [6. Testes](#6-testes) 
 * [7. Checklists de Objetivos Alcançados](#7-checklist-de-objetivos-alcançados) 
@@ -57,7 +57,8 @@ As informações do cliente são as seguintes:
 -  Os clientes podem ser indecisos e mudar o pedido várias vezes antes de finalizá-lo.
 -  A interface deve mostrar os dois menus, permitir a seleção de produtos e mostrar o resumo do pedido com o custo total.
 -  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface. <br>
-  
+
+  ##### Executar a aplicação 
 Não há uma aba específica para cadastro de novos usuários. Isso ocorre porque a responsabilidade de registrar novos usuários é atribuída exclusivamente ao administrador do sistema.<br>
 
 Caso você queira testar a aplicação, pode fazer login utilizando alguma das credenciais abaixo.
@@ -174,6 +175,16 @@ A interface fornece recursos com base nas permissões atribuídas a cada usuári
 - `Gerenciamento de Colaboradores`: Os usuários com permissões administrativas têm acesso a recursos de gerenciamento de colaboradores. Isso inclui listar, adicionar, editar e excluir informações dos colaboradores, como nome, cargo, informações de contato, entre outros.
 
 - `Gerenciamento de Produtos`: Estes usuários têm acesso a recursos de gerenciamento de produtos. Isso permite adicionar, editar e excluir produtos disponíveis no menu do restaurante, fornecendo controle completo sobre as opções oferecidas.
+***
+## 4. Considerações técnicas
+#### Tecnologias Utilizadas
+O projeto foi desenvolvido utilizando várias tecnologias modernas e amplamente adotadas no desenvolvimento de aplicações web. Algumas das principais tecnologias utilizadas incluem:
+
+O projeto foi construído usando o framework JavaScript React, que oferece uma abordagem eficiente e reativa para o desenvolvimento de interfaces de usuário interativas e dinâmicas.
+
+A ferramenta Insomnia foi utilizada para testar e simular as requisições da API. Com o Insomnia, foi possível enviar requisições HTTP personalizadas e visualizar as respostas recebidas, garantindo a correta comunicação entre a interface e o mock da API.
+
+Além dessas tecnologias mencionadas, também foram utilizadas outras ferramentas e bibliotecas, como gerenciadores de pacotes, sistemas de controle de versão e bibliotecas auxiliares para a construção do projeto. A combinação dessas tecnologias e ferramentas permitiu o desenvolvimento de uma interface de usuário moderna, responsiva e funcional para o gerenciamento eficiente de pedidos em um ambiente de restaurante.
 ***
 <br>
 Em construção :construction:
