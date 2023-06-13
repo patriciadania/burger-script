@@ -37,8 +37,8 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 ***
 ## Índice
 
-* [1. Definição de Produto](#1-definicao-de-produto) 
-* [2. Histórias de Usuários](#2-historias-de-usuarios) 
+* [1. Definição de Produto](#1-definição-de-produto) 
+* [2. Histórias de Usuários](#2-histórias-de-usuários) 
 * [3. Funcionalidades](#3-funcionalidades) 
 * [4. Protótipo Versão Mobile](#4-prototipo-versao-mobile) 
 * [5. Interface](#5-interface)
