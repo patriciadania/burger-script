@@ -8,8 +8,6 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 
 <div align="center">
   
-
-  <br>
   <br>
   <img align="center" alt="git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
     <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://user-images.githubusercontent.com/120285942/236062287-09f1bc78-7e35-45bc-b420-17b08bd4f81d.svg">
@@ -41,7 +39,7 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 
 * [1. Definição de Produto](#1-definicao-de-produto) 🗒️
 * [2. Histórias de Usuários](#2-historias-de-usuarios) 📌
-* [3. Protótipo Versão Desktop](#3-prototipo-versao-desktop) 📽️
+* [3. Funcionalidades](#3-funcionalidades) 
 * [4. Protótipo Versão Mobile](#4-prototipo-versao-mobile) 📽️
 * [5. Interface](#5-interface)💻
 * [6. Testes](#6-testes) 📊
@@ -59,7 +57,11 @@ As informações do cliente são as seguintes:
 -  Os clientes podem ser indecisos e mudar o pedido várias vezes antes de finalizá-lo.
 -  A interface deve mostrar os dois menus, permitir a seleção de produtos e mostrar o resumo do pedido com o custo total.
 -  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface. <br>
+-  
+Não há uma aba específica para cadastro de novos usuários. Isso ocorre porque a responsabilidade de registrar novos usuários é atribuída exclusivamente ao administrador do sistema.<br>
 
+Caso você queira testar a aplicação, pode fazer login utilizando alguma das credenciais abaixo.
+Destaco que essas são contas de teste e têm permissões restritas, com base nos perfis de usuário predefinidos.
 Para entrar na aplicação, segue abaixo o usuário e a senha, de acordo com suas respectivas roles.<br>
 
 <div align="center">
@@ -152,6 +154,26 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 * Excluir produtos.
 * Atualizar dados de produtos.
 
+***
+## 3. Funcionalidades
+
+A interface fornece recursos com base nas permissões atribuídas a cada usuário. Após o processo de login, o sistema verifica o cargo do usuário e redireciona automaticamente para as páginas pertinentes ao cargo. Abaixo estão listados os principais recursos disponíveis em cada área:
+
+
+#### Atendimento
+- `Registro de Pedidos`: Usuários com a role `atendimento` têm acesso à funcionalidade de registro de pedidos. A interface exibe dois menus distintos: Café da Manhã e Menu Principal, contendo os respectivos produtos disponíveis. O atendente pode selecionar itens, adicionar ou remover produtos da comanda, bem como, pode  visualizar um resumo completo do pedido, incluindo o cálculo do custo total.
+
+- `Gerenciamento de Pedidos`: Os atendentes têm acesso a uma visualização dos pedidos que foram enviados para a cozinha e aguardam a entrega. Eles podem marcar os pedidos como "entregues" após realizarem a entrega física ao cliente, removendo-os da lista de pedidos pendentes. Além disso, os atendentes também têm a capacidade de visualizar os pedidos que já foram entregues.
+
+#### Cozinha
+- `Preparação de Pedidos`: Usuários com a role `cozinha` têm acesso a uma seção específica da interface onde podem visualizar os pedidos recebidos dos atendentes. Essa área permite que os usuários da cozinha saibam quais pedidos devem ser preparados. Ao concluir o processo de preparação de um pedido, o usuário da cozinha pode alterar o status do pedido para "pronto para servir".
+
+- `Pedidos Prontos para Servir`: Os pedidos que possuem este status são automaticamente enviados de volta ao setor de atendimento. Isso permite que os atendentes sejam notificados de que os pedidos estão prontos para serem entregues aos clientes.
+
+#### Administração
+- `Gerenciamento de Colaboradores`: Os usuários com permissões administrativas têm acesso a recursos de gerenciamento de colaboradores. Isso inclui listar, adicionar, editar e excluir informações dos colaboradores, como nome, cargo, informações de contato, entre outros.
+
+- `Gerenciamento de Produtos`: Estes usuários têm acesso a recursos de gerenciamento de produtos. Isso permite adicionar, editar e excluir produtos disponíveis no menu do restaurante, fornecendo controle completo sobre as opções oferecidas.
 ***
 <br>
 Em construção :construction:
