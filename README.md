@@ -57,7 +57,7 @@ As informações do cliente são as seguintes:
 -  Os clientes podem ser indecisos e mudar o pedido várias vezes antes de finalizá-lo.
 -  A interface deve mostrar os dois menus, permitir a seleção de produtos e mostrar o resumo do pedido com o custo total.
 -  O objetivo principal do projeto é aprender a construir uma interface web usando o framework React. Isso envolve compreender o conceito de estado da tela e como cada mudança no estado reflete na interface. <br>
--  
+  
 Não há uma aba específica para cadastro de novos usuários. Isso ocorre porque a responsabilidade de registrar novos usuários é atribuída exclusivamente ao administrador do sistema.<br>
 
 Caso você queira testar a aplicação, pode fazer login utilizando alguma das credenciais abaixo.
