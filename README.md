@@ -40,10 +40,10 @@ Quinto projeto realizado pelo bootcamp @Laboratoria, o projeto Burger Queen envo
 * [1. Definição de Produto](#1-definição-de-produto) 
 * [2. Histórias de Usuários](#2-histórias-de-usuários) 
 * [3. Funcionalidades](#3-funcionalidades) 
-* [4. Considerações técnicas](#4-considerações-técnicas) 
-* [5. Interface](#5-interface)
-* [6. Testes](#6-testes) 
-* [7. Checklists de Objetivos Alcançados](#7-checklist-de-objetivos-alcançados) 
+* [4. Considerações Técnicas](#4-considerações-técnicas) 
+* [5. Mock da API](#5-mock-da-api)
+* [6. Testes Unitários](#6-testes-unitários) 
+* [7. Testes de Usabilidade e Feedback dos Usuários](#7-testes-de-usabilidade-e-feedback-dos-usuários) 
 
 ***
 ## 1. Definição de Produto 
@@ -176,15 +176,41 @@ A interface fornece recursos com base nas permissões atribuídas a cada usuári
 
 - `Gerenciamento de Produtos`: Estes usuários têm acesso a recursos de gerenciamento de produtos. Isso permite adicionar, editar e excluir produtos disponíveis no menu do restaurante, fornecendo controle completo sobre as opções oferecidas.
 ***
-## 4. Considerações técnicas
+## 4. Considerações Técnicas
 #### Tecnologias Utilizadas
 O projeto foi desenvolvido utilizando várias tecnologias modernas e amplamente adotadas no desenvolvimento de aplicações web. Algumas das principais tecnologias utilizadas incluem:
 
-O projeto foi construído usando o framework JavaScript React, que oferece uma abordagem eficiente e reativa para o desenvolvimento de interfaces de usuário interativas e dinâmicas.
+O projeto foi construído usando o framework `JavaScript React`, que oferece uma abordagem eficiente e reativa para o desenvolvimento de interfaces de usuário interativas e dinâmicas.
 
-A ferramenta Insomnia foi utilizada para testar e simular as requisições da API. Com o Insomnia, foi possível enviar requisições HTTP personalizadas e visualizar as respostas recebidas, garantindo a correta comunicação entre a interface e o mock da API.
+A ferramenta Insomnia foi utilizada para testar e simular as requisições da `API`. Com o `Insomnia`, foi possível enviar `requisições HTTP` personalizadas e visualizar as respostas recebidas, garantindo a correta comunicação entre a interface e o `mock da API`.
 
 Além dessas tecnologias mencionadas, também foram utilizadas outras ferramentas e bibliotecas, como gerenciadores de pacotes, sistemas de controle de versão e bibliotecas auxiliares para a construção do projeto. A combinação dessas tecnologias e ferramentas permitiu o desenvolvimento de uma interface de usuário moderna, responsiva e funcional para o gerenciamento eficiente de pedidos em um ambiente de restaurante.
+***
+## 5. Mock da API
+Este projeto utiliza um `mock de API` para o recebimento e processamento dos dados enviados pela interface do cliente.
+
+É importante ressaltar que o `mock de API` não armazena os dados permanentemente, pois não possui um banco de dados real. Isso significa que, ao utilizar a interface, os dados enviados são temporários e não persistem entre sessões. 
+
+
+Além disso, o `mock de API` simula um tempo de expiração do token de autenticação. Quando o token expira, o processamento dos dados enviados é descartado, pois não há mecanismo de autenticação real para renovar o token. 
+
+***
+## 6. Testes Unitários
+Foram implementados testes unitários para garantir a qualidade e a estabilidade da aplicação, onde foi possível verificar o comportamento individual de cada componente ou função em isolamento, permitindo a identificação de possíveis erros ou falhas.
+Para realizar os testes unitários, foi utilizada uma combinação de ferramentas e bibliotecas, como:
+
+`Jest`: utilizado como base para a criação e execução dos testes unitários. Ele fornece uma estrutura eficiente para escrever testes de forma organizada e automatizada.
+
+A biblioteca `React Testing Library` foi adotada para testar os componentes `React`. Ela oferece uma abordagem centrada no usuário para testes, simulando interações e verificando o comportamento esperado dos componentes.
+
+Os `testes unitários` abrangem diversas áreas da aplicação, desde a validação de dados e lógica de negócios até a interação correta com o `mock da API e a renderização adequada dos componentes.
+***
+## 7. Testes de Usabilidade e Feedback dos Usuários
+Os testes de usabilidade foram conduzidos com uma abordagem centrada no usuário, permitindo que os usuários interajam com a interface e fornecessem comentários, sugestões e observações sobre a usabilidade, a navegabilidade e a eficiência da aplicação. Esses testes proporcionam insights valiosos sobre os pontos fortes e as oportunidades de melhoria da interface.
+
+Essa abordagem ajuda a garantir que a interface seja intuitiva, fácil de usar e forneça uma experiência satisfatória aos usuários finais.
+
+ 
 ***
 <br>
 Em construção :construction:
