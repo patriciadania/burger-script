@@ -5,6 +5,7 @@ import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Botao from '../../componentes/Botao/Botao';
 import { atualizarStatusPedido } from '../../API/Pedidos';
 import Modal from 'react-modal';
+import TokenExpiracao from '../../Autenticação/Auth';
 
 const customStyles = {
   content: {
@@ -44,6 +45,7 @@ export default function PedidosProntos() {
           Voltar
         </Link>
       </nav>
+      <TokenExpiracao />
       <MenuNavegacao texto="pronto para servir" imagemSrc="pronto-para-servir.png" />
       <ListaPedidos
         status="pronto para entrega"

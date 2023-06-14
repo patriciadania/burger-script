@@ -13,24 +13,7 @@ import ListaDeColaboradores from "./componentes/CriaEListaUsuario/ListaUsuarios"
 import Produtos from "./Paginas/Adm/PagProdutos/Produtos";
 import AgrProducao from "./Paginas/Cozinha/AgrProducao";
 import PedidosProntos from "./Paginas/Cozinha/PedidosProntos";
-import { Navigate } from "react-router-dom";
-import { verificarAutenticacao } from "./Autenticação/Auth";
-
-
-const PrivateRoute = ({ children, roles }) => {
-  try {
-    const user = verificarAutenticacao();
-
-    if (roles && !roles.includes(user.role)) {
-      return <Navigate to="/" />;
-    }
-
-    return children
-  } catch (error) {
-    return <Navigate to="/" />;
-  }
-}
-
+import { PrivateRoute } from "./RotasPrivadas";
 
 function AppRoutes() {
   return (
@@ -42,7 +25,6 @@ function AppRoutes() {
             <Atendimento />
           </PrivateRoute>
         } />
-
         <Route path="/cozinha" element={
           <PrivateRoute roles={["Cozinha"]}>
             <Cozinha />
@@ -50,48 +32,53 @@ function AppRoutes() {
         } />
         <Route path="/administracao" element={
           <PrivateRoute roles={["Administração"]}>
-          <Administracao/>
-        </PrivateRoute>
-        }/>
+            <Administracao />
+          </PrivateRoute>
+        } />
         <Route path="/fazerpedido" element={
           <PrivateRoute roles={["Atendimento"]}>
-          <FazerPedido />
-        </PrivateRoute>
-      } />
+            <FazerPedido />
+          </PrivateRoute>
+        } />
         <Route path="/aguardandoentrega" element={
           <PrivateRoute roles={["Atendimento"]}>
-          <AguardandoEntrega />
-        </PrivateRoute>
-      } /> 
+            <AguardandoEntrega />
+          </PrivateRoute>
+        } />
         <Route path="/pedidosentregues" element={
           <PrivateRoute roles={["Atendimento"]}>
-          <PedidosEntregues />
-        </PrivateRoute>
-      } />
+            <PedidosEntregues />
+          </PrivateRoute>
+        } />
         <Route path="/colaboradores" element={
           <PrivateRoute roles={["Administração"]}>
-          <Colaboradores/>
-        </PrivateRoute>} />
+            <Colaboradores />
+          </PrivateRoute>} 
+          />
         <Route path="/addcolaborador" element={
           <PrivateRoute roles={["Administração"]}>
-          <CriarUsuario/>
-        </PrivateRoute>} />
+            <CriarUsuario />
+          </PrivateRoute>} />
         <Route path="/listacolaboradores" element={
           <PrivateRoute roles={["Administração"]}>
-          <ListaDeColaboradores/>
-        </PrivateRoute>} />
+            <ListaDeColaboradores />
+          </PrivateRoute>} 
+          />
         <Route path="/produtos" element={
           <PrivateRoute roles={["Administração"]}>
-          <Produtos/>
-        </PrivateRoute>} />
+            <Produtos />
+          </PrivateRoute>} 
+          />
         <Route path="/aguardandoproducao" element={
           <PrivateRoute roles={["Cozinha"]}>
-          <AgrProducao />
-        </PrivateRoute>} />
+            <AgrProducao />
+          </PrivateRoute>}
+           />
         <Route path="/pedidosprontos" element={
           <PrivateRoute roles={["Cozinha"]}>
-          <PedidosProntos />
-        </PrivateRoute>} />
+            <PedidosProntos />
+          </PrivateRoute>}
+           />
 
       </Routes>
     </BrowserRouter>

@@ -17,6 +17,7 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
       console.error(error);
     }
   };
+  
 
   const ordenarPorDataHora = (a, b) => {
     const dataA = new Date(a.dateEntry);
