@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ListaPedidos from '../../componentes/Pedidos/Pedidos';
 import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
+import TokenExpiracao from '../../Autenticação/Auth';
 
 export default function PedidosEntregues() {
  
@@ -12,6 +13,7 @@ export default function PedidosEntregues() {
           Voltar
         </Link>
       </nav>
+      <TokenExpiracao />
       <MenuNavegacao
         to="/pedidosentregues"
         texto="pedidos entregues"

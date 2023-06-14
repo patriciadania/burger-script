@@ -6,6 +6,7 @@ import Botao from '../../componentes/Botao/Botao';
 import { atualizarStatusPedido } from '../../API/Pedidos';
 import Modal from 'react-modal';
 import { useState } from 'react';
+import TokenExpiracao from '../../Autenticação/Auth';
 
 const customStyles = {
   content: {
@@ -45,6 +46,7 @@ export default function AgrProducao() {
           Voltar
         </Link>
       </nav>
+      <TokenExpiracao />
       <MenuNavegacao texto="aguardando produção" imagemSrc="preparando-pedido.png" />
       <ListaPedidos
         status="pendente"
