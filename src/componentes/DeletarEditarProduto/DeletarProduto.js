@@ -27,7 +27,7 @@ export default function DeletarProduto({ produto, onDelete }) {
 
   return (
     <>
-      <button className='btn-deletar-produto' onClick={abrirModal}>
+      <button className="deletar-btn" onClick={abrirModal}>
         <DeleteIcon />
       </button>
 
@@ -35,18 +35,7 @@ export default function DeletarProduto({ produto, onDelete }) {
         isOpen={modalOpen}
         onRequestClose={fecharModal}
         className="modal"
-        style={{
-          overlay: {
-            backgroundColor: 'var(--azul-escuro)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-            marginTop: '10%',
-           color: 'var(--cor-da-fonte)',
-          
-          },
-        }}
+      
       >
         <h2>Você tem certeza que deseja excluir o produto?</h2>
         <div className="modal-buttons">

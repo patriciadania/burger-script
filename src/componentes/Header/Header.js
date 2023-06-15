@@ -10,7 +10,7 @@ const Header = ({ msgBoasVindas }) => {
             </div>
             <div className="browser">
                 <h2 className='msgBoasVindas'>
-                    ${msgBoasVindas}
+                    {msgBoasVindas}
                     <span className="terminal-cursor"></span>
                 </h2>
             </div>
