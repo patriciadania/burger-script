@@ -1,14 +1,39 @@
 import { useEffect, useState } from "react";
 import './ListaUsuarios.css'
 import { Link } from "react-router-dom";
-import { listarUsuarios, editarUsuario, deletarUsuario} from "../../API/Usuarios";
+import { listarUsuarios, editarUsuario, deletarUsuario } from "../../API/Usuarios";
 import BtnEditarUsuario from "../EditarDeletarUsuario/BtnEditarUsuario";
 import BtnDeletarUsuario from "../EditarDeletarUsuario/BtnDeletarUsuario";
 import MenuNavegacao from "../MenuNavegacao/MenuNavegacao";
+import Modal from 'react-modal';
+import TokenExpiracao from "../../Autenticação/Auth";
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: '400px',
+    width: '90%',
+    textAlign: 'center',
+    WebkitOverflowScrolling: 'touch',
+  },
+};
 
 export default function ListaDeUsuarios() {
   const [usuarios, setUsuarios] = useState([]);
   const [editandoUsuarioId, setEditandoUsuarioId] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [deletarUsuarioId, setDeletarUsuarioId] = useState(null);
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    window.location.reload();
+  };
 
   useEffect(() => {
     const obterUsuarios = async () => {
@@ -20,6 +45,7 @@ export default function ListaDeUsuarios() {
       }
     };
 
+    
     obterUsuarios();
   }, []);
 
@@ -31,22 +57,26 @@ export default function ListaDeUsuarios() {
     try {
       const usuarioAtualizado = { ...novoUsuario };
       delete usuarioAtualizado.editando;
-  
+
       await editarUsuario(usuarioAtualizado.id, usuarioAtualizado);
-      alert("Dados alterados com sucesso")
+      setModalIsOpen(true);
+      setModalMessage("Dados alterados com sucesso");
       setEditandoUsuarioId(null);
-      window.location.reload();
     } catch (error) {
       console.error("Erro ao salvar usuário:", error);
     }
   };
-  
 
-  const onDeleteUsuario = async (id) => {
+  const confirmDelete = (usuarioId) => {
+    setDeletarUsuarioId(usuarioId);
+    setModalIsOpen(true);
+  };
+
+  const deletarUsuarioConfirmado = async () => {
     try {
-      await deletarUsuario(id);
-      alert("Usuário deletado com sucesso");
-      window.location.reload();
+      await deletarUsuario(deletarUsuarioId);
+      setModalMessage("Usuário deletado com sucesso");
+      closeModal();
     } catch (error) {
       console.error("Erro ao deletar usuário:", error);
     }
@@ -59,10 +89,11 @@ export default function ListaDeUsuarios() {
           Voltar
         </Link>
       </nav>
+      <TokenExpiracao />
       <MenuNavegacao
-                texto='listar colaboradores'
-                imagemSrc='lista.png'
-            />
+        texto='listar colaboradores'
+        imagemSrc='lista.png'
+      />
       <div className="listaUsuarios">
         {usuarios.map((usuario) => (
           <div key={usuario.id} className="cardUsuario">
@@ -85,13 +116,36 @@ export default function ListaDeUsuarios() {
                 </button>
                 <BtnDeletarUsuario
                   usuario={usuario}
-                  onDelete={() => onDeleteUsuario(usuario.id)}
+                  onDelete={() => confirmDelete(usuario.id)}
                 />
               </>
             )}
           </div>
         ))}
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <h2 className="msg-modal">{modalMessage}</h2>
+        {deletarUsuarioId && (
+          <div>
+            <p>Deseja realmente deletar o usuário?</p>
+            <button className="modal-btn" onClick={deletarUsuarioConfirmado}>
+              Deletar
+            </button>
+            <button className="modal-btn" onClick={closeModal}>
+              Cancelar
+            </button>
+          </div>
+        )}
+        {!deletarUsuarioId && (
+          <button className="modal-btn" onClick={closeModal}>
+            Fechar
+          </button>
+        )}
+      </Modal>
     </div>
   );
 }

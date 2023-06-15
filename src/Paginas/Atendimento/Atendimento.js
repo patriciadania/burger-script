@@ -4,6 +4,7 @@ import MenuNavegacao from '../../componentes/MenuNavegacao/MenuNavegacao';
 import Footer from '../../componentes/Footer/Footer';
 import Header from '../../componentes/Header/Header';
 import obterNomeUsuario from '../../API/Usuarios';
+import TokenExpiracao from '../../Autenticação/Auth';
 
 export default function Atendimento() {
   const nomeUsuario = obterNomeUsuario();
@@ -16,6 +17,7 @@ export default function Atendimento() {
       <nav className='botaoSair'>
         <Link to='/' className='botaoSair'>Sair</Link>
       </nav>
+      <TokenExpiracao />
       <MenuNavegacao
         to='/fazerpedido'
         texto='registrar pedido'

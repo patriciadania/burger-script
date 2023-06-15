@@ -2,6 +2,7 @@
 import './Colaboradores.css'
 import { Link } from 'react-router-dom'
 import MenuNavegacao from '../../../componentes/MenuNavegacao/MenuNavegacao'
+import TokenExpiracao from '../../../Autenticação/Auth'
 
 export default function Colaboradores() {
     return (
@@ -9,6 +10,7 @@ export default function Colaboradores() {
             <nav className='botaoSair'>
                 <Link to='/administracao' className='botaoSair'>Voltar</Link>
             </nav>
+            <TokenExpiracao />
             <MenuNavegacao
                 to='/addcolaborador'
                 texto='adicionar colaborador'

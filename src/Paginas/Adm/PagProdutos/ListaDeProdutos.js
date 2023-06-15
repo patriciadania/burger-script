@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { obterProdutos, deletarProduto } from '../../../API/Produtos';
 import './Produto.css';
 import ModeEditTwoToneIcon from '@mui/icons-material/ModeEditTwoTone';
+
 import DeletarProduto from '../../../componentes/DeletarEditarProduto/DeletarProduto';
+
 
 const ListaDeProdutos = (props) => {
   const { tipoProduto } = props;

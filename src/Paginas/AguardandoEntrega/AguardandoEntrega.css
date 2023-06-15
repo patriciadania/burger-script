@@ -1,26 +1,4 @@
-/* .aguardandoEntrega{
-    color: rgba(255, 253, 253, 1);
-    background-color: rgba(122, 113, 113, 0.5);
-    margin-bottom: 5rem;
-    text-transform: uppercase;
-    max-width: 35rem;
-    padding: 5px 5px;
-    border-radius: 5px;
-    font-family: Kadwa;
-    font-size: 1.3rem;
-    max-width: 50%;
-    width: 100%;
 
-}
-.telaAguardandoEntrega{
-    margin-top: 5rem ;
-    margin:10;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-} */
 .botaoVoltar{
     margin-top: 5rem;
     color: aliceblue;
@@ -33,17 +11,7 @@
     color: aliceblue;
 
 }
-/* .container-resumo-pedido{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .container-resumo-pedido {
-    width: 100%;
-    max-width: 35rem;
-    margin: 0 auto;
-  } */
-  
+
 
   @media only screen and (max-width: 767px) {
     .lista-de-pedidos{
