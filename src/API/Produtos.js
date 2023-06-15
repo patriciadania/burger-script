@@ -71,3 +71,27 @@ export const deletarProduto = async (id) => {
     throw new Error('Erro ao deletar produto');
   }
 };
+
+export const editarProduto = async (id, nomeProduto, precoProduto, tipoProduto, categoriaProduto) => {
+  try {
+    const authToken = pegarAuthToken();
+    const response = await fetch(`${API_URL}/products/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`,
+      },
+      body: JSON.stringify({
+        name: nomeProduto,
+        price: precoProduto,
+        type: tipoProduto,
+        category: categoriaProduto,
+      }),
+    });
+    const updatedProduct = await response.json();
+    return updatedProduct;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

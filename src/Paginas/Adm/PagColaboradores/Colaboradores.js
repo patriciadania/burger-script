@@ -1,5 +1,4 @@
 
-import './Colaboradores.css'
 import { Link } from 'react-router-dom'
 import MenuNavegacao from '../../../componentes/MenuNavegacao/MenuNavegacao'
 import TokenExpiracao from '../../../Autenticação/Auth'

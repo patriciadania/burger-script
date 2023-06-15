@@ -34,6 +34,7 @@ const FormularioProdutos = () => {
         try {
             await adicionarProdutos(nomeProduto, precoProduto, categoriaProduto, tipoRefeicao, idProduto);
             setCadastroSucesso(true);
+            window.location.reload();
           } catch (error) {
             console.error(error);
           }

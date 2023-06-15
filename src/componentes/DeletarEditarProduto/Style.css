@@ -1,14 +1,13 @@
-.btn-deletar-produto{
-  background-color: transparent;
-  border-style: none;
-  width: 50px;
+
+.modal-buttons button{
+  margin-bottom: 1rem;
+  background-color: var(--cinza-claro);
+  border: 3px solid var(--cinza-claro);
+  border-radius: 8px;
+  text-transform: uppercase;
   cursor: pointer;
-  color: var(--cinza-claro);
 }
-.btn-deletar-produto:hover{
-  color:var(--verde);
-}
-.modal {
+.modal{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,16 +16,116 @@
   max-width: 50rem;
   gap: 3rem;
 }
-.modal-buttons{
-  max-width: 200px;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.modal-buttons button{
-  margin-bottom: 1rem;
-  background-color: var(--cinza-claro);
-  border: 3px solid var(--cinza-claro);
-  border-radius: 8px;
-  text-transform: uppercase;
+
+
+.modal label {
+  display: block;
+}
+
+.modal input[type='text'],
+.modal input[type='number'] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.modal button {
+  padding: 0.5rem 1rem;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  max-width: 20rem;
+  gap: 3rem;
+  background-color: var(--cinza-claro);
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.editar-btn{
+  cursor: pointer;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal label {
+  display: block;
+}
+
+.modal input[type='text'],
+.modal input[type='number'] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.modal .btn-salvar,
+.modal .btn-cancelar {
+  background-color: var(--cinza-claro);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.modal .btn-salvar:hover,
+.modal .btn-cancelar:hover {
+  background-color: var(--cinza-escuro);
+  color: white;
+}
+.editar-deletar-produto {
+  display: inline-block;
+}
+
+.editar-btn,
+.deletar-btn {
+  background-color: var(--cinza-claro);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.editar-btn:hover {
+  background-color: var(--cinza-escuro);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  max-width: 50rem;
+  gap: 3rem;
 }
