@@ -187,10 +187,9 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 * Adicionar produtos.
 * Excluir produtos.
 * Atualizar dados de produtos. <br>
-*   <div align="center">
+  <div align="center">
  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/392b5ede-7bab-4092-8c49-fad27ca607eb"/>
-    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/2d1ac4c4-9043-4669-b181-de93c3fa8177"/>
-
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/2d1ac4c4-9043-4669-b181-de93c3fa8177"/>
 </div>
 
 ***
