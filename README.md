@@ -60,6 +60,12 @@ As informações do cliente são as seguintes:
 
   ##### Executar a aplicação 
 Não há uma aba específica para cadastro de novos usuários. Isso ocorre porque a responsabilidade de registrar novos usuários é atribuída exclusivamente ao administrador do sistema.<br>
+<div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/f97c3109-d6eb-4fb4-b137-47c5c77a018c"/><br>
+    Tela : Login.
+</div>
+
+<br>
 
 Caso você queira testar a aplicação, pode fazer login utilizando alguma das credenciais abaixo.
 Destaco que essas são contas de teste e têm permissões restritas, com base nos perfis de usuário predefinidos.<br>
@@ -108,6 +114,12 @@ O que deve acontecer para satisfazer as necessidades do usuário?<br>
   - Inserir email e senha.
   - Receber mensagens de erros compreensíveis, conforme o erro e as informações inseridas.
   - Entrar no sistema de pedidos caso as credenciais forem corretas. 
+   <div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/0996cf98-6019-417e-99e5-159880a608e4"/>
+ 
+</div>
+ 
+
   ***
 
 ##### História de usuário 2
@@ -118,8 +130,14 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 - Excluir produtos.
 - Ver resumo e o total da compra.
 - Enviar o pedido para a cozinha (guardar em algum banco de dados).
-- Funcionar bem em um tablet.
+- Funcionar bem em um tablet.<br>
+   <div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/a90c12ee-6e1a-4c4e-b6ed-aff567b729e6"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/1a81a03f-fc05-4bda-9ef6-226bc3996e1d"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/134bb9d0-2983-426f-af94-97505f929b8e"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/de492aaf-31aa-4319-8807-946358407595"/>
 
+</div>
 
 ***
 ##### História de usuário 3
@@ -128,16 +146,25 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 * Ver os pedidos ordenados à medida em que são feitos.
 * Marcar os pedidos que foram preparados e estão prontos para serem servidos.
 * Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado
-  como concluído
+  como concluído. <br>
 
+  <div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/780bed0b-1d79-45a3-a8c1-bce1583f40c1"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/89795e77-2ca7-411d-b00e-cf4a7bb2047f"/>
+</div>
 
 ***
 ##### História de usuário 4
 O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 
 * Ver a lista de pedidos prontos para servir.
-* Marcar os pedidos que foram entregues.
+* Marcar os pedidos que foram entregues. <br>
 
+  <div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/d65b0172-a574-407b-8997-414c7b623954"/>
+
+
+</div>
 
 ***
 ##### História de usuário 5
@@ -145,7 +172,13 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 * Ver lista de funcionários.
 * Adicionar funcionários.
 * Excluir funcionários.
-* Atualizar dados dos funcionários.
+* Atualizar dados dos funcionários.<br>
+  <div align="center">
+  <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/edcda79d-60ab-477b-8216-f3cd7f380232"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/996b1b67-2bf6-48d1-a0ad-91384257c4e8"/>
+   <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/1fb2c2ea-bb5f-4d38-b6cb-9e5cd6716249"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/43de4e7d-86c8-4e27-b023-d84e183ae7dd"/>
+</div>
 
 ***
 ##### História de usuário 6
@@ -153,7 +186,12 @@ O que deve acontecer para satisfazer as necessidades do usuário?  <br>
 * Ver lista de produtos.
 * Adicionar produtos.
 * Excluir produtos.
-* Atualizar dados de produtos.
+* Atualizar dados de produtos. <br>
+*   <div align="center">
+ <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/392b5ede-7bab-4092-8c49-fad27ca607eb"/>
+    <img width="500" src="https://github.com/patriciadania/burger-script/assets/120285942/2d1ac4c4-9043-4669-b181-de93c3fa8177"/>
+
+</div>
 
 ***
 ## 3. Funcionalidades
@@ -212,5 +250,4 @@ Essa abordagem ajuda a garantir que a interface seja intuitiva, fácil de usar e
 
  
 ***
-<br>
-Em construção :construction:
+
