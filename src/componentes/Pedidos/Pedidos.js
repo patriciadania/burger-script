@@ -19,38 +19,10 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
   };
   
 
-  const ordenarPorDataHora = (a, b) => {
-    const dataA = new Date(a.dateEntry);
-    const dataB = new Date(b.dateEntry);
-
-    if (dataA < dataB) {
-      return -1;
-    } else if (dataA > dataB) {
-      return 1;
-    } else {
-      return 0;
-    }
-  };
-
-  const formatarData = (data) => {
-    if (!data) {
-      return "Indisponível";
-    }
-
-    const date = new Date(data);
-    const dia = String(date.getDate()).padStart(2, '0');
-    const mes = String(date.getMonth() + 1).padStart(2, '0');
-    const ano = date.getFullYear();
-    const horas = String(date.getHours()).padStart(2, '0');
-    const minutos = String(date.getMinutes()).padStart(2, '0');
-
-    return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
-  };
 
   const pedidosFiltrados = pedidos
-    .filter((pedido) => pedido.status.toLowerCase() === status.toLowerCase())
-    .sort(ordenarPorDataHora)
-    .reverse();
+    .filter((pedido) => pedido.status.toLowerCase() === status.toLowerCase()
+    );
 
   return (
     <>
@@ -70,7 +42,7 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
               <strong>Mesa:</strong> {pedido.table}
             </li>
             <li>
-              <strong>Data de Entrada:</strong> {formatarData(pedido.dateEntry)}
+              <strong>Data de Entrada:</strong> {pedido.dateEntry}
             </li>
             <li>
               <strong>Produtos:</strong>
@@ -86,8 +58,9 @@ const ListaPedidos = ({ status, btnStatus, props }) => {
               <strong>Status:</strong> {pedido.status}
             </li>
             <li>
-              {props}: {pedido.dateProcessed ? formatarData(pedido.dateProcessed) : 'Em processamento'}
-            </li>
+                {props} {pedido.dateProcessed}
+              </li>
+            
             {btnStatus(pedido)}
           </ul>
         ))}
